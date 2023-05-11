@@ -28,7 +28,8 @@
     <!-- Stylesheets -->
     <?php
     queue_css_file(array('style', 'public', 'iconfonts'));
-    queue_css_url('https://fonts.googleapis.com/css?family=Crimson+Text:400,400italic,700,700italic');
+    queue_css_url("https://www.uni-mannheim.de/typo3conf/ext/uma_site/Resources/Public/Icons/sprite.css");
+    queue_css_url("https://www.uni-mannheim.de/typo3conf/ext/uma_site/Resources/Public/Css/app.css");
     echo head_css();
     echo $this->partial('common/theme_option_styles.php');
     ?>
@@ -50,24 +51,26 @@
 
             <?php fire_plugin_hook('public_header', array('view'=>$this)); ?>
 
-            <div id="site-title"><?php echo link_to_home_page(theme_logo()); ?></div>
+            <div class="align-bottom" style="display: flex;">
+                <div id="site-title" class="uma-header-left">
+                    <div id="header-logo"><?php echo link_to_home_page(theme_logo()); ?></div>
+                    <div id="header-text"><?php echo get_theme_option('logo_text'); ?></div>
+                </div>
 
-            <div id="search-container" role="search">
-                <?php if (get_theme_option('use_advanced_search') === null || get_theme_option('use_advanced_search')): ?>
-                <?php echo search_form(array('show_advanced' => true, 'form_attributes' => array('role' => 'search', 'class' => 'closed'))); ?>
-                <?php else: ?>
-                <?php echo search_form(array('form_attributes' => array('role' => 'search', 'class' => 'closed'))); ?>
-                <?php endif; ?>
-                <button type="button" class="search-toggle" title="<?php echo __('Toggle search'); ?>"></button>
+                <div class="uma-header-right">
+                    <nav id="top-nav" role="navigation">
+                        <?php echo mashare_public_nav_main(); ?>
+                    </nav>
+                    <div id="search-container" role="search">
+                        <?php if (get_theme_option('use_advanced_search') === null || get_theme_option('use_advanced_search')): ?>
+                        <?php echo search_form(array('show_advanced' => true, 'form_attributes' => array('role' => 'search', 'class' => 'closed'))); ?>
+                        <?php else: ?>
+                        <?php echo search_form(array('form_attributes' => array('role' => 'search', 'class' => 'closed'))); ?>
+                        <?php endif; ?>
+                        <button type="button" class="search-toggle" title="<?php echo __('Toggle search'); ?>"></button>
+                    </div>
+                </div>
             </div>
-
-
-            <nav id="top-nav" role="navigation">
-                <?php echo mashare_public_nav_main(); ?>
-            </nav>
-
-            <?php echo theme_header_image(); ?>
-
         </header>
 
         <article id="content" role="main">
