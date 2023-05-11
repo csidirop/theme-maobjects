@@ -31,9 +31,9 @@ queue_js_string('
     <?php endif; ?>
     <?php if ((get_theme_option('Display Featured Exhibit') !== '0')
             && plugin_is_active('ExhibitBuilder')
-            && function_exists('centerrow_display_featured_exhibit')): ?>
+            && function_exists('mashare_display_featured_exhibit')): ?>
     <!-- Featured Exhibit -->
-    <?php echo centerrow_display_featured_exhibit(); ?>
+    <?php echo mashare_display_featured_exhibit(); ?>
     <?php endif; ?>
 </div><!--end featured-item-->
 

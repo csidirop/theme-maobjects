@@ -23,7 +23,7 @@
 <script type="text/javascript">
     jQuery(document).ready(function(){
         Omeka.skipNav();
-        CenterRow.megaMenu();
+        Mashare.megaMenu();
     });
 </script>
 

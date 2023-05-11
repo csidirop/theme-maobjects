@@ -1,10 +1,10 @@
-if (!CenterRow) {
-    var CenterRow = {};
+if (!Mashare) {
+    var Mashare = {};
 }
 
 (function($) {
 
-    CenterRow.megaMenu = function (menuSelector, customMenuOptions) {
+    Mashare.megaMenu = function (menuSelector, customMenuOptions) {
         if (typeof menuSelector === 'undefined') {
             menuSelector = 'header nav';
         }

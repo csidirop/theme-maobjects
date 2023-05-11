@@ -36,7 +36,7 @@
     <!-- JavaScripts -->
     <?php
     queue_js_file(array('globals'));
-    queue_js_file(array('centerrow', 'jquery-accessibleMegaMenu'), 'js');
+    queue_js_file(array('mashare', 'jquery-accessibleMegaMenu'), 'js');
     echo head_js();
     ?>
 </head>
@@ -63,7 +63,7 @@
 
 
             <nav id="top-nav" role="navigation">
-                <?php echo centerrow_public_nav_main(); ?>
+                <?php echo mashare_public_nav_main(); ?>
             </nav>
 
             <?php echo theme_header_image(); ?>
