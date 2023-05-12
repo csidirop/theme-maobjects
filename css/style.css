@@ -967,6 +967,8 @@ nav ul {
   /* @end */
 
   /* Unterstreichungen bei a ausschalten */
+
+  /* jcarousel left / right */
 }
 @media screen and (min-width: 1100px) {
   .sub-nav.first {
@@ -1487,6 +1489,19 @@ nav ul {
   }
 }
 @media screen {
+  .browse .hentry h1, .browse .hentry h2, .browse .hentry h3, .browse .hentry h4 {
+    color: #232e58;
+  }
+  .browse .hentry h1 a, .browse .hentry h2 a, .browse .hentry h3 a, .browse .hentry h4 a {
+    color: #232e58;
+  }
+}
+@media screen {
+  #content h1, #content h2, #content h3, #content h4 {
+    color: #232e58;
+  }
+}
+@media screen {
   .pagination-nav ul.pagination li.page-input form label {
     display: inline-flex;
   }
@@ -1498,6 +1513,7 @@ nav ul {
     line-height: normal;
     position: relative;
     top: -4px;
+    width: 50px;
   }
 }
 @media screen {
@@ -1540,15 +1556,36 @@ li.pagination_next a,
   }
   .pagination li.pagination_previous a:hover,
 .pagination li.pagination_next a:hover {
+    border: 0.1875rem solid #abb8ca;
     color: #232e58;
     background: #fff;
-    border: 0.1875rem solid #abb8ca;
   }
 }
 @media screen {
   a:hover,
 header nav .navigation .nav-item a:hover {
     text-decoration: none;
+  }
+}
+@media screen {
+  .jcarousel-wrapper a.jcarousel-control-prev, .jcarousel-wrapper a.jcarousel-control-next {
+    border: 0.1875rem solid #232e58;
+    color: #fff;
+    background: #232e58;
+    font: 24px/22px Arial, sans-serif;
+  }
+  .jcarousel-wrapper a.jcarousel-control-prev:focus, .jcarousel-wrapper a.jcarousel-control-prev:hover, .jcarousel-wrapper a.jcarousel-control-next:focus, .jcarousel-wrapper a.jcarousel-control-next:hover {
+    color: #232e58;
+    background: #fff;
+    border: 0.1875rem solid #abb8ca;
+  }
+  .jcarousel-wrapper .jcarousel-pagination a.active {
+    background: #232e58;
+  }
+}
+@media screen {
+  #scroll-to-top:hover {
+    background: #abb8ca;
   }
 }
 @media screen {
@@ -1590,7 +1627,7 @@ header nav .navigation .nav-item a:hover {
   }
 }
 @media screen {
-  h2.AusstellungsThema.uma-primo-bar {
+  #content h2.AusstellungsThema.uma-primo-bar {
     position: relative;
     top: -40px;
     width: 87%;
@@ -1599,6 +1636,7 @@ header nav .navigation .nav-item a:hover {
     margin-right: auto;
     padding-top: 10px;
     padding-bottom: 4px;
+    color: #fff;
   }
 }
 @media screen {
@@ -1629,6 +1667,11 @@ header nav .navigation .nav-item a:hover {
     background: #232e58;
     border-radius: 0.5rem;
   }
+  #search-container #search-form.closed + .search-toggle:hover {
+    color: #232e58;
+    background: #fff;
+    border: 0.1875rem solid #abb8ca;
+  }
   #search-container button#submit_search {
     border: 0.1875rem solid #232e58;
     color: #fff;
@@ -1651,6 +1694,11 @@ header nav .navigation .nav-item a:hover {
   #no-results {
     margin-top: 80px;
     margin-bottom: 80px;
+  }
+}
+@media screen {
+  input#submit_search_advanced[type=submit] {
+    font-weight: normal;
   }
 }
 @media screen and (max-width: 640px) {
