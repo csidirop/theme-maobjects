@@ -965,6 +965,8 @@ nav ul {
   /* @group ----- Exhibits ----- */
 
   /* @end */
+
+  /* Unterstreichungen bei a ausschalten */
 }
 @media screen and (min-width: 1100px) {
   .sub-nav.first {
@@ -1482,6 +1484,173 @@ nav ul {
 @media screen {
   .exhibit-block > *:last-child {
     margin-bottom: 0;
+  }
+}
+@media screen {
+  .pagination-nav ul.pagination li.page-input form label {
+    display: inline-flex;
+  }
+  .pagination-nav ul.pagination li.page-input form label input[type=text] {
+    margin-left: 7px;
+    margin-right: 7px;
+    font-size: 16px;
+    height: auto;
+    line-height: normal;
+    position: relative;
+    top: -4px;
+  }
+}
+@media screen {
+  #header-logo a {
+    border-bottom: none;
+  }
+}
+@media screen {
+  #header-text {
+    text-transform: none;
+    font-size: 11px;
+  }
+}
+@media screen {
+  .item-meta .item-img a,
+li.pagination_next a,
+.jcarousel-wrapper a {
+    border: none;
+  }
+}
+@media screen {
+  header nav .navigation {
+    border: none;
+  }
+}
+@media screen {
+  .pagination {
+    /* Uni-Button simulieren */
+  }
+  .pagination li.pagination_previous,
+.pagination li.pagination_next {
+    position: relative;
+    top: -3px;
+  }
+  .pagination li.pagination_previous a,
+.pagination li.pagination_next a {
+    border: 0.1875rem solid #232e58;
+    color: #fff;
+    background: #232e58;
+  }
+  .pagination li.pagination_previous a:hover,
+.pagination li.pagination_next a:hover {
+    color: #232e58;
+    background: #fff;
+    border: 0.1875rem solid #abb8ca;
+  }
+}
+@media screen {
+  a:hover,
+header nav .navigation .nav-item a:hover {
+    text-decoration: none;
+  }
+}
+@media screen {
+  .uma-header-right {
+    position: relative;
+    text-align: right;
+    margin-right: 0;
+    margin-left: auto;
+  }
+}
+@media screen {
+  .element h3 {
+    font-size: 16px;
+    font-weight: 700;
+  }
+}
+@media screen {
+  .welcome {
+    text-align: center;
+    margin-top: 100px;
+    margin-bottom: 100px;
+  }
+}
+@media screen {
+  .pagination li, .pagination li:first-child, .pagination li {
+    float: none;
+    display: inline-block;
+  }
+}
+@media screen {
+  .secondary-nav ul {
+    margin-bottom: 15px;
+  }
+}
+@media screen {
+  .browse .hentry h2 a,
+#collection-items .hentry h2 a {
+    font-weight: bold;
+  }
+}
+@media screen {
+  h2.AusstellungsThema.uma-primo-bar {
+    position: relative;
+    top: -40px;
+    width: 87%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 10px;
+    padding-bottom: 4px;
+  }
+}
+@media screen {
+  #search-container {
+    right: 15px;
+  }
+  #search-container #search-form {
+    box-shadow: none;
+  }
+  #search-container #search-form.open {
+    width: 400px;
+    padding: 0;
+    box-shadow: none;
+    border-bottom: none;
+  }
+  #search-container #search-form.open input[type=text] {
+    border: 1px solid #ccc;
+  }
+  #search-container #search-form.open input[type=text]::placeholder {
+    color: #ccc;
+  }
+  #search-container #search-form.open + button.search-toggle {
+    border: none;
+  }
+  #search-container #search-form.closed + .search-toggle {
+    border: 0.1875rem solid #232e58;
+    color: #fff;
+    background: #232e58;
+    border-radius: 0.5rem;
+  }
+  #search-container button#submit_search {
+    border: 0.1875rem solid #232e58;
+    color: #fff;
+    background: #232e58;
+  }
+  #search-container button#submit_search:hover {
+    color: #232e58;
+    background: #fff;
+    border: 0.1875rem solid #abb8ca;
+  }
+  #search-container button#submit_search:after {
+    top: 4px;
+    left: -3px;
+  }
+  #search-container button.search-toggle {
+    border: 0.1875rem solid #232e58;
+  }
+}
+@media screen {
+  #no-results {
+    margin-top: 80px;
+    margin-bottom: 80px;
   }
 }
 @media screen and (max-width: 640px) {
