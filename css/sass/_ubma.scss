@@ -10,6 +10,13 @@
     background: #fff;
 }
 
+a:focus {
+    outline-width: 0;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+}
+
 .browse .hentry {
     h1, h2, h3, h4 {
         color: $uni-blau;
@@ -72,15 +79,9 @@ header nav .navigation {
         top: -3px;
 
         a {
-            //border: 0.1875rem solid $uni-blau;
-            //color: #fff;
-            //background: $uni-blau;
             @include button_blau;
 
             &:hover {
-                //color: $uni-blau;
-                //background: #fff;
-                //border: 0.1875rem solid $uni-blau-hell;
                 @include button_blau_hover;
             }
         }
@@ -99,16 +100,18 @@ header nav .navigation .nav-item a:hover {
     a {
         &.jcarousel-control-prev,
         &.jcarousel-control-next {
-            border: 0.1875rem solid $uni-blau;
-            color: #fff;
-            background: $uni-blau;
+            //border: 0.1875rem solid $uni-blau;
+            //color: #fff;
+            //background: $uni-blau;
+            @include button_blau;
             font: 24px / 22px Arial, sans-serif;
 
             &:focus,
             &:hover {
-                color: $uni-blau;
-                background: #fff;
-                border: 0.1875rem solid $uni-blau-hell;
+                //color: $uni-blau;
+                //background: #fff;
+                //border: 0.1875rem solid $uni-blau-hell;
+                @include button_blau_hover;
             }
         }
     }
@@ -200,29 +203,33 @@ header nav .navigation .nav-item a:hover {
         }
         &.closed {
             & + .search-toggle { 
-                border: 0.1875rem solid $uni-blau;
-                color: #fff;
-                background: $uni-blau;
+                //border: 0.1875rem solid $uni-blau;
+                //color: #fff;
+                //background: $uni-blau;
+                @include button_blau;
                 border-radius: 0.5rem;
 
                 &:hover {
-                    color: $uni-blau;
-                    background: #fff;
-                    border: 0.1875rem solid $uni-blau-hell;
+                    //color: $uni-blau;
+                    //background: #fff;
+                    //border: 0.1875rem solid $uni-blau-hell;
+                    @include button_blau_hover;
                 }
             }
         }
     }
     button {
         &#submit_search {
-            border: 0.1875rem solid $uni-blau;
-            color: #fff;
-            background: $uni-blau;
+            //border: 0.1875rem solid $uni-blau;
+            //color: #fff;
+            //background: $uni-blau;
+            @include button_blau;
 
             &:hover {
-                color: $uni-blau;
-                background: #fff;
-                border: 0.1875rem solid $uni-blau-hell;
+                //color: $uni-blau;
+                //background: #fff;
+                //border: 0.1875rem solid $uni-blau-hell;
+                @include button_blau_hover;
             }
 
             &:after {

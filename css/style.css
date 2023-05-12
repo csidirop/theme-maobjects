@@ -1489,6 +1489,14 @@ nav ul {
   }
 }
 @media screen {
+  a:focus {
+    outline-width: 0;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+  }
+}
+@media screen {
   .browse .hentry h1, .browse .hentry h2, .browse .hentry h3, .browse .hentry h4 {
     color: #232e58;
   }
@@ -1575,9 +1583,9 @@ header nav .navigation .nav-item a:hover {
     font: 24px/22px Arial, sans-serif;
   }
   .jcarousel-wrapper a.jcarousel-control-prev:focus, .jcarousel-wrapper a.jcarousel-control-prev:hover, .jcarousel-wrapper a.jcarousel-control-next:focus, .jcarousel-wrapper a.jcarousel-control-next:hover {
+    border: 0.1875rem solid #abb8ca;
     color: #232e58;
     background: #fff;
-    border: 0.1875rem solid #abb8ca;
   }
   .jcarousel-wrapper .jcarousel-pagination a.active {
     background: #232e58;
@@ -1668,9 +1676,9 @@ header nav .navigation .nav-item a:hover {
     border-radius: 0.5rem;
   }
   #search-container #search-form.closed + .search-toggle:hover {
+    border: 0.1875rem solid #abb8ca;
     color: #232e58;
     background: #fff;
-    border: 0.1875rem solid #abb8ca;
   }
   #search-container button#submit_search {
     border: 0.1875rem solid #232e58;
@@ -1678,9 +1686,9 @@ header nav .navigation .nav-item a:hover {
     background: #232e58;
   }
   #search-container button#submit_search:hover {
+    border: 0.1875rem solid #abb8ca;
     color: #232e58;
     background: #fff;
-    border: 0.1875rem solid #abb8ca;
   }
   #search-container button#submit_search:after {
     top: 4px;
