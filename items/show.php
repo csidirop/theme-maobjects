@@ -1,17 +1,24 @@
 <?php
 $linkToFileMetadata = get_option('link_to_file_metadata');
 $itemFiles = $item->Files;
-if ($itemFiles) {
-    queue_lightgallery_assets();
-}
 echo head(array('title' => metadata('item', array('Dublin Core', 'Title')), 'bodyclass' => 'items show'));
 ?>
 
 <h1><?php echo metadata('item', 'rich_title', array('no_escape' => true)); ?></h1>
 
-<?php if ($itemFiles): ?>
-<?php echo lightGallery($itemFiles); ?>
-<?php endif; ?>
+<?php
+if ($itemFiles) {
+    $image = item_image('thumbnail', array(), 0, $item);
+    $url = metadata('item', array('Item Type Metadata', 'URL'), array('no_filter' => true));
+    echo '<div class="element-set center">';
+    if ($url) {
+        echo '<a class="cover" target="_blank" href="' . $url . '">' . $image . '</a>';
+    } else {
+        echo $image;
+    }
+    echo '</div>';
+}
+?>
 
 <?php echo all_element_texts('item'); ?>
 
