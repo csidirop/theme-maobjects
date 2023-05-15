@@ -1526,7 +1526,8 @@ nav ul {
 }
 @media screen {
   a.cover,
-#header-logo a {
+#header-logo a,
+.logos a {
     border-bottom: none;
   }
 }
@@ -1765,10 +1766,16 @@ header nav .navigation .nav-item a:hover {
   }
 }
 @media screen {
-  a.cover {
+  a.nounderline {
+    text-decoration: none;
+  }
+}
+@media screen {
+  .center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
     text-align: center;
-    width: 100%;
-    display: inline-block;
   }
 }
 @media screen and (max-width: 640px) {

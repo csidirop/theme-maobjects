@@ -50,7 +50,9 @@ a:focus {
 }
 
 a.cover,
-#header-logo a {
+#header-logo a,
+.logos a
+{
     border-bottom:none
 }
 
@@ -307,8 +309,9 @@ input#submit_search_advanced[type=submit] {
     }
 }
 
-a.cover {
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
     text-align: center;
-    width: 100%;
-    display: inline-block;
 }
