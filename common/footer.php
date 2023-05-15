@@ -14,6 +14,7 @@
         </div>
         <!-- FOOTER MENU END -->
 
+<?php /*
         <div class="small-16 large-6">
           <div class="social-icons">
             <a href="https://www.facebook.com/UBMannheim" target="_blank">
@@ -38,6 +39,18 @@
             </a>
           </div>
         </div>
+*/
+?>
+        <div class="logos">
+          <div class="logo1">
+               <img class="uni-logo" src="<?php echo( img('footer/UM_Logo_DE_k.svg')); ?>" alt="Logo Uni Mannheim" title="Logo Uni Mannheim" />
+          </div>
+          <div class="logo2">
+            <span class="hosted">Hosted by<br /></span>
+            <img class="ub-logo" src="<?php echo( img('footer/UB_d_w.svg')); ?>" alt="Logo UB Mannheim" title="Logo UB Mannheim" />
+         </div>
+        </div>
+      </div>
       </div>
     </div>
   </div>

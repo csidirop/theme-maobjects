@@ -1736,6 +1736,33 @@ header nav .navigation .nav-item a:hover {
     vertical-align: inherit;
   }
 }
+@media screen {
+  .logos {
+    text-align: right;
+    right: 0;
+    position: absolute;
+  }
+  .logos .logo1, .logos .logo2 {
+    display: inline-block;
+  }
+  .logos .logo2 .hosted {
+    display: block;
+    text-align: left;
+  }
+  .logos .ub-logo {
+    height: 50px;
+  }
+  .logos .uni-logo {
+    height: 50px;
+    margin-right: 20px;
+  }
+}
+@media screen {
+  #collection.element h3,
+.element h3 {
+    padding-top: 3px;
+  }
+}
 @media screen and (max-width: 640px) {
   #site-title {
     text-align: center;

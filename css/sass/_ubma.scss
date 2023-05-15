@@ -274,3 +274,35 @@ input#submit_search_advanced[type=submit] {
         vertical-align: inherit;
     }
 }
+
+.logos {
+    text-align: right;
+    right: 0;
+    position: absolute;
+
+    .logo1, .logo2 {
+        display: inline-block;
+    }
+   .logo2 {
+       .hosted {
+           display: block;
+           text-align: left;
+       }
+   }
+
+    .ub-logo {
+        height: 50px;
+    }
+    .uni-logo {
+        height: 50px;
+        margin-right: 20px;
+    }
+}
+
+
+#collection.element,
+.element {
+    h3 {
+        padding-top: 3px;
+    }
+}
