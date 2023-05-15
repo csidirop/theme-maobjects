@@ -8,7 +8,7 @@
         <!-- FOOTER MENU BEGIN -->
         <div class="small-16 small-only-padding-bottom large-10 footer-nav footer-nav-flat">
           <ul>
-            <li><a href="https://www.uni-mannheim.de/impressum/">Impressum</a></li>
+            <li><a href="<?php echo url('imprint') ?>">Impressum</a></li>
             <li><a href="https://www.uni-mannheim.de/datenschutzerklaerung/">Datenschutzerklärung</a></li>
           </ul>
         </div>
@@ -43,11 +43,15 @@
 ?>
         <div class="logos">
           <div class="logo1">
+            <a href="https://www.uni-mannheim.de">
                <img class="uni-logo" src="<?php echo( img('footer/UM_Logo_DE_k.svg')); ?>" alt="Logo Uni Mannheim" title="Logo Uni Mannheim" />
+             </a>
           </div>
           <div class="logo2">
             <span class="hosted">Hosted by<br /></span>
-            <img class="ub-logo" src="<?php echo( img('footer/UB_d_w.svg')); ?>" alt="Logo UB Mannheim" title="Logo UB Mannheim" />
+            <a href="https://www.bib.uni-mannheim.de">
+              <img class="ub-logo" src="<?php echo( img('footer/UB_d_w.svg')); ?>" alt="Logo UB Mannheim" title="Logo UB Mannheim" />
+           </a>
          </div>
         </div>
       </div>
