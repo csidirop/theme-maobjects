@@ -252,3 +252,25 @@ header nav .navigation .nav-item a:hover {
 input#submit_search_advanced[type=submit] {
     font-weight: normal;
 }
+
+// Erweiterte Suche Überschrift "Feld löschen" ausblenden
+#search-narrow-by-fields-remove-field {
+    display: none;
+}
+#search-narrow-by-fields-label.label {
+    color: #232e58;
+    background: transparent;
+}
+#submit_search_advanced {
+    font-size: inherit;
+}
+
+.collection.hentry,
+.item-meta {
+    text-align: center;
+}
+.facet-checkbox {
+    input[type=checkbox] {
+        vertical-align: inherit;
+    }
+}

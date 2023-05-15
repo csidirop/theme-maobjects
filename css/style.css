@@ -1709,6 +1709,33 @@ header nav .navigation .nav-item a:hover {
     font-weight: normal;
   }
 }
+@media screen {
+  #search-narrow-by-fields-remove-field {
+    display: none;
+  }
+}
+@media screen {
+  #search-narrow-by-fields-label.label {
+    color: #232e58;
+    background: transparent;
+  }
+}
+@media screen {
+  #submit_search_advanced {
+    font-size: inherit;
+  }
+}
+@media screen {
+  .collection.hentry,
+.item-meta {
+    text-align: center;
+  }
+}
+@media screen {
+  .facet-checkbox input[type=checkbox] {
+    vertical-align: inherit;
+  }
+}
 @media screen and (max-width: 640px) {
   #site-title {
     text-align: center;
