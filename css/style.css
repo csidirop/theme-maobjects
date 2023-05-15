@@ -1525,7 +1525,8 @@ nav ul {
   }
 }
 @media screen {
-  #header-logo a {
+  a.cover,
+#header-logo a {
     border-bottom: none;
   }
 }
@@ -1761,6 +1762,13 @@ header nav .navigation .nav-item a:hover {
   #collection.element h3,
 .element h3 {
     padding-top: 3px;
+  }
+}
+@media screen {
+  a.cover {
+    text-align: center;
+    width: 100%;
+    display: inline-block;
   }
 }
 @media screen and (max-width: 640px) {

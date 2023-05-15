@@ -49,7 +49,7 @@ a:focus {
     }
 }
 
-
+a.cover,
 #header-logo a {
     border-bottom:none
 }
@@ -305,4 +305,10 @@ input#submit_search_advanced[type=submit] {
     h3 {
         padding-top: 3px;
     }
+}
+
+a.cover {
+    text-align: center;
+    width: 100%;
+    display: inline-block;
 }
