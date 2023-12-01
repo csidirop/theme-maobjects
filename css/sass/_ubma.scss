@@ -315,3 +315,8 @@ input#submit_search_advanced[type=submit] {
     margin-right: auto;
     text-align: center;
 }
+@media screen and (min-width: 90.0625em) {
+    #site-title.uma-header-left {
+        padding-bottom: 44px;
+    }
+}

@@ -1773,6 +1773,11 @@ header nav .navigation .nav-item a:hover {
     text-align: center;
   }
 }
+@media screen and (min-width: 90.0625em) {
+  #site-title.uma-header-left {
+    padding-bottom: 44px;
+  }
+}
 @media screen and (max-width: 640px) {
   #site-title {
     text-align: center;
