@@ -50,10 +50,12 @@ if ($itemFiles) {
 <?php endif; ?>
 
 <!-- The following prints a citation for this item. -->
+<?php if (get_theme_option('show_citation') == 1): ?>
 <div id="item-citation" class="element">
     <h3><?php echo __('Citation'); ?></h3>
     <div class="element-text"><?php echo metadata('item', 'citation', array('no_escape' => true)); ?></div>
 </div>
+<?php endif; ?>
 
 <div id="item-output-formats" class="element">
     <h3><?php echo __('Output Formats'); ?></h3>
