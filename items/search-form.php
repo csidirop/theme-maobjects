@@ -127,105 +127,12 @@ $formAttributes['method'] = 'GET';
         <button type="button" class="add_search"><?php echo __('Add a Field'); ?></button>
     </div>
 
-    <div id="search-by-range" class="field">
-        <?php echo $this->formLabel('range', __('Search by a range of ID#s (example: 1-4, 156, 79)')); ?>
-        <div class="inputs">
-        <?php
-            echo $this->formText('range', @$_GET['range'],
-                array('size' => '40')
-            );
-        ?>
-        </div>
-    </div>
-
-    <div id="search-by-collection" class="field">
-        <?php echo $this->formLabel('collection-search', __('Search By Collection')); ?>
-        <div class="inputs">
-        <?php
-            echo $this->formSelect(
-                'collection',
-                @$_REQUEST['collection'],
-                array('id' => 'collection-search'),
-                get_table_options('Collection', null, array('include_no_collection' => true))
-            );
-        ?>
-        </div>
-    </div>
-
-    <div id="search-by-type" class="field">
-        <?php echo $this->formLabel('item-type-search', __('Search By Type')); ?>
-        <div class="inputs">
-        <?php
-            echo $this->formSelect(
-                'type',
-                @$_REQUEST['type'],
-                array('id' => 'item-type-search'),
-                get_table_options('ItemType')
-            );
-        ?>
-        </div>
-    </div>
-
-    <?php if (is_allowed('Users', 'browse')): ?>
-    <div id="search-by-user" class="field">
-    <?php
-        echo $this->formLabel('user-search', __('Search By User'));?>
-        <div class="inputs">
-        <?php
-            echo $this->formSelect(
-                'user',
-                @$_REQUEST['user'],
-                array('id' => 'user-search'),
-                get_table_options('User')
-            );
-        ?>
-        </div>
-    </div>
-    <?php endif; ?>
-
     <div id="search-by-tag" class="field">
         <?php echo $this->formLabel('tag-search', __('Search By Tags')); ?>
         <div class="inputs">
         <?php
             echo $this->formText('tags', @$_REQUEST['tags'],
                 array('size' => '40', 'id' => 'tag-search')
-            );
-        ?>
-        </div>
-    </div>
-
-
-    <?php if (is_allowed('Items', 'showNotPublic')): ?>
-    <div id="search-by-public" class="field">
-        <?php echo $this->formLabel('public', __('Public/Non-Public')); ?>
-        <div class="inputs">
-        <?php
-            echo $this->formSelect(
-                'public',
-                @$_REQUEST['public'],
-                array(),
-                label_table_options(array(
-                    '1' => __('Only Public Items'),
-                    '0' => __('Only Non-Public Items')
-                ))
-            );
-        ?>
-        </div>
-    </div>
-    <?php endif; ?>
-
-    <div id="search-by-featured" class="field">
-        <?php echo $this->formLabel('featured', __('Featured/Non-Featured')); ?>
-        <div class="inputs">
-        <?php
-            echo $this->formSelect(
-                'featured',
-                @$_REQUEST['featured'],
-                array(),
-                label_table_options(array(
-                    '1' => __('Only Featured Items'),
-                    '0' => __('Only Non-Featured Items')
-                ))
             );
         ?>
         </div>
