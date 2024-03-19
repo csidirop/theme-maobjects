@@ -66,6 +66,12 @@ echo head(array('title' => metadata('item', array('Dublin Core', 'Title')), 'bod
         </div>
         <?php endif;?>
 
+        <div class="element">
+            <div class="element-text">
+                <?php fire_plugin_hook('public_items_show', array('view' => $this, 'item' => $item)); ?>
+            </div>
+        </div>
+
         <?php if ((get_theme_option('other_media') == 1) && $itemFiles): ?>
         <?php echo lightgallery_other_files($itemFiles); ?>
         <?php endif; ?>
@@ -88,7 +94,6 @@ echo head(array('title' => metadata('item', array('Dublin Core', 'Title')), 'bod
 </div>
 
 
-<?php fire_plugin_hook('public_items_show', array('view' => $this, 'item' => $item)); ?>
 
 <nav>
     <ul class="item-pagination navigation">
