@@ -3,6 +3,7 @@
 require_once dirname(__FILE__) . '/functions.php';
 
 add_filter(array('Display', 'Item', 'Item Type Metadata', 'URL'), 'make_url_link');
+add_filter(array('Display', 'Item', 'Item Type Metadata', 'Link'), 'make_url_link');
 
 function make_url_link($url)
 {
