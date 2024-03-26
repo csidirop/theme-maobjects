@@ -7,6 +7,57 @@
     $headerEverywhere = get_theme_option('header_everywhere');
     $headerImagePosition = get_theme_option('header_image_position');
     $headerImagePosition = str_replace('_', '-', $headerImagePosition);
+    $backgroundImageUrl = get_theme_option('background_image');
+    $backgroundImagePosition = get_theme_option('background_image_position');
+    $backgroundImageRepeat = get_theme_option('background_image_repeat');
+    $backgroundImageSize = get_theme_option('background_image_size');
+    $backgroundImageOpacity = get_theme_option('background_image_opacity');
+    $backgroundImageDonotshowundercontent = get_theme_option('background_image_donotshowundercontent');
+    // Match easy to read options to CSS keywords:
+    switch ($backgroundImagePosition) {
+        case 'Fix to center':
+            $backgroundImagePosition = 'center';
+            break;
+        case 'Fix to top':
+            $backgroundImagePosition = 'top';
+            break;
+        case 'Fix to bottom':
+            $backgroundImagePosition = 'bottom';
+            break;
+        case 'Fix to left':
+            $backgroundImagePosition = 'left';
+            break;
+        case 'Fix to right':
+            $backgroundImagePosition = 'right';
+            break;
+    }
+    switch ($backgroundImageRepeat) {
+        case 'Repeat':
+            $backgroundImageRepeat = 'repeat';
+            break;
+        case 'Repeat horizontally':
+            $backgroundImageRepeat = 'repeat-x';
+            break;
+        case 'Repeat vertically':
+            $backgroundImageRepeat = 'repeat-y';
+            break;
+        case 'Do not repeat':
+            $backgroundImageRepeat = 'no-repeat';
+            break;
+    }
+    $backgroundImageRepeat = str_replace('_', '-', $backgroundImageRepeat); // TODO: why is it '_' in the first place
+    switch ($backgroundImageSize) {
+        case 'Auto':
+            $backgroundImageSize = 'auto';
+            break;
+        case 'Cover':
+            $backgroundImageSize = 'cover';
+            break;
+        case 'Contain':
+            $backgroundImageSize = 'contain';
+            break;
+    }
+    is_numeric($backgroundImageOpacity) ? $backgroundImageOpacity / 100 : 100;
 ?>
 
 <style>
@@ -64,4 +115,46 @@ a,
     }
 }
 <?php endif; ?>
+
+/* Userdefined Backgroundimage */
+<?php 
+    $storage = Zend_Registry::get('storage');
+    $uri = $storage->getUri($storage->getPathByType(get_theme_option('background_image'), 'theme_uploads'));
+    if ($backgroundImageUrl):
+?>
+    body {
+        background-color: transparent;
+        background-image: url('<?php echo $uri; ?>');
+        background-size: <?php echo $backgroundImageSize; ?>;
+        background-position: <?php echo $backgroundImagePosition; ?>;
+        background-repeat: <?php echo $backgroundImageRepeat; ?>;
+        background-attachment: fixed;
+    }
+    /* Make some elements transparent: */
+    #search-form {
+        background-color: transparent;
+    }
+
+    @media screen {
+        #search-form {
+            background-color: transparent;
+        }
+        #search-container #search-form.open + button.search-toggle {
+            border: none;
+            background-color: transparent;
+        }
+    }
+<?php endif; ?>
+
+<?php if($backgroundImageUrl && ($backgroundImageDonotshowundercontent == '1')): ?>
+    #wrap {
+        background-color: #FFFFFF;
+        border-left-width: 20px;
+        border-right-width: 20px;
+        border-left-style: solid;
+        border-right-style: solid;
+        border-color: #FFFFFF;
+    }
+<?php endif; ?>
+
 </style>
