@@ -692,6 +692,22 @@ footer {
     margin-bottom: 0;
 }
 
+.browse .hentry.list,
+#collection-items .hentry.list {
+    padding: 24px;
+    width: 100%;
+    font-size: 15.75px;
+    text-align: left
+}
+
+.browse .hentry.list h2,
+#collection-items .hentry.list h2 {
+    font-size:16px;
+	line-height:24px;
+	margin-bottom:0;
+	text-align: left
+}
+
 .browse .hentry h2 a,
 #collection-items .hentry h2 a {
     color: #000;

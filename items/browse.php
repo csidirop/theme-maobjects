@@ -27,8 +27,9 @@ $sortLinks[__('Date Added')] = 'added';
 <?php endif; ?>
 
 <div class="records">
+    <?php $liststyle = (get_theme_option('browse_list_style') === 'list') ? 'list' : '' ?>
     <?php foreach (loop('items') as $item): ?>
-    <div class="item hentry">
+    <div class="item hentry <?php echo $liststyle; ?>" >
         <div class="item-meta">
         <?php if (metadata('item', 'has files')): ?>
         <div class="item-img">
