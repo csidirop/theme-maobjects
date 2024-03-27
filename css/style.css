@@ -522,8 +522,7 @@ input[type=email],
 input[type=search],
 input[type=number],
 input[type=month] {
-    -webkit-appearance: none;
-            appearance: none;
+    appearance: none;
     border: 1px solid;
     font-size: 18px;
     line-height: 24px;
@@ -1860,6 +1859,39 @@ li.pagination_next a,
 @media screen and (min-width: 90.0625em) {
   #site-title.uma-header-left {
     padding-bottom: 44px;
+  }
+}
+@media screen {
+  #correction {
+    background: #232e58;
+    color: #fff;
+    font-weight: 700;
+    border: 0.1875rem solid #232e58;
+    box-sizing: border-box;
+    transition: none;
+    line-height: 1.5rem;
+    border-radius: 0.3125rem;
+    margin: 0;
+    padding: 0.3125rem;
+    font-size: 18px;
+    display: inline-block;
+    vertical-align: middle;
+    font-family: inherit;
+    text-align: center;
+    cursor: pointer;
+  }
+  #correction:hover {
+    color: #232e58;
+    background: transparent;
+    border: 0.1875rem solid #abb8ca;
+    line-height: 1.5rem;
+    font-weight: 700;
+    font-size: 18px;
+    box-sizing: border-box;
+    transition: none;
+    border-radius: 0.3125rem;
+    margin: 0;
+    padding: 0.3125rem;
   }
 }
 @media screen {
