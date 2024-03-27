@@ -42,11 +42,9 @@
     <?php endif; ?>
 
     <div class="field">
-        <div class="one columns alpha">
-            <label for='may_contact'><?php echo __('Can we contact you?'); ?></label>
-        </div>
-        <div class="inputs tree columns omega">
-            <div class="input-block">
+        <div>
+            <label for='may_contact' style='display: inline'><?php echo __('Can we contact you?'); ?></label>
+            <div class="input-inline" style='display: inline; margin-left: 20px'>
                 <input type='checkbox' value='1' name='may_contact' />
             </div>
         </div>
@@ -67,6 +65,9 @@
     ?> -->
 
     <?php
+    
+    echo __('<p><br><i>Thank you for taking the time to improve this site!</i></p>');
+
     if (!$user) {
         echo $captchaScript;
     }
@@ -75,9 +76,5 @@
 
     <input type='hidden' name='item_id' value='<?php echo $item->id; ?>' />
 </form>
-
-<p>
-    <?php echo __('<br><i>Thank you for taking the time to improve this site!</i>'); ?>
-</p>
 
 <?php echo foot(); ?>
