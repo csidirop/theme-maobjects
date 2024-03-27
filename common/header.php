@@ -62,12 +62,21 @@
                         <?php echo mashare_public_nav_main(); ?>
                     </nav>
                     <div id="search-container" role="search">
+                    <?php if (get_theme_option('replace_quicksearch') != 1): ?>
                         <?php if (get_theme_option('use_advanced_search') === null || get_theme_option('use_advanced_search')): ?>
                         <?php echo search_form(array('show_advanced' => true, 'form_attributes' => array('role' => 'search', 'class' => 'closed'))); ?>
                         <?php else: ?>
                         <?php echo search_form(array('form_attributes' => array('role' => 'search', 'class' => 'closed'))); ?>
                         <?php endif; ?>
                         <button type="button" class="search-toggle" title="<?php echo __('Toggle search'); ?>"></button>
+                    <?php else: ?>
+                        <search>
+                        <form id="search-form" class="advanced-search-form" action="/nikephoros/items/browse" aria-label="Search">
+                        <input id="query" class="advanced-search-form input" name="search" type="search" placeholder="Search Items">
+                        <button id="submit_search" class="advanced-search-form button" name="submit-search" type="submit">Search</button>
+                        </form>
+                        </search>
+                    <?php endif; ?>
                     </div>
                 </div>
             </div>
