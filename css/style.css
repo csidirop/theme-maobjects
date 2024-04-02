@@ -1719,6 +1719,22 @@ header nav .navigation .nav-item a:hover {
   }
 }
 @media screen {
+  #advanced-search-form button {
+    border: 0.1875rem solid #232e58;
+    color: #fff;
+    background: #232e58;
+    border-radius: 4px;
+    padding: 4px;
+  }
+  #advanced-search-form button:hover {
+    border: 0.1875rem solid #abb8ca;
+    color: #232e58;
+    background: #fff;
+    border-radius: 4px;
+    padding: 4px;
+  }
+}
+@media screen {
   #no-results {
     margin-top: 80px;
     margin-bottom: 80px;

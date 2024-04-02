@@ -246,6 +246,20 @@ header nav .navigation .nav-item a:hover {
     }
 }
 
+#advanced-search-form {
+    button {
+        @include button_blau;
+        border-radius: 4px; //TODO: why is this needed?
+        padding: 4px;
+
+        &:hover {
+            @include button_blau_hover;
+            border-radius: 4px;
+            padding: 4px;
+        }
+    }
+}
+
 #no-results {
     margin-top: 80px;
     margin-bottom: 80px;
@@ -255,7 +269,7 @@ input#submit_search_advanced[type=submit] {
     font-weight: normal;
 }
 
-// Erweiterte Suche Überschrift "Feld löschen" ausblenden
+// Erweiterte Suche Überschrift "Feld löschen" ausblenden // TODO: sollte konfigurierbar sein
 #search-narrow-by-fields-remove-field {
     display: none;
 }
