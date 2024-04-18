@@ -73,8 +73,8 @@
                             <button type="button" class="search-toggle" title="<?php echo __('Toggle search'); ?>"></button>
                         <?php else: ?>
                             <search>
-                                <form id="search-form" class="advanced-search-form" action="items/browse" aria-label="Search">
-                                    <input id="query" class="advanced-search-form input" name="search" type="search" placeholder="Search Items">
+                                <form id="search-form" class="advanced-search-form" action="find" aria-label="Search">
+                                    <input id="query" class="advanced-search-form input" name="keywords" type="search" placeholder="Search Items">
                                     <button id="submit_search" class="advanced-search-form button" name="submit-search" type="submit">Search</button>
                                 </form>
                             </search>
