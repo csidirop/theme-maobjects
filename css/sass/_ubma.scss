@@ -181,6 +181,35 @@ header nav .navigation .nav-item a:hover {
     color: #fff;
 }
 
+#home #search-form {
+    background-color: $uni-blau;
+    border-radius: 15px;
+    padding: 8px 8px 8px 8px;
+
+    input, button{
+        margin-bottom: 0rem;
+        &:hover {
+            // color: $uni-blau;
+            background: #fff;
+            // border: 0.1875rem solid $uni-blau-hell;
+        }
+        &:after {
+            width: 60px;
+        }
+    }
+}
+
+#home #submitt-search {
+    border: none;
+    padding-right: 10px;
+    margin-left: 10px;
+    margin-bottom: 0px;
+  
+    &::after {
+        width: inherit;
+    }
+}
+
 #search-container {
     right: 15px;
 

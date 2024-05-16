@@ -1668,6 +1668,33 @@ header nav .navigation .nav-item a:hover {
   }
 }
 @media screen {
+  #home #search-form {
+    background-color: #232e58;
+    border-radius: 15px;
+    padding: 8px 8px 8px 8px;
+  }
+  #home #search-form input, #home #search-form button {
+    margin-bottom: 0rem;
+  }
+  #home #search-form input:hover, #home #search-form button:hover {
+    background: #fff;
+  }
+  #home #search-form input:after, #home #search-form button:after {
+    width: 60px;
+  }
+}
+@media screen {
+  #home #submitt-search {
+    border: none;
+    padding-right: 10px;
+    margin-left: 10px;
+    margin-bottom: 0px;
+  }
+  #home #submitt-search::after {
+    width: inherit;
+  }
+}
+@media screen {
   #search-container {
     right: 15px;
   }
