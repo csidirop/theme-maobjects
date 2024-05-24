@@ -52,10 +52,11 @@
             <?php fire_plugin_hook('public_header', array('view'=>$this)); ?>
 
             <div class="align-bottom" style="display: flex;">
+                <?php $logostyle = ( get_theme_option('logo_text_position') == 'below' ? "" : 'style="display: inline-block;"' ) ; ?>
                 <div id="site-title" class="uma-header-left">
-                    <div id="header-logo"><?php echo link_to_home_page(theme_logo()); ?></div>
-                    <div id="header-text"><?php echo get_theme_option('logo_text'); ?></div>
-                </div>
+                <div id="header-logo" <?php echo $logostyle; ?>><?php echo link_to_home_page(theme_logo()); ?></div>
+                <p id="header-text" <?php echo $logostyle; ?>><?php echo get_theme_option('logo_text'); ?></p>
+            </div>
 
                 <div class="uma-header-right">
                     <nav id="top-nav" role="navigation">
