@@ -1812,6 +1812,11 @@ header nav .navigation .nav-item a:hover {
     padding-bottom: 44px;
   }
 }
+@media screen {
+  #simple-pages-breadcrumbs {
+    display: none;
+  }
+}
 @media screen and (max-width: 640px) {
   #site-title {
     text-align: center;
