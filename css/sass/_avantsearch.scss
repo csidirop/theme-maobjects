@@ -1,0 +1,149 @@
+// Overwrite original (plugins/AvantSearch/views/public/css/avantsearch.css) search results page styling:
+
+/* SEARCH RESULTS */
+// Overwrite missing navigation & selector button symbols:
+#search-selectors button::after {
+    content: '\2BC6'; // ⯆
+}
+.search-pagination-next a::after {
+    content: '\2BC8'; // ⯈
+}
+.search-pagination-previous a::after {
+    content: '\2BC7'; // ⯇
+}
+
+// Overwrite selector button styling:
+#search-selectors {
+    .search-selector-button {
+        border: 0.1275rem solid #f6f6f6;
+        color: $uni-blau;
+        background: #f6f6f6;
+        padding: 4px;
+    
+        &:hover {
+            border: 0.1275rem solid $uni-blau;
+            color: #fff;
+            background: $uni-blau;
+        }
+    }
+
+    .search-selector-options .selector-selected {
+        background-color: $uni-blau;
+        color: #fff;
+    }
+
+    // Hide unnecessary selectors:
+    #search-layout-selector, #search-sort-selector, #search-filter-selector {
+        display: none;
+    }
+} 
+
+// Overwrite search results table styling:
+#search-table-view {
+    margin-top: auto; // Reset distance between selector-bar and search-results
+
+    td, th {
+        vertical-align: top;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        padding-left: 10px;
+        border-style: none;
+        line-height: 1.25;
+    }
+    
+    // Alternating row colors:
+    tbody tr:nth-child(odd) {
+        background: #f6f6f6;
+    }
+    tbody tr:nth-child(even) {
+        background: white;
+    }
+    
+    // Hide item image:
+    .item-img {
+        display: none;
+    }
+    // Hide item details:
+    .search-results-detail .search-results-metadata {
+        display: none;
+    }
+    
+    // Hide underlining:
+    .search-results-title {
+        border-bottom: none;
+        a {
+            border-bottom: none;
+        }
+        a:hover {
+            border-bottom: .1875rem solid $uni-blau-hell;
+        }
+    }
+}
+
+/* ADVANCED SEARCH */
+// Reset 50:50 page split so 2/3
+#avantsearch-container {
+    grid-template-columns: auto;
+}
+
+// Overwrite search tips styling:
+.search-help {
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+}
+
+.search-help li {
+    font-size: 14px;
+    line-height: initial;
+}
+
+.search-help ul ul li::marker {
+    content: "•";
+}
+
+// Overwrite main search:
+#avantsearch-primary {
+    .search-form-section .search-field {
+        display: flex;
+
+        .search-radio-buttons {
+            display: flex;
+
+            label {
+                margin-right: 25px;
+                margin-bottom: 0px;
+            }
+        }
+    }
+
+    .search-form-section .search-entry select {
+        &.advanced-search-joiner{
+            width: 70px;
+        }
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    .search-form-section button {
+        @include button_blau;
+        border-radius: 4px;
+        padding: 4px;
+        font-size: small;
+        display: block; // right-aligned
+        margin-left: auto;
+        margin-bottom: 0px;
+
+        &:hover {
+            @include button_blau_hover;
+        }
+    }
+
+    .search-form-section input {
+        margin-bottom: 0.25rem;
+    }
+
+    .avantsearch-year-range {
+        display: flex;
+    }
+}
