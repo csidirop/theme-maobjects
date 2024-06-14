@@ -1865,6 +1865,16 @@ li.pagination_next a,
   }
 }
 @media screen {
+  .items.show #item-tags .element-text a {
+    background: #fff;
+    border: 0.0875rem solid #abb8ca;
+    padding: 0.3125rem;
+  }
+  .items.show #item-tags .element-text a:hover {
+    background: #f7faff;
+  }
+}
+@media screen {
   #correction {
     background: #232e58;
     color: #fff;

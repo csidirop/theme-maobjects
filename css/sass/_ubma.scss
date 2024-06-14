@@ -385,6 +385,18 @@ input#submit_search_advanced[type=submit] {
     }
 }
 
+// Tag element styling:
+.items.show #item-tags .element-text a {
+    background: #fff;
+    border: .0875rem solid $uni-blau-hell;
+    padding: .3125rem;
+
+    &:hover {
+        background: #f7faff;
+    }
+}
+
+// Correction plugin: Button styling:
 #correction {
     background: $uni-blau;
     color: #fff;
