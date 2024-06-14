@@ -335,6 +335,12 @@ input#submit_search_advanced[type=submit] {
     }
 }
 
+// Hide breadcrumbs on simple pages:
 #simple-pages-breadcrumbs {
+    display: none;
+}
+
+// Hide line on top of h1 on home page:
+#home #wrap #content h1:before {
     display: none;
 }

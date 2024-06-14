@@ -1817,6 +1817,11 @@ header nav .navigation .nav-item a:hover {
     display: none;
   }
 }
+@media screen {
+  #home #wrap #content h1:before {
+    display: none;
+  }
+}
 @media screen and (max-width: 640px) {
   #site-title {
     text-align: center;
