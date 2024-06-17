@@ -1568,6 +1568,11 @@ li.pagination_next a,
   }
 }
 @media screen {
+  header .uma-header-right nav .navigation li a {
+    border: 0.1875rem solid transparent;
+  }
+}
+@media screen {
   .pagination {
     /* Uni-Button simulieren */
   }
@@ -1590,9 +1595,20 @@ li.pagination_next a,
   }
 }
 @media screen {
-  a:hover,
-header nav .navigation .nav-item a:hover {
+  a:hover {
     text-decoration: none;
+  }
+}
+@media screen {
+  header nav .navigation li.active a {
+    border-bottom: 0.1875rem solid #abb8ca;
+  }
+  header nav .navigation li a {
+    border: 1px solid transparent;
+  }
+  header nav .navigation li a:hover {
+    text-decoration: none;
+    border-bottom: 0.1875rem solid #232e58;
   }
 }
 @media screen {
