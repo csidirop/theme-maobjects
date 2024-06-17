@@ -400,33 +400,25 @@ input#submit_search_advanced[type=submit] {
 #correction {
     background: $uni-blau;
     color: #fff;
-    font-weight: 700;
-    border: .1875rem solid $uni-blau;
+    border: .1275rem solid $uni-blau;
+    border-radius: .3125rem;
     box-sizing: border-box;
     transition: none;
-    line-height: 1.5rem;
-    border-radius: .3125rem;
     margin: 0;
+    margin-top: -20px;
     padding: .3125rem;
-    font-size: 18px;
+    font-family: inherit;
+    font-size: 14px;
+    line-height: 1rem;
     display: inline-block;
     vertical-align: middle;
-    font-family: inherit;
     text-align: center;
     cursor: pointer;
 
     &:hover {
         color: $uni-blau;
         background: transparent;
-        border: .1875rem solid $uni-blau-hell;
-        line-height: 1.5rem;
-        font-weight: 700;
-        font-size: 18px;
-        box-sizing: border-box;
-        transition: none;
-        border-radius: .3125rem;
-        margin: 0;
-        padding: .3125rem;
+        border: .1275rem solid $uni-blau-hell;
     }
 }
 
