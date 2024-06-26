@@ -13,6 +13,7 @@
     $backgroundImageSize = get_theme_option('background_image_size');
     $backgroundImageOpacity = get_theme_option('background_image_opacity');
     $backgroundImageDonotshowundercontent = get_theme_option('background_image_donotshowundercontent');
+    $floatingHome = get_theme_option('floating_homepage');
     is_numeric($backgroundImageOpacity) ? $backgroundImageOpacity / 100 : 100;
 ?>
 
@@ -105,11 +106,57 @@
     <?php if ($backgroundImageUrl && ($backgroundImageDonotshowundercontent == '1')) : ?>
     #wrap {
         background-color: #FFFFFF;
-        border-left-width: 20px;
-        border-right-width: 20px;
-        border-left-style: solid;
-        border-right-style: solid;
-        border-color: #FFFFFF;
+        padding: 0px
+    }
+    #wrap header, #wrap article {
+        margin-left: 1.8rem;
+        margin-right: 1.8rem;
+    }
+    <?php endif; ?>
+
+    /* Floating home */
+    <?php if ($floatingHome == '1') : ?>
+    /* Main Element: */
+    #home #wrap {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    @media only screen and (min-width: 900px) {
+        #home #wrap {
+            min-width: 1000px;
+        }
+    } 
+    @media only screen and (max-width: 900px) {
+        #home #wrap {
+            min-width: 100%;
+        }
+    }
+
+    #home #search-container {
+        display: none;
+    }
+
+    #home #site-title {
+        margin-top: auto;
+    }
+
+    /* Footer: */
+    #home .uma-footer {
+        padding: 0rem;
+    }
+
+    #home .logos .hosted {
+        display: none;
+    }
+
+    #home footer .legal {
+        margin: 1.075rem 0;
+    }
+
+    #home footer .logos {
+        margin-right: 20px;
     }
     <?php endif; ?>
 </style>
