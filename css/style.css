@@ -1697,6 +1697,7 @@ li.pagination_next a,
   }
   #home #search-form input, #home #search-form button {
     margin-bottom: 0rem;
+    padding-bottom: 0px;
   }
   #home #search-form input:hover, #home #search-form button:hover {
     background: #fff;

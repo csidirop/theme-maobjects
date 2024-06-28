@@ -206,8 +206,9 @@ header nav .navigation li {
     border-radius: 15px;
     padding: 8px 8px 8px 8px;
 
-    input, button{
+    input, button {
         margin-bottom: 0rem;
+        padding-bottom: 0px;
         &:hover {
             // color: $uni-blau;
             background: #fff;
