@@ -62,7 +62,7 @@ echo head(array('title' => metadata('item', array('Dublin Core', 'Title')), 'bod
         <?php if (metadata('item', 'has tags')): ?>
         <div id="item-tags" class="element">
             <h3><?php echo __('Tags'); ?></h3>
-            <div class="element-text"><?php echo tag_string('item'); ?></div>
+            <div class="element-text"><?php echo tag_string('item', 'find'); ?></div>
         </div>
         <?php endif;?>
 
