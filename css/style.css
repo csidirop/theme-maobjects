@@ -1862,7 +1862,8 @@ li.pagination_next a,
 }
 @media screen and (min-width: 90.0625em) {
   #site-title.uma-header-left {
-    padding-bottom: 44px;
+    padding-top: 12px;
+    padding-bottom: 12px;
   }
 }
 @media screen {
