@@ -15,6 +15,7 @@
     $backgroundImageDonotshowundercontent = get_theme_option('background_image_donotshowundercontent');
     $floatingHome = get_theme_option('floating_homepage');
     is_numeric($backgroundImageOpacity) ? $backgroundImageOpacity / 100 : 100;
+    $show_element_set_headings = get_option('show_element_set_headings');
 ?>
 
 <style>
@@ -73,7 +74,14 @@
     }
     <?php endif; ?>
 
-    /* Userdefined Backgroundimage */
+    /*** Close gap between metadata entries when headings are hidden ***/
+    <?php if (!$show_element_set_headings) : ?>
+    #wrap .element-set {
+        margin-bottom: 0px;
+    }
+    <?php endif; ?>
+
+    /*** Userdefined Backgroundimage ***/
     <?php
         $storage = Zend_Registry::get('storage');
         $uri = $storage->getUri($storage->getPathByType(get_theme_option('background_image'), 'theme_uploads'));
@@ -87,7 +95,7 @@
         background-repeat: <?php echo $backgroundImageRepeat; ?>;
         background-attachment: fixed;
     }
-    /* Make some elements transparent: */
+
     #search-form {
         background-color: transparent;
     }
@@ -114,9 +122,8 @@
     }
     <?php endif; ?>
 
-    /* Floating home */
+    /*** Floating home ***/
     <?php if ($floatingHome == '1') : ?>
-    /* Main Element: */
     #home #wrap {
         position: absolute;
         top: 50%;
@@ -142,7 +149,6 @@
         margin-top: auto;
     }
 
-    /* Footer: */
     #home .uma-footer {
         padding: 0rem;
     }
