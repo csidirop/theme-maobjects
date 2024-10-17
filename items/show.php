@@ -31,6 +31,15 @@ if ($itemFiles) {
 
 <?php echo all_element_texts('item'); ?>
 
+<style>
+    /* Hide metadata entry if option is set */
+    <?php if(get_theme_option('hide_item_metadata_title')) : ?>
+        #dublin-core-title {
+            display: none;
+        }
+    <?php endif; ?>
+</style>
+
 <!-- If the item belongs to a collection, the following creates a link to that collection. -->
 <?php if (metadata('item', 'Collection Name')): ?>
 <div id="collection" class="element">
