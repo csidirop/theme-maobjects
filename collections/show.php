@@ -5,9 +5,20 @@ $totalItems = metadata('collection', 'total_items');
 
 <?php echo head(array('title' => $collectionTitle, 'bodyclass' => 'collections show')); ?>
 
-<h1><?php echo $collectionTitle; ?></h1>
+<?php if (get_theme_option('hide_collection_heading') != 1): ?>
+    <h1><?php echo $collectionTitle; ?></h1>
+<?php endif; ?>
 
-<?php echo all_element_texts('collection'); ?>
+<?php echo all_element_texts('collection'); ?> <!-- Metadata entry collection title -->
+
+<style>
+    /* Hide metadata entry if option is set */
+    <?php if(get_theme_option('hide_collection_metadata_title')) : ?>
+        #dublin-core-title {
+            display: none;
+        }
+    <?php endif; ?>
+</style>
 
 <div id="collection-items" class="items browse">
     <h2><?php echo __('Collection Items'); ?></h2>
