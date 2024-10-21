@@ -16,6 +16,7 @@
     $floatingHome = get_theme_option('floating_homepage');
     is_numeric($backgroundImageOpacity) ? $backgroundImageOpacity / 100 : 100;
     $show_element_set_headings = get_option('show_element_set_headings');
+    $collectionitems_as_list = get_theme_option('collectionitems_as_list');
 ?>
 
 <style>
@@ -164,5 +165,37 @@
     #home footer .logos {
         margin-right: 20px;
     }
+    <?php endif; ?>
+
+    /*** Collections: Listview ***/
+    <?php if ($collectionitems_as_list == '1') : ?>
+        .collections #collection-items .item, .browse .item {
+            padding: 10px;
+            width: 100%;
+        }
+
+        .collections #collection-items .item-meta, .browse .item-meta {
+            text-align: left;
+        }
+
+        .collections #collection-items .item-meta a, .browse .item-meta a {
+            border-bottom: none;
+        }
+
+        .collections #collection-items .item-meta .item-img, .browse .item-meta .item-img {
+            display: none;
+        }
+
+        .collections #collection-items .item-meta a:hover, .browse .item-meta a:hover {
+            border-bottom: 0.1875rem solid #abb8ca;
+        }
+
+        .browse .item:nth-child(odd) {
+            background-color: #f6f6f6;
+        }
+
+        .browse .item:nth-child(even) {
+            background-color: #ffffff;
+        }
     <?php endif; ?>
 </style>
