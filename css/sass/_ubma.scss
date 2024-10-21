@@ -392,3 +392,17 @@ input#submit_search_advanced[type=submit] {
 #home #wrap #content h1:before {
     display: none;
 }
+
+// Style Collection title in item overview:
+#item-filters ul {
+    text-align: inherit;
+    margin: inherit;
+
+    li {
+        border: none;
+        font-size: 30px;
+        margin-left: 0px;
+        margin-bottom: 15px;
+        padding-left: 0px;
+    }
+}

@@ -1865,6 +1865,19 @@ li.pagination_next a,
     display: none;
   }
 }
+@media screen {
+  #item-filters ul {
+    text-align: inherit;
+    margin: inherit;
+  }
+  #item-filters ul li {
+    border: none;
+    font-size: 30px;
+    margin-left: 0px;
+    margin-bottom: 15px;
+    padding-left: 0px;
+  }
+}
 @media screen and (max-width: 640px) {
   #site-title {
     text-align: center;
