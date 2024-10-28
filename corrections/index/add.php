@@ -1,7 +1,7 @@
 <?php
     queue_css_file('correction');
     echo head();
-    $user = current_user();
+    // $user = current_user();
 ?>
 <?php echo flash(); ?>
 
@@ -41,17 +41,24 @@
             $elName = $element->name;
             $elSetName = $element->getElementSet()->name;
             echo $this->elementForm($element, $corrections_correction);
-            echo "<p class='correction-current-data'>" . __('Current entry for %s', $elName) .": ". metadata($item, array($elSetName, $elName), array('no_filter' => true)) . "</p>";
+            $metadatavalues = metadata($item, array($elSetName, $elName), array('no_filter' => true));
+            if ($metadatavalues) {
+                echo "<p class='correction-current-data'>" . __('Current entry for %s', $elName) .": ". $metadatavalues  . "</p>";
+            } else if ($elName == 'Keywords') {
+                $metadatavalues = tag_string("item", "find");
+                echo "<p class='correction-current-data'>" . __('Current entry for %s', $elName) .": ". $metadatavalues  . "</p>";
+            } else {
+                echo "<p class='correction-current-data'>" . __('No value for %s', $elName) . "</p>";
+            }
             echo "</div>";
         }
     ?>
 
     <?php
         echo __('<p><br><i>Thank you for taking the time to improve this site!</i></p>');
-
-        if (!$user) {
-            echo $captchaScript;
-        }
+        // if (!$user) {
+        //     echo $captchaScript;
+        // }
         echo $this->formSubmit('submit', __('Submit Suggestion'));
     ?>
 
