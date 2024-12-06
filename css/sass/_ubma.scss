@@ -32,6 +32,7 @@ a:focus {
         color: $uni-blau;
     }
 }
+
 .pagination-nav ul.pagination li.page-input {
     form label {
         display: inline-flex;
@@ -363,12 +364,16 @@ input#submit_search_advanced[type=submit] {
     }
 }
 
-
 #collection.element,
 .element {
     h3 {
         padding-top: 3px;
     }
+}
+
+.element-set .element h3{
+    overflow-wrap: break-word;
+    word-break: break-word;
 }
 
 .center {

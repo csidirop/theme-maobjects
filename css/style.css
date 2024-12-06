@@ -1843,6 +1843,12 @@ li.pagination_next a,
   }
 }
 @media screen {
+  .element-set .element h3 {
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
+}
+@media screen {
   .center {
     display: block;
     margin-left: auto;

@@ -18,6 +18,8 @@
     $show_element_set_headings = get_option('show_element_set_headings');
     $collectionitems_as_list = get_theme_option('collectionitems_as_list');
     $media_lightgallery_pdf_embed_hide_toolbar = get_theme_option( 'media_lightgallery_pdf_embed_hide_toolbar');
+    $media_lightgallery_pdf_embed_hide_toolbar = get_theme_option( 'media_lightgallery_pdf_embed_hide_toolbar');
+    $item_page_layout = get_theme_option( 'item_page_layout');
 ?>
 
 <style>
@@ -209,4 +211,22 @@
         top: auto;
     }
     <?php endif; ?>
+
+    <?php if ($item_page_layout == 'vertical') : ?>
+    .content-container {
+        display: flex;
+        align-items: flex-start;
+    }
+
+    #itemfiles {
+        flex: 0 1 auto;
+        margin-right: 20px;
+    }
+
+    .secondary-content {
+        display: flex;
+        flex-direction: column;
+    }
+    <?php endif; ?>
+
 </style>
