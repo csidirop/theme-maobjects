@@ -17,6 +17,7 @@
     is_numeric($backgroundImageOpacity) ? $backgroundImageOpacity / 100 : 100;
     $show_element_set_headings = get_option('show_element_set_headings');
     $collectionitems_as_list = get_theme_option('collectionitems_as_list');
+    $media_lightgallery_pdf_embed_hide_toolbar = get_theme_option( 'media_lightgallery_pdf_embed_hide_toolbar');
 ?>
 
 <style>
@@ -197,5 +198,15 @@
         .browse .item:nth-child(even) {
             background-color: #ffffff;
         }
+    <?php endif; ?>
+
+    <?php if ($media_lightgallery_pdf_embed_hide_toolbar == '1') : ?>
+    #wrap .lightgallery .toolbar {
+        display: none;
+    }
+
+    #wrap .lightgallery #viewerContainer {
+        top: auto;
+    }
     <?php endif; ?>
 </style>

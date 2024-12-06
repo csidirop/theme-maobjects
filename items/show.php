@@ -1,6 +1,10 @@
 <?php
 $linkToFileMetadata = get_option('link_to_file_metadata');
 $itemFiles = $item->Files;
+$useLightgallery  = get_theme_option('media_lightgallery');
+if ($itemFiles && $useLightgallery) {
+    queue_lightgallery_assets();
+}
 echo head(array('title' => metadata('item', array('Dublin Core', 'Title')), 'bodyclass' => 'items show'));
 ?>
 
@@ -9,14 +13,14 @@ echo head(array('title' => metadata('item', array('Dublin Core', 'Title')), 'bod
 <?php endif; ?>
 
 <nav>
-<ul class="item-pagination navigation">
-    <li id="previous-item" class="previous"><?php echo link_to_previous_item_show(); ?></li>
-    <li id="next-item" class="next"><?php echo link_to_next_item_show(); ?></li>
-</ul>
+    <ul class="item-pagination navigation">
+        <li id="previous-item" class="previous"><?php echo link_to_previous_item_show(); ?></li>
+        <li id="next-item" class="next"><?php echo link_to_next_item_show(); ?></li>
+    </ul>
 </nav>
 
 <?php
-if ($itemFiles) {
+if ($itemFiles && !$useLightgallery) {
     $image = item_image('thumbnail', array(), 0, $item);
     $url = metadata('item', array('Item Type Metadata', 'URL'), array('no_filter' => true));
     echo '<div class="element-set center">';
@@ -26,6 +30,8 @@ if ($itemFiles) {
         echo $image;
     }
     echo '</div>';
+} elseif ($itemFiles && $useLightgallery) {
+    echo lightGallery($itemFiles);
 }
 ?>
 
@@ -78,10 +84,10 @@ if ($itemFiles) {
 <?php fire_plugin_hook('public_items_show', array('view' => $this, 'item' => $item)); ?>
 
 <nav>
-<ul class="item-pagination navigation">
-    <li id="previous-item" class="previous"><?php echo link_to_previous_item_show(); ?></li>
-    <li id="next-item" class="next"><?php echo link_to_next_item_show(); ?></li>
-</ul>
+    <ul class="item-pagination navigation">
+        <li id="previous-item" class="previous"><?php echo link_to_previous_item_show(); ?></li>
+        <li id="next-item" class="next"><?php echo link_to_next_item_show(); ?></li>
+    </ul>
 </nav>
 
 <?php echo foot(); ?>
