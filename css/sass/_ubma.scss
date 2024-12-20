@@ -411,3 +411,24 @@ input#submit_search_advanced[type=submit] {
         padding-left: 0px;
     }
 }
+
+/* listen */
+ul {
+    margin-left: 40px;
+}
+
+/* Fix nav-menu on mobile devices */
+@media screen and (max-width: 640px) {
+    .align-bottom {
+        display: flex;
+        flex-direction: column;
+    }
+
+    div#site-title {
+        order: unset;
+    }
+
+    #top-nav ul.nav-menu {
+        margin: unset;
+    }
+}
