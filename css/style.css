@@ -1699,9 +1699,6 @@ li.pagination_next a,
   #home #search-form input:hover, #home #search-form button:hover {
     background: #fff;
   }
-  #home #search-form input:after, #home #search-form button:after {
-    width: 60px;
-  }
 }
 @media screen {
   #home #submitt-search {
