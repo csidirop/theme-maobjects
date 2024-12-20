@@ -404,9 +404,9 @@ input#submit_search_advanced[type=submit] {
     }
 }
 
-/* listen */
-ul {
-    margin-left: 40px;
+/* indent lists */
+#content ul, #content ol {
+    margin-left: 2.5rem;
 }
 
 /* Fix nav-menu on mobile devices */

@@ -970,7 +970,7 @@ nav ul {
 
   /* jcarousel left / right */
 
-  /* listen */
+  /* indent lists */
 
   /* Fix nav-menu on mobile devices */
 }
@@ -1881,8 +1881,8 @@ li.pagination_next a,
   }
 }
 @media screen {
-  ul {
-    margin-left: 40px;
+  #content ul, #content ol {
+    margin-left: 2.5rem;
   }
 }
 @media screen and (max-width: 640px) {
