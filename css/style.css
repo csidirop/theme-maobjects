@@ -1863,11 +1863,6 @@ li.pagination_next a,
   }
 }
 @media screen {
-  #simple-pages-breadcrumbs {
-    display: none;
-  }
-}
-@media screen {
   #home #wrap #content h1:before {
     display: none;
   }

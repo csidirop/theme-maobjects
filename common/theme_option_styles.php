@@ -20,6 +20,7 @@
     $media_lightgallery_pdf_embed_hide_toolbar = get_theme_option( 'media_lightgallery_pdf_embed_hide_toolbar');
     $media_lightgallery_pdf_embed_hide_toolbar = get_theme_option( 'media_lightgallery_pdf_embed_hide_toolbar');
     $item_page_layout = get_theme_option( 'item_page_layout');
+    $show_breadcrumbs = get_theme_option( 'show_breadcrumbs');
 ?>
 
 <style>
@@ -82,6 +83,16 @@
     <?php if (!$show_element_set_headings) : ?>
     #wrap .element-set {
         margin-bottom: 0px;
+    }
+    <?php endif; ?>
+
+    <?php if ($show_breadcrumbs) : ?>
+    #simple-pages-breadcrumbs {
+        display: none;
+    }
+
+    #content p + h1 {
+        margin-top: unset;
     }
     <?php endif; ?>
 
