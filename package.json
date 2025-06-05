@@ -1,7 +1,7 @@
 {
-  "name": "mashare",
+  "name": "maobjects",
   "version": "1.0.0",
-  "description": "\"Omeka Classic theme for MASHARE.\"",
+  "description": "\"Omeka Classic theme for MAObjects.\"",
   "main": "gulpfile.js",
   "devDependencies": {
     "autoprefixer": "^10.2.5",
@@ -15,7 +15,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/UB-Mannheim/theme-mashare.git"
+    "url": "git+https://github.com/UB-Mannheim/theme-maobjects.git"
   },
   "keywords": [
     "\"white",
@@ -25,9 +25,9 @@
   "author": "\"Mannheim University Library\"",
   "license": "GPL-3.0",
   "bugs": {
-    "url": "https://github.com/UB-Mannheim/theme-mashare/issues"
+    "url": "https://github.com/UB-Mannheim/theme-maobjects/issues"
   },
-  "homepage": "https://github.com/UB-Mannheim/theme-mashare#readme",
+  "homepage": "https://github.com/UB-Mannheim/theme-maobjects#readme",
   "browserslist": [
     "> 5%",
     "> 1% in US"
