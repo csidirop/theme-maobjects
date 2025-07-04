@@ -522,8 +522,7 @@ input[type=email],
 input[type=search],
 input[type=number],
 input[type=month] {
-    -webkit-appearance: none;
-            appearance: none;
+    appearance: none;
     border: 1px solid;
     font-size: 18px;
     line-height: 24px;
@@ -1156,10 +1155,10 @@ nav ul {
   }
 }
 @media screen {
-  .browse .creator + .date {
+  .browse .item-creator + .item-date {
     margin-left: -4px;
   }
-  .browse .creator + .date:before {
+  .browse .item-creator + .item-date:before {
     content: ", ";
   }
 }
