@@ -1526,6 +1526,16 @@ nav ul {
   }
 }
 @media screen {
+  .browse .records > div.list:nth-of-type(odd) {
+    background-color: #f6f6f6;
+  }
+}
+@media screen {
+  .browse .records > div.list:nth-of-type(even) {
+    background-color: white;
+  }
+}
+@media screen {
   #content h1, #content h2, #content h3, #content h4 {
     color: #232e58;
   }
