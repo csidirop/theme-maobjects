@@ -433,3 +433,33 @@ input#submit_search_advanced[type=submit] {
         margin: unset;
     }
 }
+
+// Search results page:
+#search-filters {
+  display: none;
+}
+
+#search-results {
+    border: none;
+
+    thead,
+    tbody .item td:first-child {
+        display: none;
+    }
+
+    td, th {
+        padding-top: 20px;
+        padding-bottom: 20px;
+        padding-left: 10px;
+        border-style: none;
+        line-height: 1.25;
+
+        a {
+            border-bottom: none;
+        }
+
+        a:hover {
+            border-bottom: 0.1875rem solid $uni-blau-hell;
+        }
+    }
+}

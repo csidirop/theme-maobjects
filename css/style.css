@@ -1908,6 +1908,33 @@ li.pagination_next a,
     margin: unset;
   }
 }
+@media screen {
+  #search-filters {
+    display: none;
+  }
+}
+@media screen {
+  #search-results {
+    border: none;
+  }
+  #search-results thead,
+#search-results tbody .item td:first-child {
+    display: none;
+  }
+  #search-results td, #search-results th {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 10px;
+    border-style: none;
+    line-height: 1.25;
+  }
+  #search-results td a, #search-results th a {
+    border-bottom: none;
+  }
+  #search-results td a:hover, #search-results th a:hover {
+    border-bottom: 0.1875rem solid #abb8ca;
+  }
+}
 @media screen and (max-width: 640px) {
   #site-title {
     text-align: center;
