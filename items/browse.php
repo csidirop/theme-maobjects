@@ -79,10 +79,14 @@ $sortLinks[__('Date Added')] = 'added';
 <?php echo pagination_links(); ?>
 
 <?php if (get_theme_option('show_outputformats') == 1): ?>
-<div id="outputs">
-    <span class="outputs-label"><?php echo __('Output Formats'); ?></span>
-    <?php echo output_format_list(false); ?>
-</div>
+<details class="outputs">
+    <summary class="outputs-label">
+        <?php echo __('Output Formats'); ?>
+    </summary>
+    <div id="output-format-list">
+        <?php echo output_format_list(false); ?>
+    </div>
+</details>
 <?php endif; ?>
 
 <?php fire_plugin_hook('public_items_browse', array('items'=>$items, 'view' => $this)); ?>

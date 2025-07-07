@@ -78,10 +78,16 @@ echo head(array('title' => metadata('item', array('Dublin Core', 'Title')), 'bod
         </div>
         <?php endif; ?>
 
+        <!-- Adds the output formats in a collapsible menu -->
         <?php if (get_theme_option('show_outputformats') == 1): ?>
-        <div id="item-output-formats" class="element">
+         <div id="item-output-formats" class="element">
             <h3><?php echo __('Output Formats'); ?></h3>
-            <div class="element-text"><?php echo output_format_list(); ?></div>
+            <details class="element-text outputs">
+                <summary class="outputs-label">
+                    <?php echo __('Show'); ?>
+                </summary>
+                <?php echo output_format_list(); ?>
+            </details>
         </div>
         <?php endif; ?>
     </div>
