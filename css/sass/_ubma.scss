@@ -17,23 +17,42 @@ a:focus {
     border-top: none;
 }
 
-.browse .hentry {
-    h1, h2, h3, h4 {
-        color: $uni-blau;
-
-        a {
+// Item browse page:
+.browse {
+    .hentry {
+        h1, h2, h3, h4 {
             color: $uni-blau;
+    
+            a {
+                color: $uni-blau;
+            }
         }
     }
-}
 
-// Alternating row colors:
-.browse .records > div.list:nth-of-type(odd) {
-  background-color: #f6f6f6;
-}
-
-.browse .records > div.list:nth-of-type(even) {
-  background-color: white;
+    // Alternating row colors:
+    .records > div.list:nth-of-type(odd) {
+        background-color: #f6f6f6;
+    }
+  
+    .records > div.list:nth-of-type(even) {
+        background-color: white;
+    }
+  
+    // List specific styles:
+    .item-meta.hentry.list {
+        .item-meta-content {
+            display: flex;
+        }
+    
+        .item-img {
+            margin-right: 3%;
+            max-width: 120px;
+    
+            img {
+                max-width: 100%;
+            }
+        }
+    }
 }
 
 #content {

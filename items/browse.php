@@ -32,9 +32,9 @@ $sortLinks[__('Date Added')] = 'added';
             <div class="item-meta hentry list">
                 <h3><?php echo link_to_item(metadata($item, array('Dublin Core', 'Title'), array('class'=>'permalink'))); ?></h3>
 
-                <div class="item-meta-content" style="display: flex;">
+                <div class="item-meta-content">
                     <?php if (metadata($item, 'has thumbnail')): ?>
-                        <div class="item-img" style="margin-right: 25px;">
+                        <div class="item-img">
                         <?php echo link_to_item(item_image()); ?>
                         </div>
                     <?php endif; ?>

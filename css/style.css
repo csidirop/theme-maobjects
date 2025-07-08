@@ -1524,15 +1524,21 @@ nav ul {
   .browse .hentry h1 a, .browse .hentry h2 a, .browse .hentry h3 a, .browse .hentry h4 a {
     color: #232e58;
   }
-}
-@media screen {
   .browse .records > div.list:nth-of-type(odd) {
     background-color: #f6f6f6;
   }
-}
-@media screen {
   .browse .records > div.list:nth-of-type(even) {
     background-color: white;
+  }
+  .browse .item-meta.hentry.list .item-meta-content {
+    display: flex;
+  }
+  .browse .item-meta.hentry.list .item-img {
+    margin-right: 3%;
+    max-width: 120px;
+  }
+  .browse .item-meta.hentry.list .item-img img {
+    max-width: 100%;
   }
 }
 @media screen {
