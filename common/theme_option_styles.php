@@ -21,6 +21,7 @@
     $media_lightgallery_pdf_embed_hide_toolbar = get_theme_option( 'media_lightgallery_pdf_embed_hide_toolbar');
     $item_page_layout = get_theme_option( 'item_page_layout');
     $show_breadcrumbs = get_theme_option( 'show_breadcrumbs');
+    $browse_hide_sec_nav = get_theme_option('browse_hide_sec_nav');
 ?>
 
 <style>
@@ -237,6 +238,13 @@
     .secondary-content {
         display: flex;
         flex-direction: column;
+    }
+    <?php endif; ?>
+
+    /* Hide Secondary Navigation */
+    <?php if ($browse_hide_sec_nav == '1') : ?>
+    nav.navigation.secondary-nav > ul > li {
+        display: none;
     }
     <?php endif; ?>
 
