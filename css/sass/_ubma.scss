@@ -432,7 +432,8 @@ footer {
 
     li {
         border: none;
-        font-size: 30px;
+        font-size: medium;
+        font-style: italic;
         margin-left: 0px;
         margin-bottom: 15px;
         padding-left: 0px;
@@ -489,5 +490,21 @@ footer {
                 border-bottom: 0.1875rem solid $uni-blau-hell;
             }
         }
+    }
+}
+
+// Plugin Facets: horizontal styling: (item browse and collection views)
+.facets-layout-horizontal {
+    margin-top: unset;
+
+    #facets-body {
+        border-color: #232e58;
+        border-width: 2px 2px 2px 2px;
+        border-style: solid;
+    }
+
+    button#facets-title {
+        color: unset;
+        width: unset;
     }
 }

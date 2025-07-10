@@ -14,6 +14,8 @@ $sortLinks[__('Date Added')] = 'added';
     <span class="sort-label"><?php echo __('Sort by: '); ?></span><?php echo browse_sort_links($sortLinks); ?>
 </div>
 
+<?php fire_plugin_hook('public_facets', array('collections'=>$collections, 'view' => $this)); ?> <!-- TODO: wont load for some reason -->
+
 <div class="records">
 <?php foreach (loop('collections') as $collection): ?>
     <div class="collection hentry">

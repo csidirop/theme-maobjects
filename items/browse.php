@@ -26,6 +26,8 @@ $sortLinks[__('Date Added')] = 'added';
 
 <?php endif; ?>
 
+<?php fire_plugin_hook('public_facets', array('items'=>$items, 'view' => $this)); ?>
+
 <div class="records">
     <?php foreach (loop('items') as $item): ?>
         <?php if (get_theme_option('browse_list_style') === 'list'): ?>
