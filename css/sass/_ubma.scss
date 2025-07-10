@@ -229,32 +229,40 @@ header nav .navigation li {
     color: #fff;
 }
 
-#home #search-form {
-    background-color: $uni-blau;
-    border-radius: 15px;
-    padding: 8px 8px 8px 8px;
-
-    input, button{
-        margin-bottom: 0rem;
-        &:hover {
-            // color: $uni-blau;
-            background: #fff;
-            // border: 0.1875rem solid $uni-blau-hell;
+#home {
+    #search-form {
+        background-color: $uni-blau;
+        border-radius: 15px;
+        padding: 8px 8px 8px 8px;
+    
+        input, button {
+            margin-bottom: 0rem;
+            &:hover {
+                // color: $uni-blau;
+                background: #fff;
+                // border: 0.1875rem solid $uni-blau-hell;
+            }
         }
     }
-}
 
-#home #submitt-search {
-    border: none;
-    padding-right: 10px;
-    margin-left: 10px;
-    margin-bottom: 0px;
-  
-    &::after {
-        width: inherit;
+    #submitt-search {
+        border: none;
+        padding-right: 10px;
+        margin-left: 10px;
+        margin-bottom: 0px;
+        
+        &::after {
+            width: inherit;
+        }
+    }
+
+    // Hide line on top of h1 on home page:
+    #home #wrap #content h1:before {
+        display: none;
     }
 }
 
+// Header search form:
 #search-container {
     right: 15px;
 
@@ -320,7 +328,8 @@ header nav .navigation li {
     }
 }
 
-#advanced-search-form {
+// Advanced search:
+.advanced-search #advanced-search-form {
     button {
         @include button_blau;
         border-radius: 4px; //TODO: why is this needed?
@@ -332,27 +341,27 @@ header nav .navigation li {
             padding: 4px;
         }
     }
+
+    input#submit_search_advanced[type=submit] {
+        font-weight: normal;
+    }
+    
+    // Erweiterte Suche Überschrift "Feld löschen" ausblenden // TODO: sollte konfigurierbar sein
+    #search-narrow-by-fields-remove-field {
+        display: none;
+    }
+    #search-narrow-by-fields-label.label {
+        color: #232e58;
+        background: transparent;
+    }
+    #submit_search_advanced {
+        font-size: inherit;
+    }
 }
 
 #no-results {
     margin-top: 80px;
     margin-bottom: 80px;
-}
-
-input#submit_search_advanced[type=submit] {
-    font-weight: normal;
-}
-
-// Erweiterte Suche Überschrift "Feld löschen" ausblenden // TODO: sollte konfigurierbar sein
-#search-narrow-by-fields-remove-field {
-    display: none;
-}
-#search-narrow-by-fields-label.label {
-    color: #232e58;
-    background: transparent;
-}
-#submit_search_advanced {
-    font-size: inherit;
 }
 
 .collection.hentry,
@@ -365,27 +374,30 @@ input#submit_search_advanced[type=submit] {
     }
 }
 
-.logos {
-    text-align: right;
-    right: 0;
-    position: absolute;
-
-    .logo1, .logo2 {
-        display: inline-block;
-    }
-   .logo2 {
-       .hosted {
-           display: block;
-           text-align: left;
+//Footer:
+footer {
+    .logos {
+        text-align: right;
+        right: 0;
+        position: absolute;
+    
+        .logo1, .logo2 {
+            display: inline-block;
+        }
+       .logo2 {
+           .hosted {
+               display: block;
+               text-align: left;
+           }
        }
-   }
-
-    .ub-logo {
-        height: 50px;
-    }
-    .uni-logo {
-        height: 50px;
-        margin-right: 20px;
+    
+        .ub-logo {
+            height: 50px;
+        }
+        .uni-logo {
+            height: 50px;
+            margin-right: 20px;
+        }
     }
 }
 
@@ -411,11 +423,6 @@ input#submit_search_advanced[type=submit] {
     #site-title.uma-header-left {
         padding-bottom: 44px;
     }
-}
-
-// Hide line on top of h1 on home page:
-#home #wrap #content h1:before {
-    display: none;
 }
 
 // Style Collection title in item overview:
@@ -454,31 +461,33 @@ input#submit_search_advanced[type=submit] {
 }
 
 // Search results page:
-#search-filters {
-  display: none;
-}
-
-#search-results {
-    border: none;
-
-    thead,
-    tbody .item td:first-child {
-        display: none;
+.search {
+    #search-filters {
+    display: none;
     }
 
-    td, th {
-        padding-top: 20px;
-        padding-bottom: 20px;
-        padding-left: 10px;
-        border-style: none;
-        line-height: 1.25;
+    #search-results {
+        border: none;
 
-        a {
-            border-bottom: none;
+        thead,
+        tbody .item td:first-child {
+            display: none;
         }
 
-        a:hover {
-            border-bottom: 0.1875rem solid $uni-blau-hell;
+        td, th {
+            padding-top: 20px;
+            padding-bottom: 20px;
+            padding-left: 10px;
+            border-style: none;
+            line-height: 1.25;
+
+            a {
+                border-bottom: none;
+            }
+
+            a:hover {
+                border-bottom: 0.1875rem solid $uni-blau-hell;
+            }
         }
     }
 }

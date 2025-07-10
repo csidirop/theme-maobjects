@@ -1714,8 +1714,6 @@ li.pagination_next a,
   #home #search-form input:hover, #home #search-form button:hover {
     background: #fff;
   }
-}
-@media screen {
   #home #submitt-search {
     border: none;
     padding-right: 10px;
@@ -1724,6 +1722,9 @@ li.pagination_next a,
   }
   #home #submitt-search::after {
     width: inherit;
+  }
+  #home #home #wrap #content h1:before {
+    display: none;
   }
 }
 @media screen {
@@ -1778,46 +1779,38 @@ li.pagination_next a,
   }
 }
 @media screen {
-  #advanced-search-form button {
+  .advanced-search #advanced-search-form button {
     border: 0.1875rem solid #232e58;
     color: #fff;
     background: #232e58;
     border-radius: 4px;
     padding: 4px;
   }
-  #advanced-search-form button:hover {
+  .advanced-search #advanced-search-form button:hover {
     border: 0.1875rem solid #abb8ca;
     color: #232e58;
     background: #fff;
     border-radius: 4px;
     padding: 4px;
   }
+  .advanced-search #advanced-search-form input#submit_search_advanced[type=submit] {
+    font-weight: normal;
+  }
+  .advanced-search #advanced-search-form #search-narrow-by-fields-remove-field {
+    display: none;
+  }
+  .advanced-search #advanced-search-form #search-narrow-by-fields-label.label {
+    color: #232e58;
+    background: transparent;
+  }
+  .advanced-search #advanced-search-form #submit_search_advanced {
+    font-size: inherit;
+  }
 }
 @media screen {
   #no-results {
     margin-top: 80px;
     margin-bottom: 80px;
-  }
-}
-@media screen {
-  input#submit_search_advanced[type=submit] {
-    font-weight: normal;
-  }
-}
-@media screen {
-  #search-narrow-by-fields-remove-field {
-    display: none;
-  }
-}
-@media screen {
-  #search-narrow-by-fields-label.label {
-    color: #232e58;
-    background: transparent;
-  }
-}
-@media screen {
-  #submit_search_advanced {
-    font-size: inherit;
   }
 }
 @media screen {
@@ -1832,22 +1825,22 @@ li.pagination_next a,
   }
 }
 @media screen {
-  .logos {
+  footer .logos {
     text-align: right;
     right: 0;
     position: absolute;
   }
-  .logos .logo1, .logos .logo2 {
+  footer .logos .logo1, footer .logos .logo2 {
     display: inline-block;
   }
-  .logos .logo2 .hosted {
+  footer .logos .logo2 .hosted {
     display: block;
     text-align: left;
   }
-  .logos .ub-logo {
+  footer .logos .ub-logo {
     height: 50px;
   }
-  .logos .uni-logo {
+  footer .logos .uni-logo {
     height: 50px;
     margin-right: 20px;
   }
@@ -1875,11 +1868,6 @@ li.pagination_next a,
 @media screen and (min-width: 90.0625em) {
   #site-title.uma-header-left {
     padding-bottom: 44px;
-  }
-}
-@media screen {
-  #home #wrap #content h1:before {
-    display: none;
   }
 }
 @media screen {
@@ -1915,29 +1903,27 @@ li.pagination_next a,
   }
 }
 @media screen {
-  #search-filters {
+  .search #search-filters {
     display: none;
   }
-}
-@media screen {
-  #search-results {
+  .search #search-results {
     border: none;
   }
-  #search-results thead,
-#search-results tbody .item td:first-child {
+  .search #search-results thead,
+.search #search-results tbody .item td:first-child {
     display: none;
   }
-  #search-results td, #search-results th {
+  .search #search-results td, .search #search-results th {
     padding-top: 20px;
     padding-bottom: 20px;
     padding-left: 10px;
     border-style: none;
     line-height: 1.25;
   }
-  #search-results td a, #search-results th a {
+  .search #search-results td a, .search #search-results th a {
     border-bottom: none;
   }
-  #search-results td a:hover, #search-results th a:hover {
+  .search #search-results td a:hover, .search #search-results th a:hover {
     border-bottom: 0.1875rem solid #abb8ca;
   }
 }
