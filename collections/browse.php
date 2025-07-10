@@ -18,31 +18,31 @@ $sortLinks[__('Date Added')] = 'added';
 
 <div class="records">
 <?php foreach (loop('collections') as $collection): ?>
-    <div class="collection hentry">
-
+    <div class="collection hentry list item-meta-content">
         <?php if ($collectionImage = record_image('collection')): ?>
             <?php echo link_to_collection($collectionImage, array('class' => 'image')); ?>
         <?php endif; ?>
 
-        <h2><?php echo link_to_collection(); ?></h2>
+        <span class="item-meta-details">
+            <h2><?php echo link_to_collection(); ?></h2>
 
-        <?php if (metadata('collection', array('Dublin Core', 'Description'))): ?>
-        <div class="collection-description">
-            <?php echo text_to_paragraphs(metadata('collection', array('Dublin Core', 'Description'), array('snippet'=>150))); ?>
-        </div>
-        <?php endif; ?>
+            <?php if (metadata('collection', array('Dublin Core', 'Description'))): ?>
+            <div class="collection-description">
+                <?php echo text_to_paragraphs(metadata('collection', array('Dublin Core', 'Description'), array('snippet'=>150))); ?>
+            </div>
+            <?php endif; ?>
 
-        <?php if ($collection->hasContributor()): ?>
-        <div class="collection-contributors">
-            <p>
-            <strong><?php echo __('Contributors'); ?>:</strong>
-            <?php echo metadata('collection', array('Dublin Core', 'Contributor'), array('all'=>true, 'delimiter'=>', ')); ?>
-            </p>
-        </div>
-        <?php endif; ?>
+            <?php if ($collection->hasContributor()): ?>
+            <div class="collection-contributors">
+                <p>
+                    <strong><?php echo __('Contributors'); ?>:</strong>
+                    <?php echo metadata('collection', array('Dublin Core', 'Contributor'), array('all'=>true, 'delimiter'=>', ')); ?>
+                </p>
+            </div>
+            <?php endif; ?>
 
-        <?php echo link_to_items_browse(__('View the items in %s', metadata('collection', 'rich_title', array('no_escape' => true))), array('collection' => metadata('collection', 'id')), array('class' => 'view-items-link')); ?>
-
+            <?php echo link_to_items_browse(__('View the items in %s', metadata('collection', 'rich_title', array('no_escape' => true))), array('collection' => metadata('collection', 'id')), array('class' => 'view-items-link')); ?>
+        </span>
         <?php fire_plugin_hook('public_collections_browse_each', array('view' => $this, 'collection' => $collection)); ?>
 
     </div><!-- end class="collection" -->

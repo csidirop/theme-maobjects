@@ -39,7 +39,7 @@ a:focus {
     }
   
     // List specific styles:
-    .item-meta.hentry.list {
+    // .item-meta.hentry.list { //TODO: reverse comment
         .item-meta-content {
             display: flex;
         }
@@ -52,7 +52,7 @@ a:focus {
                 max-width: 100%;
             }
         }
-    }
+    // }
 }
 
 #content {

@@ -197,6 +197,7 @@
             border-bottom: none;
         }
 
+        /* TODO: why browse .item-meta .item-img */
         .collections #collection-items .item-meta .item-img, .browse .item-meta .item-img {
             display: none;
         }
