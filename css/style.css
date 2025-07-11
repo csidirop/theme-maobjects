@@ -1629,6 +1629,31 @@ li.pagination_next a,
     text-decoration: none;
     border-bottom: 0.1875rem solid #232e58;
   }
+  header nav .navigation li.nav-item a {
+    margin-bottom: 0;
+  }
+  header nav .navigation li.nav-item > div {
+    background-color: #232e58;
+    color: #fff;
+  }
+  header nav .navigation li.nav-item > div .parent {
+    display: none;
+  }
+  header nav .navigation li.nav-item > div a {
+    color: #fff;
+    border-bottom: none;
+  }
+  header nav .navigation li.nav-item > div a:not(.parent)::before {
+    display: none;
+    margin-right: 15px;
+  }
+  header nav .navigation li.nav-item > div a:hover {
+    border-bottom: 0.1875rem solid #abb8ca;
+  }
+  header nav .navigation li.nav-item .sub-nav ul li {
+    padding: 10px;
+    margin-right: 5px;
+  }
 }
 @media screen {
   .jcarousel-wrapper a.jcarousel-control-prev, .jcarousel-wrapper a.jcarousel-control-next {

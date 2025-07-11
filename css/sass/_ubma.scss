@@ -143,6 +143,41 @@ header nav .navigation li {
             border-bottom: 0.1875rem solid $uni-blau;
         }
     }
+
+    // Submenu styling:
+    &.nav-item {
+        a {
+            margin-bottom: 0;
+        }
+
+        & > div {
+            background-color: #232e58;
+            color: #fff;
+
+            .parent {
+                display: none;
+            }
+
+            a {
+                color: #fff;
+                border-bottom: none;
+
+                &:not(.parent)::before {
+                    display: none;
+                    margin-right: 15px;
+                }
+
+                &:hover {
+                    border-bottom: 0.1875rem solid $uni-blau-hell;
+                }
+            }
+        }
+
+        .sub-nav ul li {
+            padding: 10px;
+            margin-right: 5px;
+        }
+    }
 }
 
 /* jcarousel left / right */
