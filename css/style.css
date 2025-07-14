@@ -972,6 +972,8 @@ nav ul {
   /* indent lists */
 
   /* Fix nav-menu on mobile devices */
+
+  /*** Collection Show page: Listview if set ***/
 }
 @media screen and (min-width: 1100px) {
   .sub-nav.first {
@@ -1965,6 +1967,30 @@ li.pagination_next a,
   .facets-layout-horizontal button#facets-title {
     color: unset;
     width: unset;
+  }
+}
+@media screen {
+  .collections #collection-items.browse.list .item {
+    padding: 10px;
+    width: 100%;
+  }
+  .collections #collection-items.browse.list .item:nth-child(odd) {
+    background-color: #f6f6f6;
+  }
+  .collections #collection-items.browse.list .item:nth-child(even) {
+    background-color: #ffffff;
+  }
+  .collections #collection-items.browse.list .item-meta {
+    text-align: left;
+  }
+  .collections #collection-items.browse.list .item-meta a {
+    border-bottom: none;
+  }
+  .collections #collection-items.browse.list .item-meta .item-img {
+    display: none;
+  }
+  .collections #collection-items.browse.list .item-meta a:hover {
+    border-bottom: 0.1875rem solid #abb8ca;
   }
 }
 @media screen and (max-width: 640px) {

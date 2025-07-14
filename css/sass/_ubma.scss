@@ -543,3 +543,34 @@ footer {
         width: unset;
     }
 }
+
+/*** Collection Show page: Listview if set ***/
+.collections #collection-items.browse.list {
+    .item {
+        padding: 10px;
+        width: 100%;
+
+        &:nth-child(odd) {
+            background-color: #f6f6f6;
+        }
+
+        &:nth-child(even) {
+            background-color: #ffffff;
+        }
+    }
+
+    .item-meta {
+        text-align: left;
+        a {
+            border-bottom: none;
+        }
+
+        .item-img {
+            display: none;
+        }
+
+        a:hover {
+            border-bottom: 0.1875rem solid #abb8ca;
+        }
+    }
+}

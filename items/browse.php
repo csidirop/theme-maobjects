@@ -30,7 +30,7 @@ $sortLinks[__('Date Added')] = 'added';
 
 <div class="records">
     <?php foreach (loop('items') as $item): ?>
-        <?php if (get_theme_option('browse_list_style') === 'list'): ?>
+        <?php if (get_theme_option('browse_item_style') === 'list'): ?>
             <div class="item-meta hentry list">
                 <h3><?php echo link_to_item(metadata($item, array('Dublin Core', 'Title'), array('class'=>'permalink'))); ?></h3>
 
