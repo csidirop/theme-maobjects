@@ -1,0 +1,41 @@
+name: Frontend build & audit
+
+on:
+  push:
+    branches: [ master, 'feat/**' ]
+    paths:
+      - 'css/**'
+      - 'js/**'
+      - 'gulpfile.js'
+      - 'package.json'
+  pull_request:
+    branches: [ master ]
+    paths:
+      - 'css/**'
+      - 'js/**'
+      - 'gulpfile.js'
+      - 'package.json'
+  workflow_dispatch:
+
+jobs:
+  frontend:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v5
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v5
+        with:
+          node-version: 22
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build SCSS with Gulp
+        run: npx gulp css
+
+      - name: npm security audit
+        run: npm audit --production || true
