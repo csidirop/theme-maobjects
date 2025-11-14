@@ -2048,6 +2048,33 @@ li.pagination_next a,
     transition: none;
   }
 }
+@media screen {
+  .item-nav-buttons {
+    margin: 2rem 0;
+  }
+  .item-nav-buttons .item-pagination.navigation li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+  }
+  .item-nav-buttons .item-pagination a {
+    display: inline-block;
+    padding: 0.6rem 1.4rem;
+    border-radius: 8px;
+    border: 1px solid #232e58;
+    background: white;
+    color: #232e58;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.2s ease-out;
+  }
+  .item-nav-buttons .item-pagination a:hover, .item-nav-buttons .item-pagination a:focus {
+    background: #232e58;
+    color: white;
+  }
+}
 @media screen and (max-width: 640px) {
   #site-title {
     text-align: center;

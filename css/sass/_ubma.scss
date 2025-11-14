@@ -650,3 +650,41 @@ li {
         }
     }
 }
+
+// Buttons for item navigation (previous/next) on item show page:
+.item-nav-buttons {
+    margin: 2rem 0;
+
+    // Make the list a flex container and remove default list styles:
+    .item-pagination {
+        
+        &.navigation li {
+            display: flex;
+            justify-content: space-between; // one button left, one right
+            align-items: center;
+            list-style: none;
+            margin: 0;
+        }
+
+        // Turn links into buttons:
+        a {
+            display: inline-block;
+            padding: 0.6rem 1.4rem;
+            border-radius: 8px;
+            border: 1px solid $uni-blau;
+            background: white;
+            color: $uni-blau;
+            font-weight: 600;
+            font-size: 0.95rem;
+
+            transition: all .2s ease-out;
+
+            // Hover/focus effect:
+            &:hover,
+            &:focus {
+                background: $uni-blau;
+                color: white;
+            }
+        }
+    }
+}
