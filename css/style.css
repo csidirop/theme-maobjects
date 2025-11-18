@@ -1963,6 +1963,7 @@ li.pagination_next a,
     border-color: #232e58;
     border-width: 2px 2px 2px 2px;
     border-style: solid;
+    border-radius: 0.5rem;
   }
   .facets-layout-horizontal button#facets-title {
     color: unset;

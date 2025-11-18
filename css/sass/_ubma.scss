@@ -533,9 +533,10 @@ footer {
     margin-top: unset;
 
     #facets-body {
-        border-color: #232e58;
+        border-color: $uni-blau;
         border-width: 2px 2px 2px 2px;
         border-style: solid;
+        border-radius: .5rem;
     }
 
     button#facets-title {
