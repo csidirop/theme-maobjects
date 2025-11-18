@@ -92,6 +92,67 @@ echo head(array('title' => metadata('item', array('Dublin Core', 'Title')), 'bod
             </details>
         </div>
         <?php endif; ?>
+
+        <div id="item-output-formats" class="element">
+            <h3><?php echo __('Output Formats'); ?></h3>
+
+            <!-- Trigger button -->
+            <button type="button" class="outputs-label" popovertarget="output-formats-popover" popovertargetaction="toggle">
+                <?php echo __('Show'); ?>
+            </button>
+
+            <!-- Popover content -->
+            <div id="output-formats-popover" popover class="element-text outputs">
+                <?php echo output_format_list(); ?>
+            </div>
+        </div>
+        
+        <style>
+            .element-text.outputs[popover] {
+                top: 50%;
+                right: 0;
+                padding: 0.75rem 5rem 0.75rem 0.5rem;
+                margin-left: -0.5rem;
+                /* transform: translateY(-50%); */
+                border: 1px solid #ccc;
+                border-radius: 0.4rem;
+                background: #fff;
+                width: fit-content;
+
+                transform: translate(100%, -50%);  /* start off-screen to the right */
+                opacity: 0;
+
+
+            }
+
+            .element-text.outputs[popover]:popover-open {
+                transform: translate(0, -50%);     /* slide into view */
+                opacity: 1;
+                                /* animation */
+                transition:
+                    transform 0.25s ease-out,
+                    opacity 0.25s ease-out;
+            }
+
+            button {
+                width: 36px;
+                overflow: hidden;
+                text-indent: -9999px;
+                position: relative;
+            }
+            button:after {
+                content: "\f002";
+                font-family: "Font Awesome 5 Free";
+                font-weight: 900;
+                position: absolute;
+                top: 6px;
+                right: 0;
+                text-indent: 0;
+                width: 36px;
+                text-align: center;
+                cursor: pointer;
+            }
+        </style>
     </div>
 </div>
 
