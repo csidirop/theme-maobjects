@@ -1,18 +1,19 @@
 # Omeka Classic theme for MAObjects
 
-This theme is based on the [Center Row theme](https://github.com/omeka/theme-centerrow).
+This theme is based on the [Center Row](https://github.com/omeka/theme-centerrow) theme.
 
-It is used by the Mannheim University Library in the context of [MAObjects](https://www.bib.uni-mannheim.de/en/teaching-and-research/research-data-center-fdz/services-of-the-fdz/maobjects/) Omeka deployments.
+It is used by the [Mannheim University Library](https://www.bib.uni-mannheim.de) in the context of [MAObjects](https://www.bib.uni-mannheim.de/en/teaching-and-research/research-data-center-fdz/services-of-the-fdz/maobjects/) Omeka deployments to provide a theme in the corporate design of the [University of Mannheim](https://www.uni-mannheim.de/). MAObjects is a service of the Mannheim University Library that provides researchers with an Omeka-based platform to create and present digital object collections and virtual exhibitions by uploading digital objects, describing them with standardised metadata, and making the data available via an API.
 
 <!-- ![Theme Example (Kotzebue Exhibition)](theme.jpg) -->
-<img src="theme.jpg" alt="Theme Example (Kotzebue Exhibition)" style="width:75%; height:auto;" />
+<a href="https://fdz.bib.uni-mannheim.de/kotzebue/"><img src="theme.jpg" alt="Theme Example (Kotzebue Exhibition)" style="max-width:70%; height:auto;" /></a>
 
-TODO:
-- Describe the purpose of the theme
-- List main features
+- **Powerful search integration:** Optional advanced site-wide search, ability to route or hide the quick search bar, and show/hide child pages in top navigation.
+- **Customizable homepage:** Featured item/collection/exhibit, intro text, optional slideshow with autoplay and speed, “floating” minimal homepage layout, and toggleable breadcrumbs.
+- **Item & media display controls:** Lightgallery support (incl. PDFs via PDF Embed), handling of non-image media, configurable media captions, options to hide headings/DC title, and show/hide citation.
+- **Collection views:** Configurable collection browse page style (e.g. grid/list) and options to hide headings/duplicate title entries on collection pages.
+- **Background image options:** Site-wide background image with control over position, repeat, size, and whether it appears beneath the main content area.
 
-
-## Features & Customization
+## Theme settings
 
 This theme offers extensive customization options through the Omeka admin interface:
 
@@ -100,7 +101,11 @@ This theme offers extensive customization options through the Omeka admin interf
 ## Contributing
 Contributions are welcome! Please fork the repository and submit a pull request with your changes. For major changes, please open an issue first to discuss what you would like to change.
 
-## Licence
+## Copyright & Licence
+
+MAObjects is Copyright © 2024-present Mannheim University Library, Mannheim, Germany [https://www.bib.uni-mannheim.de](https://www.bib.uni-mannheim.de).
+
+Center Row is Copyright © 2018-present Corporation for Digital Scholarship, Vienna, Virginia, USA [http://digitalscholar.org](http://digitalscholar.org).
 
 The Corporation for Digital Scholarship distributes the Omeka source code under the GNU General Public License, version 3 (GPLv3). See the LICENSE file for the full text.
 
