@@ -1730,6 +1730,24 @@ li.pagination_next a,
   }
 }
 @media screen {
+  button,
+.button,
+input[type=button],
+input[type=submit] {
+    border: 0.1875rem solid #232e58;
+    color: #fff;
+    background: #232e58;
+  }
+  button:hover,
+.button:hover,
+input[type=button]:hover,
+input[type=submit]:hover {
+    border: 0.1875rem solid #abb8ca;
+    color: #232e58;
+    background: #fff;
+  }
+}
+@media screen {
   #home #search-form {
     background-color: #232e58;
     border-radius: 15px;
