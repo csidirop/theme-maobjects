@@ -1916,6 +1916,11 @@ li.pagination_next a,
     margin-left: 2.5rem;
   }
 }
+@media screen {
+  li {
+    list-style-type: disc;
+  }
+}
 @media screen and (max-width: 640px) {
   .align-bottom {
     display: flex;

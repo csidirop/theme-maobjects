@@ -480,6 +480,10 @@ footer {
     margin-left: 2.5rem;
 }
 
+li {
+    list-style-type: disc;
+}
+
 /* Fix nav-menu on mobile devices */
 @media screen and (max-width: 640px) {
     .align-bottom {
