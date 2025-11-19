@@ -22,22 +22,15 @@ echo head(array('title' => metadata('item', array('Dublin Core', 'Title')), 'bod
 <style>
     /* Wrapper: full-width bar inside the content area */
     .item-nav--buttons {
-        width: 100%;
         margin: 2rem 0;
     }
 
     /* Make the list a flex container and remove default list styles */
-    .item-nav--buttons .item-pagination.navigation {
+    .item-nav--buttons .item-pagination.navigation li {
         display: flex;
         justify-content: space-between;   /* one button left, one right */
         align-items: center;
         list-style: none;
-        padding: 0;
-        margin: 0;
-    }
-
-    /* Optional: reset default li styling if the theme adds something */
-    .item-nav--buttons .item-pagination li {
         margin: 0;
     }
 
@@ -45,26 +38,19 @@ echo head(array('title' => metadata('item', array('Dublin Core', 'Title')), 'bod
     .item-nav--buttons .item-pagination a {
         display: inline-block;
         padding: 0.6rem 1.4rem;
-        border-radius: 999px;
-        border: 1px solid #444;          /* adjust to your theme color */
-        background: #f7f7f7;
-        text-decoration: none;
+        border-radius: 8px;
+        border: 1px solid #232e58;  /* uni blau*/
+        background: #232e58;
+        color: white;
         font-weight: 600;
         font-size: 0.95rem;
-        text-align: center;
-
-        transition:
-            background-color 0.2s ease,
-            transform 0.1s ease,
-            box-shadow 0.1s ease;
     }
 
     /* Hover / focus effect */
     .item-nav--buttons .item-pagination a:hover,
     .item-nav--buttons .item-pagination a:focus {
-        background: #e8e8e8;
-        transform: translateY(-1px);
-        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+        background: white;
+        color: #232e58;
     }
 </style>
 
