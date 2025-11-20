@@ -39,6 +39,7 @@
     $item_page_layout_content_ratio = is_numeric($tmp = get_theme_option( 'item_page_layout_content_ratio')) ? $tmp : 50;
     $show_breadcrumbs = get_theme_option( 'show_breadcrumbs');
     $browse_hide_sec_nav = get_theme_option('browse_hide_sec_nav');
+    $no_img_hover_effect = get_theme_option('no_img_hover_effect');
 ?>
 
 <style>
@@ -227,4 +228,11 @@
     }
     <?php endif; ?>
 
+    /* Disable Image Hover Effect */
+    <?php if ($no_img_hover_effect == '1') : ?>
+    #content img:hover {
+        transform: none !important;
+        transition: none !important;
+    }
+    <?php endif; ?>
 </style>
