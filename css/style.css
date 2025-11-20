@@ -1796,6 +1796,8 @@ li.pagination_next a,
   }
   #search-container #search-form {
     box-shadow: none;
+    transform: scale(1.05);
+    transition: all 0.4s;
   }
   #search-container #search-form.open {
     width: 400px;

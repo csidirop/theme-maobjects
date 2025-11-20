@@ -355,6 +355,8 @@ header nav .navigation li {
 
     #search-form {
         box-shadow: none;
+        transform: scale(1.05);
+        transition: all .4s;
 
         &.open {
             width: 400px;
