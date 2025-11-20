@@ -29,6 +29,16 @@ a:focus {
         }
     }
 
+    // Grid view styling:
+    // Image container hides image overflow
+    .records {
+        .item-img {
+            overflow: hidden;
+            margin-bottom: 0.5rem;
+        }
+    }
+
+    // List view styling:
     // Alternating row colors:
     .records > div.list:nth-of-type(odd) {
         background-color: #f6f6f6;
@@ -57,6 +67,7 @@ a:focus {
 
 // Item show page:
 .show {
+    // Layout of the main content container (some properties set in theme_option_styles.php):
     .content-container {
         display: flex;
         flex-direction: column;
@@ -73,9 +84,25 @@ a:focus {
     }
 }
 
+// Main article content area:
 #content {
+    // Headings in UniMa blue:
     h1, h2, h3, h4 {
         color: $uni-blau;
+
+        // No hover effect on headings:
+        img:hover {
+            transform: none;
+            transition: none;
+        }
+    }
+
+    // Image hover effect:
+    img{
+        &:hover {
+            transform: scale(1.05);
+        }
+        transition: all .4s;
     }
 }
 
@@ -109,7 +136,8 @@ a.cover,
 }
 
 /* Unterstreichungen bei a ausschalten */
-.item-meta .item-img, 
+.collection .item-img,
+.item-meta .item-img,
 li.pagination_next,
 .jcarousel-wrapper {
     a {

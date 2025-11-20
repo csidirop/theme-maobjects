@@ -1526,6 +1526,10 @@ nav ul {
   .browse .hentry h1 a, .browse .hentry h2 a, .browse .hentry h3 a, .browse .hentry h4 a {
     color: #232e58;
   }
+  .browse .records .item-img {
+    overflow: hidden;
+    margin-bottom: 0.5rem;
+  }
   .browse .records > div.list:nth-of-type(odd) {
     background-color: #f6f6f6;
   }
@@ -1561,6 +1565,16 @@ nav ul {
   #content h1, #content h2, #content h3, #content h4 {
     color: #232e58;
   }
+  #content h1 img:hover, #content h2 img:hover, #content h3 img:hover, #content h4 img:hover {
+    transform: none;
+    transition: none;
+  }
+  #content img {
+    transition: all 0.4s;
+  }
+  #content img:hover {
+    transform: scale(1.05);
+  }
 }
 @media screen {
   .pagination-nav ul.pagination li.page-input form label {
@@ -1591,7 +1605,8 @@ nav ul {
   }
 }
 @media screen {
-  .item-meta .item-img a,
+  .collection .item-img a,
+.item-meta .item-img a,
 li.pagination_next a,
 .jcarousel-wrapper a {
     border: none;
