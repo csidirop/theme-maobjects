@@ -55,6 +55,24 @@ a:focus {
     }
 }
 
+// Item show page:
+.show {
+    .content-container {
+        display: flex;
+        flex-direction: column;
+        
+        .primary-content {
+            flex-basis: 50%;
+        }
+
+        .secondary-content {
+            flex-basis: auto;
+            display: flex;
+            flex-direction: column;
+        }
+    }
+}
+
 #content {
     h1, h2, h3, h4 {
         color: $uni-blau;

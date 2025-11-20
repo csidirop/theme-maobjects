@@ -1544,6 +1544,20 @@ nav ul {
   }
 }
 @media screen {
+  .show .content-container {
+    display: flex;
+    flex-direction: column;
+  }
+  .show .content-container .primary-content {
+    flex-basis: 50%;
+  }
+  .show .content-container .secondary-content {
+    flex-basis: auto;
+    display: flex;
+    flex-direction: column;
+  }
+}
+@media screen {
   #content h1, #content h2, #content h3, #content h4 {
     color: #232e58;
   }
