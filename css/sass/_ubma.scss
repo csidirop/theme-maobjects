@@ -263,12 +263,12 @@ header nav .navigation li {
     color: #fff;
 }
 
-// Buttos styling:
+// Buttos styling (Uni-Button simulieren):
 button,
-.button,
+button[type=button],
 input[type=button],
-input[type=submit] {
-    // Uni-Button simulieren
+input[type=submit],
+.button {
     @include button_blau;
 
     &:hover {
