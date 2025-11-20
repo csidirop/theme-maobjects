@@ -196,15 +196,16 @@
     <?php if ($item_page_layout == 'vertical') : ?>
     .content-container {
         display: flex;
-        align-items: flex-start;
+        flex-direction: row;
     }
 
-    #itemfiles {
-        flex: 0 1 auto;
-        margin-right: 20px;
+    .primary-content {
+        flex-basis: 50%;
     }
 
     .secondary-content {
+        flex-basis: auto;
+
         display: flex;
         flex-direction: column;
     }

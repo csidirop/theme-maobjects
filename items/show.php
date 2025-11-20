@@ -20,7 +20,7 @@ echo head(array('title' => metadata('item', array('Dublin Core', 'Title')), 'bod
 </nav>
 
 <div class="content-container">
-    <!-- <div class="primary-content"> -->
+    <div class="primary-content">
         <?php
         if ($itemFiles && !$useLightgallery) {
             $image = item_image('thumbnail', array(), 0, $item);
@@ -36,7 +36,7 @@ echo head(array('title' => metadata('item', array('Dublin Core', 'Title')), 'bod
             echo lightGallery($itemFiles);
         }
         ?>
-    <!-- </div> -->
+    </div>
 
     <div class="secondary-content">
         <!-- Add all metadata entries: -->
