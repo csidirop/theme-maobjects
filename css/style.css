@@ -1554,6 +1554,11 @@ nav ul {
   }
   .show .content-container .primary-content {
     flex-basis: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 0.2rem;
   }
   .show .content-container .secondary-content {
     flex-basis: auto;

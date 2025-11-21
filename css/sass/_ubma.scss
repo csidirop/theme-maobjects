@@ -74,6 +74,12 @@ a:focus {
         
         .primary-content {
             flex-basis: 50%;
+            // For multi-media display:
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row;
+            gap: 0.2rem;
         }
 
         .secondary-content {

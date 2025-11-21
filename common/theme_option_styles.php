@@ -213,12 +213,14 @@
 
     /*** Set item show page layout: ***/
     .show .content-container {
-        display: flex;
         flex-direction: <?php echo $item_page_layout ?>;
     }
 
     .show .content-container .primary-content {
         flex-basis: <?php echo $item_page_layout_content_ratio ."%" ?>;
+        <?php if ($item_page_layout == 'row' || $item_page_layout == 'row-reverse') : ?>
+            flex-direction: column;
+        <?php endif; ?>
     }
 
     /* Hide Secondary Navigation */
