@@ -631,3 +631,22 @@ li {
         }
     }
 }
+
+/** Files show page styling **/
+.files.show {
+    #content {
+        display: flex;
+        gap: 2rem;
+
+        // Hide h1 and h2 headings:
+        h1,h2 {
+            display: none;
+        }
+
+        // Image hover effect off:
+        img:hover {
+            transform: none;
+            transition: none;
+        }
+    }
+}
