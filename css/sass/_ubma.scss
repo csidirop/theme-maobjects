@@ -95,6 +95,12 @@ a:focus {
     // Headings in UniMa blue:
     h1, h2, h3, h4 {
         color: $uni-blau;
+
+        // No hover effect on headings:
+        img:hover {
+            transform: none;
+            transition: none;
+        }
     }
 
     // Image hover effect:
