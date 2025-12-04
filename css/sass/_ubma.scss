@@ -175,12 +175,11 @@ header .uma-header-right nav .navigation li a {
     }
 }
 
-
 a:hover {
     text-decoration: none;
 }
 
-// Navigation styling
+// Header navigation styling:
 header nav .navigation li {
     // Highlight active navigation in Uni style:
     &.active a {
@@ -316,6 +315,19 @@ header nav .navigation li {
     color: #fff;
 }
 
+// Buttos styling (Uni-Button simulieren):
+button,
+button[type=button],
+input[type=button],
+input[type=submit],
+.button {
+    @include button_blau;
+
+    &:hover {
+        @include button_blau_hover;
+    }
+}
+
 #home {
     #search-form {
         background-color: $uni-blau;
@@ -374,16 +386,10 @@ header nav .navigation li {
         }
         &.closed {
             & + .search-toggle { 
-                //border: 0.1875rem solid $uni-blau;
-                //color: #fff;
-                //background: $uni-blau;
                 @include button_blau;
                 border-radius: 0.5rem;
 
                 &:hover {
-                    //color: $uni-blau;
-                    //background: #fff;
-                    //border: 0.1875rem solid $uni-blau-hell;
                     @include button_blau_hover;
                 }
             }
@@ -391,15 +397,9 @@ header nav .navigation li {
     }
     button {
         &#submit_search {
-            //border: 0.1875rem solid $uni-blau;
-            //color: #fff;
-            //background: $uni-blau;
             @include button_blau;
 
             &:hover {
-                //color: $uni-blau;
-                //background: #fff;
-                //border: 0.1875rem solid $uni-blau-hell;
                 @include button_blau_hover;
             }
 
