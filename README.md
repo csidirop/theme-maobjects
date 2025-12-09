@@ -7,9 +7,9 @@ It is used by the [Mannheim University Library](https://www.bib.uni-mannheim.de)
 <!-- ![Theme Example (Kotzebue Exhibition)](theme.jpg) -->
 <a href="https://fdz.bib.uni-mannheim.de/kotzebue/"><img src="theme.jpg" alt="Theme Example (Kotzebue Exhibition)" style="max-width:70%; height:auto;" /></a>
 
-- **Powerful search integration:** Optional advanced site-wide search, ability to route or hide the quick search bar, and show/hide child pages in top navigation.
+- **Very customizable:** Optional advanced site-wide search, ability to route or hide the quick search bar, and show/hide child pages in top navigation.
 - **Customizable homepage:** Featured item/collection/exhibit, intro text, optional slideshow with autoplay and speed, optional “floating” minimal homepage layout, and toggleable breadcrumbs.
-- **Item & media display controls:** Multiple user-selected layout options. Optional Lightgallery support (incl. PDFs via PDF Embed), handling of non-image media, configurable media captions, options to hide headings/DC title, and show/hide citation.
+- **Item and media display controls:** Multiple user-selectable layout options. Optional Lightgallery support (including PDFs via PDF Embed), handling of non-image media, configurable media captions, options to hide headings/DC title, and show/hide citations.
 - **Collection views:** Configurable collection browse page style (e.g. grid/list) and options to hide headings/duplicate title entries on collection pages.
 - **Background image options:** Site-wide background image with control over position, repeat, size, and whether it appears beneath the main content area.
 - _much more...!_
@@ -18,10 +18,11 @@ It is used by the [Mannheim University Library](https://www.bib.uni-mannheim.de)
 
 This theme offers extensive customization options through the Omeka admin interface. The listings are grouped in the same way as in the Appearance → Configure Theme screen.
 
-### General
+### [General][general]
 These options apply to various general aspects of the theme.
 |     Setting     |     Description     |
 |-----------------|---------------------|
+| Hide 'breadcrumbs' | Hides the breadcrumb trail (the path to the current page) from the top of content pages. |
 | Disable Image Hover Effect | Disables the zoom-on-hover effect for images throughout the theme. |
 
 ### Colors
@@ -36,7 +37,7 @@ Provide a hex code to set the color of different elements of the theme. (Read mo
 > [!NOTE]
 > In the current state of the theme, some colors are not fully applied throughout all elements of the theme. Further improvements are planned for future versions.
 
-### Header and Footer
+### [Header and Footer][header_footer]
 These options apply to the header and footer of the theme, including the quick search bar button in the header.
 
 |     Setting     |     Description     |
@@ -60,7 +61,7 @@ These options apply to the header and footer of the theme, including the quick s
 > [!NOTE]
 > In the current state of the theme, some header and footer options have no effect anymore. Further improvements are planned for future versions.
 
-### Homepage
+### [Homepage][homepage]
 These options apply to the homepage. Most of these options apply only if no other homepage is set in the Omeka settings ( Select a Homepage).
 
 |     Setting     |     Description     |
@@ -72,9 +73,8 @@ These options apply to the homepage. Most of these options apply only if no othe
 | Autoplay Homepage Slides | Automatically cycles through slides in the homepage carousel. |
 | Slide Autoplay Speed | Time in milliseconds between slide transitions when autoplay is enabled (e.g. `5000` = 5 seconds). |
 | Floating Homepage | Uses a “floating” layout where the main homepage content card appears detached from the page background. |
-| Hide 'breadcrumbs' | Hides the breadcrumb trail (the path to the current page) from the top of content pages. |
 
-### Items: Browse
+### [Items: Browse][items_browse]
 These options apply to the items browse page (Browse All, Browse by Tag, Browse by Collection, etc.). This is the overview of all items.
 
 |     Setting     |     Description     |
@@ -83,7 +83,7 @@ These options apply to the items browse page (Browse All, Browse by Tag, Browse 
 | Hide Secondary Navigation | Hides the secondary navigation on browse pages (Browse All, Browse Collections, Browse by Tag, etc.). |
 | Show list of output formats | Shows links to available output formats on item browse and item show pages. |
 
-### Items: Page
+### [Items: Page][items_page]
 These options apply to the item (show) page. This is the item detail view of one specific item.
 
 |     Setting     |     Description     |
@@ -99,14 +99,14 @@ These options apply to the item (show) page. This is the item detail view of one
 | Hide Dublin Core Title entry | Hides the “Dublin Core: Title” element in the metadata list (useful to avoid duplicating the page heading). |
 | Show citation | Displays a citation box on the item page. |
 
-### Collection: Browse
+### [Collection: Browse][collections]
 These options apply to the collection browse pages (overview of all collections). This is the overview of all collections.
 
 |     Setting     |     Description     |
 |-----------------|---------------------|
 | Browse Collection Page Style | Choose between **Grid** and **List** layout for the collection browse page. |
 
-### Collection: Page
+### [Collection: Page][collections]
 These options apply to the collection show pages (overview of one collections, showing some items). This is the collection detail view of one specific collection.
 
 |     Setting     |     Description     |
@@ -148,3 +148,10 @@ The Omeka name is a registered trademark of the Corporation for Digital Scholars
 Third-party copyright in this distribution is noted where applicable.
 
 All rights not expressly granted are reserved.
+
+[general]: docs/options-general.md
+[header_footer]: docs/options-header_footer.md
+[homepage]: docs/options-homepage.md
+[items_page]: docs/options-items_page.md
+[items_browse]: docs/options-items_browse.md
+[collections]: docs/options-collections.md
