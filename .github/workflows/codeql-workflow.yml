@@ -3,14 +3,30 @@ name: CodeQL
 on:
   push:
     branches: [ master, 'feat/**' ]
+    paths:
+      - '**/*.js'
+      - '**/*.ts'
+      - 'js/**'
+      - 'package.json'
+      - 'package-lock.json'
+      - 'yarn.lock'
+      - '.github/workflows/**'
   pull_request:
     branches: [ master ]
+    paths:
+      - '**/*.js'
+      - '**/*.ts'
+      - 'js/**'
+      - 'package.json'
+      - 'package-lock.json'
+      - 'yarn.lock'
+      - '.github/workflows/**'
   schedule: # Run once per week
     - cron: '0 3 * * 1'
 
 jobs:
   analyze:
-    name: Analyze (PHP & JS)
+    name: Analyze (JS & GitHub Actions)
     runs-on: ubuntu-latest
 
     permissions:
