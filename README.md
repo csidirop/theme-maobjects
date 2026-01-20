@@ -20,6 +20,7 @@ This theme offers extensive customization options through the Omeka admin interf
 
 ### [General][general]
 These options apply to various general aspects of the theme.
+
 |     Setting     |     Description     |
 |-----------------|---------------------|
 | Hide 'breadcrumbs' | Hides the breadcrumb trail (the path to the current page) from the top of content pages. |

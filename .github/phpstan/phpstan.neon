@@ -39,6 +39,7 @@ parameters:
     - '#Variable \$tags might not be defined.#'
     - '#Variable \$corrections_correction might not be defined.#'
     - '#Variable \$elements might not be defined.#'
+    - '#Variable \$title might not be defined.#'
 
   # TODO: An alternative to `ignoreErrors` could be to add PHPDoc in each view file. Something like:
   # <?php
