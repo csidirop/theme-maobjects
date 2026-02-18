@@ -40,6 +40,7 @@
     $show_breadcrumbs = get_theme_option( 'show_breadcrumbs');
     $browse_hide_sec_nav = get_theme_option('browse_hide_sec_nav');
     $no_img_hover_effect = get_theme_option('no_img_hover_effect');
+    $media_image_max_height = get_theme_option('media_image_max_height');
 ?>
 
 <style>
@@ -237,4 +238,13 @@
         transition: none !important;
     }
     <?php endif; ?>
+    
+    /* Media Image Max Height */
+    <?php if ($media_image_max_height && $media_image_max_height !== '0') : ?>
+    .items.show img {
+        max-height: <?php echo $media_image_max_height; ?>px;
+        object-fit: contain;
+    }
+    <?php endif; ?>
+
 </style>

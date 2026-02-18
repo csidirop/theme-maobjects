@@ -26,10 +26,10 @@ echo head(array('title' => metadata('item', array('Dublin Core', 'Title')), 'bod
         <?php
         // Default display of all mediafiles:
         if ($itemFiles && !$useLightgallery && !$mediaOnlyPrimary) {
-            echo files_for_item(array('imageSize' => 'thumbnail'), array('class' => 'element center'));
+            echo files_for_item(array('imageSize' => get_theme_option('media_image_size') ?: 'thumbnail'), array('class' => 'element center'));
         // Default display of only primary media (first file):
         } elseif ($itemFiles && !$useLightgallery && $mediaOnlyPrimary) {
-            $image = item_image('thumbnail', array(), 0, $item);
+            $image = item_image(get_theme_option('media_image_size') ?: 'thumbnail', array(), 0, $item);
             $url = metadata('item', array('Item Type Metadata', 'URL'), array('no_filter' => true));
             // If a URL exists in the metadata, link the image to that URL:
             echo ($mediaLinkToUrl && $url) ? '<a class="cover" target="_blank" href="' . $url . '">' . $image . '</a>' : $image;
