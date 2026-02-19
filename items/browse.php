@@ -19,9 +19,17 @@ echo head(array('title'=>$pageTitle,'bodyclass' => 'items browse'));
 $sortLinks[__('Title')] = 'Dublin Core,Title';
 $sortLinks[__('Creator')] = 'Dublin Core,Creator';
 $sortLinks[__('Date Added')] = 'added';
+
+$sortMenu = str_replace('<ul ', '<form method="post" action="?sort_field="><select onchange="this.form.submit()"', browse_sort_links($sortLinks));
+$sortMenu = str_replace('</ul>', '</select></form>', $sortMenu);
+$sortMenu = preg_replace('~<li\s*( class="sorting asc")?>\s*~i', '<option value=', $sortMenu);
+$sortMenu = preg_replace('~<a href=.*?sort_field=\s*~is', '', $sortMenu);
+$sortMenu = str_replace('</a></li>', '</option>', $sortMenu);
+$sortMenu = str_replace('title="Sort ascending"', '', $sortMenu);
 ?>
+
 <div id="sort-links">
-    <span class="sort-label"><?php echo __('Sort by: '); ?></span><?php echo browse_sort_links($sortLinks); ?>
+    <span class="sort-label"><?php echo __('Sort by: '); ?></span><?php echo $sortMenu; ?>
 </div>
 
 <?php endif; ?>
@@ -94,3 +102,4 @@ $sortLinks[__('Date Added')] = 'added';
 <?php fire_plugin_hook('public_items_browse', array('items'=>$items, 'view' => $this)); ?>
 
 <?php echo foot(); ?>
+
