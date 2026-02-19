@@ -28,8 +28,8 @@
     <!-- Stylesheets -->
     <?php
     queue_css_file(array('style', 'public', 'iconfonts'));
-    queue_css_url("https://www.uni-mannheim.de/typo3conf/ext/uma_site/Resources/Public/Icons/sprite.css");
-    queue_css_url("https://www.uni-mannheim.de/typo3conf/ext/uma_site/Resources/Public/Css/app.css");
+    // queue_css_url("https://www.uni-mannheim.de/typo3conf/ext/uma_site/Resources/Public/Icons/sprite.css");
+    // queue_css_url("https://www.uni-mannheim.de/typo3conf/ext/uma_site/Resources/Public/Css/app.css");
     echo head_css();
     echo $this->partial('common/theme_option_styles.php');
     ?>
