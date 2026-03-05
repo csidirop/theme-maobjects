@@ -41,6 +41,7 @@
     $browse_hide_sec_nav = get_theme_option('browse_hide_sec_nav');
     $no_img_hover_effect = get_theme_option('no_img_hover_effect');
     $media_image_max_height = get_theme_option('media_image_max_height');
+    $hide_item_metadata_title = get_theme_option('hide_item_metadata_title');
 ?>
 
 <style>
@@ -247,4 +248,10 @@
     }
     <?php endif; ?>
 
+    /* Hide Item Metadata Title */
+    <?php if ($hide_item_metadata_title == '1') : ?>
+    #dublin-core-title {
+        display: none;
+    }
+    <?php endif; ?>
 </style>

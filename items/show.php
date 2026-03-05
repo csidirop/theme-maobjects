@@ -44,15 +44,6 @@ echo head(array('title' => metadata('item', array('Dublin Core', 'Title')), 'bod
         <!-- Add all metadata entries: -->
         <?php echo all_element_texts('item'); ?>
 
-        <!-- Hide metadata entry if option is set: -->
-        <style>
-            <?php if(get_theme_option('hide_item_metadata_title')) : ?>
-                #dublin-core-title {
-                    display: none;
-                }
-            <?php endif; ?>
-        </style>
-
         <!-- If the item belongs to a collection, create a link to that collection: -->
         <?php if (metadata('item', 'Collection Name')): ?>
         <div id="collection" class="element">
