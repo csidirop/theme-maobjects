@@ -22,6 +22,7 @@ echo head(array('title' => metadata('item', array('Dublin Core', 'Title')), 'bod
 </nav>
 
 <div class="content-container">
+    <div class="primary-secondary-content" style="display: flex;flex-direction: row;">
     <div class="primary-content">
         <?php
         // Default display of all mediafiles:
@@ -42,8 +43,14 @@ echo head(array('title' => metadata('item', array('Dublin Core', 'Title')), 'bod
 
     <div class="secondary-content">
         <!-- Add all metadata entries: -->
-        <?php echo all_element_texts('item'); ?>
+        <?php
+        $allMetadata = all_element_texts('item');
+        echo $allMetadata;
+        ?>
+    </div>
+    </div>
 
+    <div class="tertiary-content">
         <!-- If the item belongs to a collection, create a link to that collection: -->
         <?php if (metadata('item', 'Collection Name')): ?>
         <div id="collection" class="element">
@@ -60,16 +67,16 @@ echo head(array('title' => metadata('item', array('Dublin Core', 'Title')), 'bod
         </div>
         <?php endif;?>
 
-        <?php if ((get_theme_option('other_media') == 1) && $itemFiles): ?>
-        <?php echo lightgallery_other_files($itemFiles); ?>
-        <?php endif; ?>
-
         <!-- Add a citation for this item: -->
         <?php if (get_theme_option('show_citation') == 1): ?>
         <div id="item-citation" class="element">
             <h3><?php echo __('Citation'); ?></h3>
             <div class="element-text"><?php echo metadata('item', 'citation', array('no_escape' => true)); ?></div>
         </div>
+        <?php endif; ?>
+
+        <?php if ((get_theme_option('other_media') == 1) && $itemFiles): ?>
+        <?php echo lightgallery_other_files($itemFiles); ?>
         <?php endif; ?>
 
         <!-- Adds the output formats in a collapsible menu: -->
