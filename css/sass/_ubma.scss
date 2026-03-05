@@ -141,6 +141,12 @@ a.cover,
     font-size:11px
 }
 
+/* Show lightgallery in flex container: */
+.lightgallery {
+    min-width: 100%;
+    min-height: 75%;
+}
+
 /* Unterstreichungen bei a ausschalten */
 .collection .item-img,
 .item-meta .item-img,

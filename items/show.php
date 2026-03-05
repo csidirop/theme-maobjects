@@ -1,8 +1,9 @@
 <?php
 $linkToFileMetadata = get_option('link_to_file_metadata');
 $itemFiles = $item->Files;
-$useLightgallery  = get_theme_option('media_lightgallery');
+$useLightgallery = get_theme_option('media_lightgallery');
 $mediaOnlyPrimary = get_theme_option('media_only_primary');
+$mediaLinkToUrl = get_theme_option('media_link_to_url');
 if ($itemFiles && $useLightgallery) {
     queue_lightgallery_assets();
 }
@@ -23,18 +24,18 @@ echo head(array('title' => metadata('item', array('Dublin Core', 'Title')), 'bod
 <div class="content-container">
     <div class="primary-content">
         <?php
-        // Regular display of all mediafiles:
+        // Default display of all mediafiles:
         if ($itemFiles && !$useLightgallery && !$mediaOnlyPrimary) {
             echo files_for_item(array('imageSize' => 'thumbnail'), array('class' => 'element center'));
-        // Display only primary media (first file):
+        // Default display of only primary media (first file):
         } elseif ($itemFiles && !$useLightgallery && $mediaOnlyPrimary) {
             $image = item_image('thumbnail', array(), 0, $item);
             $url = metadata('item', array('Item Type Metadata', 'URL'), array('no_filter' => true));
             // If a URL exists in the metadata, link the image to that URL:
-            echo $url ? '<a class="cover" target="_blank" href="' . $url . '">' . $image . '</a>' : $image;
-        // Display all files using lightgallery
+            echo ($mediaLinkToUrl && $url) ? '<a class="cover" target="_blank" href="' . $url . '">' . $image . '</a>' : $image;
+        // Display files using lightgallery:
         } elseif ($itemFiles && $useLightgallery) {
-            echo lightGallery($itemFiles);
+            echo $mediaOnlyPrimary ? lightGallery(array_splice($itemFiles, 0, 1)) : lightGallery($itemFiles);
         }
         ?>
     </div>

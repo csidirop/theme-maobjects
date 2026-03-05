@@ -965,6 +965,8 @@ nav ul {
 
   /* @end */
 
+  /* Show lightgallery in flex container: */
+
   /* Unterstreichungen bei a ausschalten */
 
   /* jcarousel left / right */
@@ -1609,6 +1611,12 @@ nav ul {
   #header-text {
     text-transform: none;
     font-size: 11px;
+  }
+}
+@media screen {
+  .lightgallery {
+    min-width: 100%;
+    min-height: 75%;
   }
 }
 @media screen {

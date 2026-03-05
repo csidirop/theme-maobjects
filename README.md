@@ -92,6 +92,7 @@ These options apply to the item (show) page. This is the item detail view of one
 | Layout | Selects the item page layout: vertical (media above/below metadata) or horizontal (media and metadata side by side, with media on left or right). |
 | Content Ratio | For horizontal layouts, percentage width of the primary (media) column; the metadata column uses the remaining width. |
 | Show only primary media | Shows only the primary media file on the item page and hides all other attached files. |
+| Link media to URL | Links media files to the URL set in the item metadata (only applies if "Show only primary media" is enabled and "Use lightgallery" is disabled). |
 | Non-Image Media | When enabled, non-image files that cannot be shown in the media viewer are listed as downloadable links instead of being hidden. |
 | Use lightgallery | Uses the lightgallery viewer to display media; when combined with the PDF Embed plugin, PDFs can be shown in the gallery as well. |
 | Hide toolbar from PDF viewer | Hides the PDF viewer toolbar when using PDF Embed with PDF.js (if supported by the browser). |
