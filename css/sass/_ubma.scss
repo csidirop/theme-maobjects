@@ -1,14 +1,14 @@
-@mixin button_blau {
-    border: 0.1875rem solid $uni-blau;
-    color: #fff;
-    background: $uni-blau;
-}
+// @mixin button_blau {
+//     border: 0.1875rem solid $uni-blau;
+//     color: #fff;
+//     background: $uni-blau;
+// }
 
-@mixin button_blau_hover {
-    border: 0.1875rem solid $uni-blau-hell;
-    color: $uni-blau;
-    background: #fff;
-}
+// @mixin button_blau_hover {
+//     border: 0.1875rem solid $uni-blau-hell;
+//     color: $uni-blau;
+//     background: #fff;
+// }
 
 a:focus {
     outline-width: 0;
@@ -233,33 +233,33 @@ header nav .navigation li {
 }
 
 /* jcarousel left / right */
-.jcarousel-wrapper {
-    a {
-        &.jcarousel-control-prev,
-        &.jcarousel-control-next {
-            //border: 0.1875rem solid $uni-blau;
-            //color: #fff;
-            //background: $uni-blau;
-            @include button_blau;
-            font: 24px / 22px Arial, sans-serif;
+// .jcarousel-wrapper {
+//     a {
+//         &.jcarousel-control-prev,
+//         &.jcarousel-control-next {
+//             //border: 0.1875rem solid $uni-blau;
+//             //color: #fff;
+//             //background: $uni-blau;
+//             @include button_blau;
+//             font: 24px / 22px Arial, sans-serif;
 
-            &:focus,
-            &:hover {
-                //color: $uni-blau;
-                //background: #fff;
-                //border: 0.1875rem solid $uni-blau-hell;
-                @include button_blau_hover;
-            }
-        }
-    }
-    .jcarousel-pagination {
-        a {
-            &.active {
-                background: $uni-blau;
-            }
-        }
-    }
-}
+//             &:focus,
+//             &:hover {
+//                 //color: $uni-blau;
+//                 //background: #fff;
+//                 //border: 0.1875rem solid $uni-blau-hell;
+//                 @include button_blau_hover;
+//             }
+//         }
+//     }
+//     .jcarousel-pagination {
+//         a {
+//             &.active {
+//                 background: $uni-blau;
+//             }
+//         }
+//     }
+// }
 
 #scroll-to-top {
     &:hover {
@@ -486,6 +486,7 @@ footer {
             margin-right: 20px;
         }
     }
+
 }
 
 #collection.element,
@@ -692,42 +693,46 @@ ul {
 }
 
 // Maintenance page styling:
-.maintenance-mode {
-    // Hide menu items in header:
-    .uma-header-right {
-        display: none;
-    }
+// .maintenance-mode {
+//     // Hide menu items in header:
+//     .uma-header-right {
+//         display: none;
+//     }
 
-    // Box styling:
-    #maintenance_inner {
-        margin-left: auto;
-        margin-right: auto;
-        width: 75%;
-        max-width: 800px;
-        padding: 25px;
-        border: 2px solid $uni-blau;
-        border-radius: 10px;
-        background-color: #e6f2ff;
+//     // Box styling:
+//     #maintenance_inner {
+//         margin-left: auto;
+//         margin-right: auto;
+//         width: 75%;
+//         max-width: 800px;
+//         padding: 25px;
+//         border: 2px solid $uni-blau;
+//         border-radius: 10px;
+//         background-color: #e6f2ff;
 
-        .centered {
-            text-align: center;
-        }
-    }
+//         .centered {
+//             text-align: center;
+//         }
+//     }
 
-    .maintenance_text {
-        font: 32px Helvetica, sans-serif;
+//     .maintenance_text {
+//         font: 32px Helvetica, sans-serif;
 
-        h1 {
-            font-size: 1.5em;
-            margin: 0;
-        }
+//         h1 {
+//             font-size: 1.5em;
+//             margin: 0;
+//         }
 
-        h2 {
-            font-size: 0.8em;
-            margin-bottom: 20px;
-            border-bottom: 2px solid $uni-blau;
-            text-align: right;
-            font-style: italic;
-        }
-    }
-}
+//         h2 {
+//             font-size: 0.8em;
+//             margin-bottom: 20px;
+//             border-bottom: 2px solid $uni-blau;
+//             text-align: right;
+//             font-style: italic;
+//         }
+//     }
+// }
+
+// .hide {
+//     display: none;
+// }

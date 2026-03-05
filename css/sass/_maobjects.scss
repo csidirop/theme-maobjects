@@ -1,0 +1,302 @@
+@mixin button_blau {
+    border: 0.1875rem solid $uni-blau;
+    color: white;
+    background: $uni-blau;
+    border-radius: .5rem;
+    transition: all .2s ease-out;
+}
+
+@mixin button_blau_hover {
+    border: 0.1875rem solid $uni-blau-hell;
+    color: $uni-blau;
+    background: white;
+    border-radius: .5rem;
+}
+
+// BASIC STYLING:
+form input,
+select {
+  border-radius: .625rem;
+  background-color: #f6f6f6;
+  box-shadow: none;
+  font-weight: 400;
+}
+
+button,
+.button {
+     @include button_blau;
+
+     &:hover {
+        @include button_blau_hover;
+     }
+}
+
+// Navigation (Item, Browse, Collection?):
+nav.pagination .button {
+    @include button_blau;
+    box-shadow: unset;
+    line-height: 30px;
+
+    &:hover {
+        @include button_blau_hover;
+    }
+
+    &.inactive {
+        cursor: not-allowed;
+        pointer-events: none;
+        background: #f6f6f6;
+        border-color: $gray;
+    }
+}
+
+body {
+    // Font styling:
+    font-family: myriad-pro, sans-serif !important;
+    color: $uni-blau;
+
+    a {
+        color: $uni-blau;
+        text-decoration: none;
+        border-bottom: .1875rem solid lightgray;
+
+        &:hover {
+            color: $uni-blau;
+            border-color: $uni-blau-hell;
+            text-decoration: none;
+        }
+    }
+
+    #wrap {
+        padding-bottom: unset;
+    }
+}
+
+/* jcarousel left / right */
+.jcarousel-wrapper {
+    a {
+        &.jcarousel-control-prev,
+        &.jcarousel-control-next {
+            //border: 0.1875rem solid $uni-blau;
+            //color: #fff;
+            //background: $uni-blau;
+            @include button_blau;
+            font: 24px / 22px Arial, sans-serif;
+
+            &:focus,
+            &:hover {
+                //color: $uni-blau;
+                //background: #fff;
+                //border: 0.1875rem solid $uni-blau-hell;
+                @include button_blau_hover;
+            }
+        }
+    }
+    .jcarousel-pagination {
+        a {
+            &.active {
+                background: $uni-blau;
+            }
+        }
+    }
+}
+
+/* Unterstreichungen bei a ausschalten */
+.collection .item-img,
+.item-meta .item-img,
+li.pagination_next,
+.jcarousel-wrapper {
+    a {
+        border:none;
+    }
+}
+a {
+    border:none;
+}
+a:hover {
+    text-decoration: none;
+    border:none;
+}
+
+#scroll-to-top {
+    &:hover {
+        background: $uni-blau-hell;
+    }
+}
+
+.hide {
+    display: none;
+}
+
+
+.pagination {
+    /* Uni-Button simulieren */
+    li.pagination_previous,
+    li.pagination_next {
+        position: relative;
+        top: -3px;
+
+        a {
+            @include button_blau;
+
+            &:hover {
+                @include button_blau_hover;
+            }
+        }
+    }
+}
+
+// HEADER:
+header {
+    display: flex;
+
+    nav {
+        margin-left: auto;
+
+        .navigation.nav-menu {
+            border: none;
+        }
+
+        .nav-item > a {
+            border: none;
+
+            &:hover {
+                text-decoration: none;
+                border-bottom: 0.1875rem solid $uni-blau;
+            }
+        }
+    }
+}
+
+// FOOTER:
+footer {
+    background: $uni-blau;
+    color: $uni-blau-hell;
+    padding: 2rem;
+    margin-top: 48px;
+
+    a {
+        border-bottom: none;
+    }
+
+    li {
+        float: left;
+        list-style-type: none;
+        margin-right: .75rem;
+
+        a {
+            text-decoration: none;
+            color: $uni-blau-hell;
+
+            &:hover {
+                color: #fff;
+                text-decoration: none;
+                border-bottom: .1875rem solid $uni-blau-hell;
+            }
+        }
+    }
+
+    .logos {
+        text-align: right;
+
+        .logo1,
+        .logo2 {
+            display: inline-block;
+        }
+
+        .logo2 {
+            .hosted {
+                display: block;
+                text-align: left;
+            }
+        }
+
+        .ub-logo {
+            height: 50px;
+        }
+
+        .uni-logo {
+            height: 50px;
+            margin-right: 20px;
+        }
+    }
+}
+
+// BROWSE ITEM:
+.browse {
+    // List view styling:
+    .resource-list.list > li.item {
+        border: unset;
+        padding: 1.2rem;
+
+        .resource-name {
+            margin-bottom: 1.2rem;
+            font-weight: normal;
+        }
+
+        // Alternating row colors:
+        &:nth-of-type(odd) {
+            background-color: #f6f6f6;
+        }
+    
+        &:nth-of-type(even) {
+            background-color: white;
+        }
+    }
+  
+    // List specific styles:
+    .item-meta.hentry.list {
+        .item-meta-content {
+            display: flex;
+        }
+    
+        .item-img {
+            margin-right: 3%;
+            max-width: 120px;
+    
+            img {
+                max-width: 100%;
+            }
+        }
+    }
+}
+
+// Maintenance page styling:
+.maintenance-mode {
+    // Hide menu items in header:
+    .uma-header-right {
+        display: none;
+    }
+
+    // Box styling:
+    #maintenance_inner {
+        margin-left: auto;
+        margin-right: auto;
+        width: 75%;
+        max-width: 800px;
+        padding: 25px;
+        border: 2px solid $uni-blau;
+        border-radius: 10px;
+        background-color: #e6f2ff;
+
+        .centered {
+            text-align: center;
+        }
+    }
+
+    .maintenance_text {
+        font: 32px Helvetica, sans-serif;
+
+        h1 {
+            font-size: 1.5em;
+            margin: 0;
+        }
+
+        h2 {
+            font-size: 0.8em;
+            margin-bottom: 20px;
+            border-bottom: 2px solid $uni-blau;
+            text-align: right;
+            font-style: italic;
+        }
+    }
+}

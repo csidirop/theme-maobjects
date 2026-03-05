@@ -77,7 +77,7 @@
     <div class="cookie-accept cookie-button button">Tracking erlauben</div>
   </div>
 </div>
-<script src="https://www.uni-mannheim.de/typo3conf/ext/uma_site/Resources/Public/JavaScripts/app.js" type="text/javascript"></script>
+<!-- <script src="https://www.uni-mannheim.de/typo3conf/ext/uma_site/Resources/Public/JavaScripts/app.js" type="text/javascript"></script> -->
 
 <script type="text/javascript">
     jQuery(document).ready(function(){
