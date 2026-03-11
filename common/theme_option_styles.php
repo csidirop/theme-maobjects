@@ -42,6 +42,8 @@
     $no_img_hover_effect = get_theme_option('no_img_hover_effect');
     $media_image_max_height = get_theme_option('media_image_max_height');
     $hide_item_metadata_title = get_theme_option('hide_item_metadata_title');
+    $hide_exhibit_heading = get_theme_option('hide_exhibit_heading');
+    $hide_exhibit_navigation = get_theme_option('hide_exhibit_navigation');
 ?>
 
 <style>
@@ -252,6 +254,22 @@
     <?php if ($hide_item_metadata_title == '1') : ?>
     #dublin-core-title {
         display: none;
+    }
+    <?php endif; ?>
+
+    /* Exhibits: */
+    <?php if ($hide_exhibit_heading == '1') : ?>
+    .exhibits article h1 {
+        display: none;
+    }
+    <?php endif; ?>
+    <?php if ($hide_exhibit_navigation == '1') : ?>
+    #exhibit-pages,
+    #exhibit-page-navigation {
+        display: none;
+    }
+    #exhibit-blocks {
+        width: unset;
     }
     <?php endif; ?>
 </style>

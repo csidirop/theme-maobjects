@@ -130,6 +130,13 @@ These options allow to set a background image which is shown in the background o
 | Body Background Image Size | Controls how the background image is scaled (automatic, cover the viewport, or contain within it). |
 | Do not show background image under content | When enabled, the background image is not shown beneath the main content area, keeping the content background solid. |
 
+### Exhibits 
+These options apply to the exhibit pages. This includes the exhibit overview page and the individual exhibit pages created with the Exhibit Builder plugin"
+|     Setting     |     Description     |
+|-----------------|---------------------|
+| Hide exhibit heading | Hides the main heading on exhibit pages. |
+| Hide exhibit navigation | Hides the exhibit navigation on exhibit pages. |
+
 ## Installation
 
 1. Download the theme archive from the [Omeka themes collection](https://omeka.org/classic/themes/maobjects/) or clone this repository into your Omeka installation's `themes` directory.
