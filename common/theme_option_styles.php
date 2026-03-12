@@ -44,6 +44,8 @@
     $hide_item_metadata_title = get_theme_option('hide_item_metadata_title');
     $hide_exhibit_heading = get_theme_option('hide_exhibit_heading');
     $hide_exhibit_navigation = get_theme_option('hide_exhibit_navigation');
+    $media_lightgallery_background = get_theme_option('media_lightgallery_background');
+    $media_lightgallery_background_transparency = get_theme_option('media_lightgallery_background_transparency');
 ?>
 
 <style>
@@ -202,6 +204,25 @@
     #home footer .logos {
         margin-right: 20px;
     }
+    <?php endif; ?>
+
+    /*** Lightgallery Background Color ***/
+    <?php if ($media_lightgallery_background) : ?>
+    #wrap .lg-container.lg-inline .lg-backdrop {
+        background-color: <?php echo ($media_lightgallery_background[0]=='#' ? $media_lightgallery_background : '#'.$media_lightgallery_background); ?>;
+        opacity: <?php echo $media_lightgallery_background_transparency . '%' ; ?>;
+    }
+
+    #wrap .lg-container .lg-backdrop {
+        background-color: <?php echo ($media_lightgallery_background[0]=='#' ? $media_lightgallery_background : '#'.$media_lightgallery_background); ?>;
+        opacity: <?php echo '75%' ; ?>;
+    }
+
+    #wrap .lg-thumb-outer {
+        background-color: <?php echo ($media_lightgallery_background[0]=='#' ? $media_lightgallery_background : '#'.$media_lightgallery_background); ?>;
+        opacity: <?php echo $media_lightgallery_background_transparency+10 . '%' ; ?>;
+    }
+
     <?php endif; ?>
 
     /*** Lightgallery PDF embed toolbar: ***/
