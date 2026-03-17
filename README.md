@@ -66,6 +66,7 @@ These options apply to the header of the theme, including the quick search bar i
 | Replace quick search bar with link to items/search | Routes queries from the quick search bar to the `/items/search` page instead of using the basic search. |
 | Do not provide quick search bar | Completely hides the quick search bar from the header. |
 | Show Top Navigation Child Pages | Shows child pages as dropdowns under the top navigation items; when unchecked, only top-level pages are shown. |
+| Top Navigation Style | Switches between the existing horizontal navigation and a hamburger button that opens the navigation in a panel. |
 
 > [!NOTE]
 > In the current state of the theme, some header options have no effect anymore and will be reviewed in future updates.

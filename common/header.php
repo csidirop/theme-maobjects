@@ -34,6 +34,7 @@
 
     <!-- JavaScripts -->
     <?php
+    $menuStyle = get_theme_option('nav_menu_style') ?: 'classic';
     queue_js_file(array('globals'));
     queue_js_file(array('centerrow', 'jquery-accessibleMegaMenu', 'uma-app', 'maobjects'), 'js');
     echo head_js();
@@ -57,7 +58,7 @@
             </div>
 
                 <div class="uma-header-right">
-                    <nav id="top-nav" role="navigation">
+                    <nav id="top-nav" class="<?php echo $menuStyle === 'hamburger' ? 'nav-mode-hamburger' : 'nav-mode-classic'; ?>" role="navigation">
                         <?php echo centerrow_public_nav_main(); ?>
                     </nav>
                     <?php if (get_theme_option('no_quicksearch') != 1): ?>

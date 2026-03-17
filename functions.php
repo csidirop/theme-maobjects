@@ -26,7 +26,11 @@ function centerrow_public_nav_main() {
     $nav = new Omeka_Navigation;
     $nav->loadAsOption(Omeka_Navigation::PUBLIC_NAVIGATION_MAIN_OPTION_NAME);
     $nav->addPagesFromFilter(Omeka_Navigation::PUBLIC_NAVIGATION_MAIN_FILTER_NAME);
-    $html = $view->navigation()->menu($nav)->setPartial('common/accessible-megamenu.php')->render();
+    $menuStyle = get_theme_option('nav_menu_style') ?: 'classic';
+    $partial = ($menuStyle === 'hamburger')
+        ? 'common/hamburger-menu.php'
+        : 'common/accessible-megamenu.php';
+    $html = $view->navigation()->menu($nav)->setPartial($partial)->render();
     $view->navigation()->menu($nav)->setPartial(null);
     return $html;
 }
