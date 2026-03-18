@@ -82,7 +82,7 @@
 <script type="text/javascript">
     jQuery(document).ready(function(){
         Omeka.skipNav();
-        Mashare.megaMenu();
+        CenterRow.megaMenu();
     });
 </script>
 

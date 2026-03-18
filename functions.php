@@ -1,6 +1,6 @@
 <?php
 
-function mashare_display_featured_exhibit() {
+function centerrow_display_featured_exhibit() {
     $html = '';
     $featuredExhibit = exhibit_builder_random_featured_exhibit();
     if ($featuredExhibit) {

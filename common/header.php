@@ -37,7 +37,7 @@
     <!-- JavaScripts -->
     <?php
     queue_js_file(array('globals'));
-    queue_js_file(array('mashare', 'jquery-accessibleMegaMenu'), 'js');
+    queue_js_file(array('centerrow', 'jquery-accessibleMegaMenu'), 'js');
     echo head_js();
     ?>
 </head>
