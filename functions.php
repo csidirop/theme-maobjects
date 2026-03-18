@@ -30,4 +30,18 @@ function centerrow_public_nav_main() {
     $view->navigation()->menu($nav)->setPartial(null);
     return $html;
 }
+
+function maobjects_queue_lightgallery_assets() {
+    queue_css_file('lightgallery');
+    queue_css_file('lightgallery-bundle.min', 'all', false, 'javascripts/vendor/lightgallery/css');
+    queue_js_file(array(
+        'vendor/lightgallery/lightgallery.min',
+        'vendor/lightgallery/plugins/thumbnail/lg-thumbnail.min',
+        'vendor/lightgallery/plugins/video/lg-video.min',
+        'vendor/lightgallery/plugins/rotate/lg-rotate.min',
+        'vendor/lightgallery/plugins/hash/lg-hash.min',
+        'vendor/lightgallery/plugins/zoom/lg-zoom.min',
+    ));
+    queue_js_file('lg-itemfiles-config', 'js');
+}
 ?>

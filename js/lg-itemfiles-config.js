@@ -1,32 +1,37 @@
 (function($) {
-    $(document).ready(function() {        
-        var galleryState = ($('#itemfiles li').length > 1) ? true : false;
+    $(document).ready(function() {
+        var lgContainer = document.getElementById('omeka-lightgallery');
+        if (!lgContainer) {
+            return;
+        }
 
-        var lgContainer = document.getElementById('itemfiles');
         var inlineGallery = lightGallery(lgContainer, {
+            licenseKey: '76E9AA35-CDB54382-B1A52890-683C953F',
             container: lgContainer,
-            dynamic: false,
             hash: true,
             closable: false,
             thumbnail: true,
-            selector: '.media.resource',
             showMaximizeIcon: true,
-            autoplayFirstVideo: false,
+            captions: true,
+            allowMediaOverlap: false,
+            getCaptionFromTitleOrAlt: false,
             exThumbImage: 'data-thumb',
-            flipVertical: false,
-            flipHorizontal: false,
-            zoom: 1,
             showZoomInOutIcons: true,
-            actualSizeIcons: {
-                zoomIn: 'hidden', 
-                zoomOut: 'o-icon-undo',
-            },
-            plugins: [
-                lgThumbnail,lgZoom,lgVideo,lgHash,lgRotate
-            ],
+            scale: 0.5,
+            actualSize: false,
+            infiniteZoom: false,
+            // plugins: [lgThumbnail, lgVideo, lgZoom, lgHash, lgRotate],
+            plugins: [lgThumbnail, lgVideo, lgZoom, lgHash],
         });
 
         inlineGallery.openGallery();
+
+        var downloadButton = lgContainer.getElementsByClassName('lg-download');
+        if (downloadButton.length) {
+            downloadButton[0].addEventListener('click', function(e) {
+                e.stopPropagation();
+            });
+        }
     });
-})(jQuery)
+})(jQuery);
 

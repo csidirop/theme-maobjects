@@ -5,7 +5,7 @@ $useLightgallery = get_theme_option('media_lightgallery');
 $mediaOnlyPrimary = get_theme_option('media_only_primary');
 $mediaLinkToUrl = get_theme_option('media_link_to_url');
 if ($itemFiles && $useLightgallery) {
-    queue_lightgallery_assets();
+    maobjects_queue_lightgallery_assets();
 }
 echo head(array('title' => metadata('item', array('Dublin Core', 'Title')), 'bodyclass' => 'items show'));
 ?>
