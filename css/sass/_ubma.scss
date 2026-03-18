@@ -469,6 +469,23 @@ header nav .navigation li {
 
 //Footer:
 footer {
+    // Local replacement for the few sprite.css icon size helpers used in the footer.
+    .svg-icon-social-facebook-dims {
+        width: 13px;
+        height: 24px;
+    }
+
+    .svg-icon-social-twitter-dims,
+    .svg-icon-social-instagram-dims {
+        width: 24px;
+        height: 24px;
+    }
+
+    .svg-icon-social-youtube-dims {
+        width: 24px;
+        height: 17.7px;
+    }
+
     .logos {
         text-align: right;
         right: 0;
