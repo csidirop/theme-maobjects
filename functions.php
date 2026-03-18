@@ -1,13 +1,13 @@
 <?php
-
-function centerrow_display_featured_exhibit() {
-    $html = '';
-    $featuredExhibit = exhibit_builder_random_featured_exhibit();
-    if ($featuredExhibit) {
-        $html .= get_view()->partial('exhibit-builder/exhibits/single.php', array('exhibit' => $featuredExhibit));
+function centerrow_featured_html() {
+    $featuredHtml = '';
+    $featuredRecordTypes = ['Exhibit', 'Collection', 'Item'];
+    foreach ($featuredRecordTypes as $featuredRecordType) {
+        if (get_theme_option('display_featured_' . strtolower($featuredRecordType)) == '1') {
+           $featuredHtml .= display_records($featuredRecordType, 5, 'common/featured.php', ['recordType' => $featuredRecordType]);
+        }
     }
-    $html = apply_filters('exhibit_builder_display_random_featured_exhibit', $html);
-    return $html;
+    return $featuredHtml;
 }
 
 function centerrow_get_square_thumbnail_url($file, $view) {
@@ -22,12 +22,17 @@ function centerrow_get_square_thumbnail_url($file, $view) {
 }
 
 function centerrow_public_nav_main() {
-    $view = get_view();
-    $nav = new Omeka_Navigation;
-    $nav->loadAsOption(Omeka_Navigation::PUBLIC_NAVIGATION_MAIN_OPTION_NAME);
-    $nav->addPagesFromFilter(Omeka_Navigation::PUBLIC_NAVIGATION_MAIN_FILTER_NAME);
-    $html = $view->navigation()->menu($nav)->setPartial('common/accessible-megamenu.php')->render();
-    $view->navigation()->menu($nav)->setPartial(null);
+    $html = '';
+    if (get_theme_option('nav_show_levels') == 1) {
+        $view = get_view();
+        $nav = new Omeka_Navigation;
+        $nav->loadAsOption(Omeka_Navigation::PUBLIC_NAVIGATION_MAIN_OPTION_NAME);
+        $nav->addPagesFromFilter(Omeka_Navigation::PUBLIC_NAVIGATION_MAIN_FILTER_NAME);
+        $html = $view->navigation()->menu($nav)->setPartial('common/accessible-megamenu.php')->render();
+        $view->navigation()->menu($nav)->setPartial(null);
+    } else {
+        $html = public_nav_main(array('role' => 'navigation'))->setMaxDepth(0);
+    }
     return $html;
 }
 

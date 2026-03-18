@@ -1,4 +1,4 @@
-</article><!-- end content -->
+</main><!-- end content -->
 
 <footer role="contentinfo" class="uma-footer">
   <div class="row expanded align-center">

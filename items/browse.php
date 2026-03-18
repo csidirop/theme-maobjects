@@ -11,17 +11,19 @@ echo head(array('title'=>$pageTitle,'bodyclass' => 'items browse'));
 
 <?php echo item_search_filters(); ?>
 
-<?php echo pagination_links(); ?>
+<div class="browse-controls">
+    <?php echo pagination_links(); ?>
 
-<?php if ($total_results > 0): ?>
+    <?php if ($total_results > 0): ?>
 
-<?php
-$sortLinks[__('Title')] = 'Dublin Core,Title';
-$sortLinks[__('Creator')] = 'Dublin Core,Creator';
-$sortLinks[__('Date Added')] = 'added';
-?>
-<div id="sort-links">
-    <span class="sort-label"><?php echo __('Sort by: '); ?></span><?php echo browse_sort_links($sortLinks); ?>
+    <?php
+    $sortLinks[__('Title')] = 'Dublin Core,Title';
+    $sortLinks[__('Creator')] = 'Dublin Core,Creator';
+    $sortLinks[__('Date Added')] = 'added';
+    ?>
+    <div id="sort-links">
+        <span class="sort-label"><?php echo __('Sort by: '); ?></span><?php echo browse_sort_links($sortLinks); ?>
+    </div>
 </div>
 
 <?php endif; ?>
@@ -76,9 +78,16 @@ $sortLinks[__('Date Added')] = 'added';
             </div>
         <?php endif; ?>
     <?php endforeach; ?>
+    <?php 
+    foreach (loop('items') as $item) {
+        echo $this->partial('items/browse-single.php', array('item' => $item));
+    }
+    ?>
 </div>
 
-<?php echo pagination_links(); ?>
+<div class="browse-controls">
+    <?php echo pagination_links(); ?>
+</div>
 
 <?php if (get_theme_option('show_outputformats') == 1): ?>
 <details class="outputs">
