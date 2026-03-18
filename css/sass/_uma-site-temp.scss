@@ -2679,12 +2679,6 @@ select {
    transition: border-color .25s ease-in-out
 }
 
-@media screen and (min-width:0\0) {
-   select {
-      background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAYCAYAAACbU/80AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAIpJREFUeNrEkckNgDAMBBfRkEt0ObRBBdsGXUDgmQfK4XhH2m8czQAAy27R3tsw4Qfe2x8uOO6oYLb6GlOor3GF+swURAOmUJ+RwtEJs9WvTGEYxBXqI1MQAZhCfUQKRzDMVj+TwrAIV6jvSUEkYAr1LSkcyTBb/V+KYfX7xAeusq3sLDtGH3kEGACPWIflNZfhRQAAAABJRU5ErkJggg==")
-   }
-}
-
 select:focus {
    outline: none;
    border: .1875rem solid #abb8ca;
@@ -4983,18 +4977,6 @@ screen and (min-width:64.0625em) {
    display: none
 }
 
-.slick-loading .slick-list {
-   background: #fff url(https://www.uni-mannheim.de/typo3conf/ext/uma_site/Resources/Public/Images/ajax-loader.gif) 50% no-repeat
-}
-
-@font-face {
-   font-family: slick;
-   src: url(https://www.uni-mannheim.de/typo3conf/ext/uma_site/Resources/Public/Fonts/slick.eot);
-   src: url(https://www.uni-mannheim.de/typo3conf/ext/uma_site/Resources/Public/Fonts/slick.eot?#iefix) format("embedded-opentype"), url(https://www.uni-mannheim.de/typo3conf/ext/uma_site/Resources/Public/Fonts/slick.woff) format("woff"), url(https://www.uni-mannheim.de/typo3conf/ext/uma_site/Resources/Public/Fonts/slick.ttf) format("truetype"), url(https://www.uni-mannheim.de/typo3conf/ext/uma_site/Resources/Public/Fonts/slick.svg#slick) format("svg");
-   font-weight: 400;
-   font-style: normal
-}
-
 .slick-next,
 .slick-prev {
    position: absolute;
@@ -5148,54 +5130,6 @@ screen and (min-width:64.0625em) {
 .slick-dots li.slick-active button:before {
    color: #000;
    opacity: .75
-}
-
-@font-face {
-   font-family: myriad-pro;
-   src: url(/typo3conf/ext/uma_site/Resources/Public/Fonts/myriadpro-regular-webfont.woff2) format("woff2"), url(/typo3conf/ext/uma_site/Resources/Public/Fonts/myriadpro-regular-webfont.woff) format("woff");
-   font-display: auto;
-   font-style: normal;
-   font-weight: 400
-}
-
-@font-face {
-   font-family: myriad-pro;
-   src: url(/typo3conf/ext/uma_site/Resources/Public/Fonts/myriadpro-light-webfont.woff2) format("woff2"), url(/typo3conf/ext/uma_site/Resources/Public/Fonts/myriadpro-light-webfont.woff) format("woff");
-   font-display: auto;
-   font-style: normal;
-   font-weight: 300
-}
-
-@font-face {
-   font-family: myriad-pro;
-   src: url(/typo3conf/ext/uma_site/Resources/Public/Fonts/myriadpro-semibold-webfont.woff2) format("woff2"), url(/typo3conf/ext/uma_site/Resources/Public/Fonts/myriadpro-semibold-webfont.woff) format("woff");
-   font-display: auto;
-   font-style: normal;
-   font-weight: 600
-}
-
-@font-face {
-   font-family: myriad-pro;
-   src: url(/typo3conf/ext/uma_site/Resources/Public/Fonts/myriadpro-bold-webfont.woff2) format("woff2"), url(/typo3conf/ext/uma_site/Resources/Public/Fonts/myriadpro-bold-webfont.woff) format("woff");
-   font-display: auto;
-   font-style: normal;
-   font-weight: 700
-}
-
-@font-face {
-   font-family: myriad-pro;
-   src: url(/typo3conf/ext/uma_site/Resources/Public/Fonts/myriadpro-it-webfont.woff2) format("woff2"), url(/typo3conf/ext/uma_site/Resources/Public/Fonts/myriadpro-it-webfont.woff) format("woff");
-   font-display: auto;
-   font-style: italic;
-   font-weight: 400
-}
-
-@font-face {
-   font-family: myriad-pro;
-   src: url(/typo3conf/ext/uma_site/Resources/Public/Fonts/myriadpro-boldit-webfont.woff2) format("woff2"), url(/typo3conf/ext/uma_site/Resources/Public/Fonts/myriadpro-boldit-webfont.woff) format("woff");
-   font-display: auto;
-   font-style: italic;
-   font-weight: 700
 }
 
 body {
