@@ -1,0 +1,122 @@
+/* Layout and utility styles extracted from the TYPO3 migration staging file. */
+@media print, screen and (min-width: 48em) {
+  .medium-text-center {
+    text-align: center;
+  }
+}
+.align-center {
+  justify-content: center;
+}
+
+.align-justify {
+  justify-content: space-between;
+}
+
+.align-bottom {
+  align-items: flex-end;
+}
+
+.align-middle {
+  align-items: center;
+}
+
+html body .row.no-outer-column-margin {
+  margin-left: -1rem;
+  margin-right: -1rem;
+}
+
+html body .row.no-outer-column-margin.column-spacing-1rem {
+  margin-left: -0.5rem;
+  margin-right: -0.5rem;
+}
+
+@media print, screen and (max-width: 47.99875em) {
+  html body .row.no-outer-column-margin,
+html body .row.no-outer-column-margin.column-spacing-1rem {
+    margin-left: -0.25rem;
+    margin-right: -0.25rem;
+  }
+}
+@media print, screen and (min-width: 48em) {
+  html body .row.column-spacing-1rem > .column,
+html body .row.column-spacing-1rem > .columns {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+}
+@media print, screen and (max-width: 64.06125em) {
+  .row.no-outer-padding > .column,
+.row.no-outer-padding > .columns {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+.row.no-outer-padding > .column:first-child,
+.row.no-outer-padding > .columns:first-child {
+  padding-left: 0;
+}
+
+.row.no-outer-padding > .column:last-child,
+.row.no-outer-padding > .columns:last-child {
+  padding-right: 0;
+}
+
+main {
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+
+@media print, screen and (min-width: 64.0625em) {
+  main {
+    margin-top: 0;
+  }
+}
+@media (min-aspect-ratio: 8/5) and (max-width: 1440px) {
+  html body main.uma-global-content > .columns,
+main.uma-global-content > .column,
+main.uma-global-content > .columns {
+    margin-bottom: 2rem;
+  }
+}
+.row {
+  max-width: none;
+}
+
+.full-width {
+  position: relative;
+  left: 50%;
+  transform: translate(-50%);
+  width: calc(100% + 2rem);
+}
+
+@media print, screen and (max-width: 64.06125em) {
+  .full-width {
+    width: calc(100% + 0.5rem);
+  }
+}
+@media print, screen and (min-width: 64.0625em) {
+  .large-10 .full-width {
+    width: calc(160% + 2rem);
+  }
+}
+@media screen and (min-width: 90.0625em) {
+  .xlarge-12 .full-width {
+    width: calc(133.333% + 2rem);
+  }
+}
+.no-padding {
+  padding: 0;
+}
+
+@media print, screen and (max-width: 47.99875em) {
+  .small-only-no-padding {
+    padding: 0;
+  }
+}
+.map {
+  height: 18.75rem;
+}
+
+.map .marker {
+  display: none;
+}

@@ -1,0 +1,348 @@
+/* Extracted button, form, and generic table controls from the TYPO3 staging stylesheet. */
+.button,
+html body input[type=submit] {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 0 1rem;
+  padding: 0.5rem 2rem;
+  border: 1px solid transparent;
+  border-radius: 0.5rem;
+  transition: background-color 0.25s ease-out, color 0.25s ease-out;
+  font-family: inherit;
+  font-size: 1rem;
+  -webkit-appearance: none;
+  line-height: 1;
+  text-align: center;
+  cursor: pointer;
+}
+
+.button.expanded,
+html body input.expanded[type=submit] {
+  display: block;
+  width: 100%;
+  margin-right: 0;
+  margin-left: 0;
+}
+
+.button,
+.button.disabled,
+.button.disabled:focus,
+.button.disabled:hover,
+.button[disabled],
+.button[disabled]:focus,
+.button[disabled]:hover,
+html body input[type=submit] {
+  background-color: #232e58;
+  color: #fff;
+}
+
+.button:focus,
+.button:hover,
+html body input[type=submit]:focus,
+html body input[type=submit]:hover {
+  background-color: #1e274b;
+  color: #fff;
+}
+
+.button.disabled,
+.button[disabled],
+html body input.disabled[type=submit],
+html body input[disabled][type=submit] {
+  opacity: 0.25;
+  cursor: not-allowed;
+}
+
+a.button:focus,
+a.button:hover {
+  text-decoration: none;
+}
+
+textarea {
+  max-width: 100%;
+}
+
+textarea[rows] {
+  height: auto;
+}
+
+input:disabled,
+input[readonly],
+textarea:disabled,
+textarea[readonly] {
+  background-color: #eff1f5;
+  cursor: not-allowed;
+}
+
+[type=button],
+[type=submit] {
+  appearance: none;
+  border-radius: 0.5rem;
+}
+
+input[type=search] {
+  box-sizing: border-box;
+}
+
+::placeholder {
+  color: #232e58;
+}
+
+[type=checkbox],
+[type=file],
+[type=radio] {
+  margin: 0 0 1rem;
+}
+
+[type=checkbox] + label,
+[type=radio] + label {
+  display: inline-block;
+  vertical-align: baseline;
+  margin-left: 0.5rem;
+  margin-right: 1rem;
+  margin-bottom: 0;
+}
+
+[type=checkbox] + label[for],
+[type=radio] + label[for] {
+  cursor: pointer;
+}
+
+label > [type=checkbox],
+label > [type=radio] {
+  margin-right: 0.5rem;
+}
+
+[type=file] {
+  width: 100%;
+}
+
+label {
+  display: block;
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.8;
+  color: #232e58;
+}
+
+fieldset {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+legend {
+  max-width: 100%;
+  margin-bottom: 0.5rem;
+}
+
+select {
+  height: 2.4375rem;
+  margin: 0 0 1rem;
+  padding: 0.5rem;
+  appearance: none;
+  border: 0.1875rem solid #eff1f5;
+  border-radius: 0.625rem;
+  background-color: #eff1f5;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #232e58;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="32" height="24" viewBox="0 0 32 24"><polygon points="0,0 32,0 16,24" style="fill: rgb%2835, 46, 88%29"></polygon></svg>');
+  background-origin: content-box;
+  background-position: right -1rem center;
+  background-repeat: no-repeat;
+  background-size: 9px 6px;
+  padding-right: 1.5rem;
+  transition: border-color 0.25s ease-in-out;
+}
+
+select:focus {
+  outline: none;
+  border: 0.1875rem solid #abb8ca;
+  background-color: #eff1f5;
+  box-shadow: none;
+  transition: border-color 0.25s ease-in-out;
+}
+
+select:disabled {
+  background-color: #eff1f5;
+  cursor: not-allowed;
+}
+
+select::-ms-expand {
+  display: none;
+}
+
+select[multiple] {
+  height: auto;
+  background-image: none;
+}
+
+select:not([multiple]) {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+input[type=range] {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-top: 0.45rem;
+  margin-bottom: 0.45rem;
+  appearance: none;
+  border: 0;
+  line-height: 1;
+  cursor: pointer;
+  border-radius: 0.5rem;
+}
+
+input[type=range]:focus {
+  outline: 0;
+}
+
+input[type=range][disabled] {
+  opacity: 0.25;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+  height: 0.5rem;
+  background: #eff1f5;
+}
+
+input[type=range]::-webkit-slider-thumb {
+  width: 1.4rem;
+  height: 1.4rem;
+  margin-top: -0.45rem;
+  -webkit-appearance: none;
+  background: #232e58;
+  border-radius: 0.5rem;
+}
+
+input[type=range]::-moz-range-track {
+  height: 0.5rem;
+  -moz-appearance: none;
+  background: #eff1f5;
+}
+
+input[type=range]::-moz-range-thumb {
+  width: 1.4rem;
+  height: 1.4rem;
+  margin-top: -0.45rem;
+  -moz-appearance: none;
+  background: #232e58;
+  border-radius: 0.5rem;
+}
+
+input[type=range]::-ms-track {
+  height: 0.5rem;
+  border: 0;
+  border-top: 0.45rem solid #fff;
+  border-bottom: 0.45rem solid #fff;
+  background: #eff1f5;
+  overflow: visible;
+  color: transparent;
+}
+
+input[type=range]::-ms-thumb {
+  width: 1.4rem;
+  height: 1.4rem;
+  border: 0;
+  background: #232e58;
+  border-radius: 0.5rem;
+}
+
+input[type=range]::-ms-fill-lower {
+  background: #d1d7df;
+}
+
+input[type=range]::-ms-fill-upper {
+  background: #eff1f5;
+}
+
+output {
+  vertical-align: middle;
+  margin-left: 0.5em;
+  line-height: 1.4rem;
+}
+
+.label {
+  display: inline-block;
+  padding: 0.33333rem 0.5rem;
+  border-radius: 0.5rem;
+  font-size: 0.8rem;
+  line-height: 1;
+  white-space: nowrap;
+  cursor: default;
+}
+
+.label {
+  background: #232e58;
+  color: #fff;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 1rem;
+  border-radius: 0.5rem;
+}
+
+tbody,
+tfoot,
+thead {
+  border: 0;
+  background-color: #fff;
+}
+
+caption {
+  padding: 0.5rem 0.625rem 0.625rem;
+  font-weight: 700;
+}
+
+thead {
+  background: #f9f9f9;
+}
+
+tfoot,
+thead {
+  color: #232e58;
+}
+
+tfoot {
+  background: #f2f2f2;
+}
+
+tfoot tr,
+thead tr {
+  background: transparent;
+}
+
+tfoot td,
+tfoot th,
+thead td,
+thead th {
+  padding: 0.5rem 0.625rem 0.625rem;
+  font-weight: 700;
+  text-align: left;
+}
+
+tbody td,
+tbody th {
+  padding: 0.5rem 0.625rem 0.625rem;
+}
+
+tbody tr:nth-child(2n) {
+  border-bottom: 0;
+  background-color: #f2f2f2;
+}
+
+@media print, screen and (max-width: 64.06125em) {
+  .button:focus-visible,
+.button:hover,
+html body input[type=submit]:focus-visible,
+html body input[type=submit]:hover {
+    border-width: 0.0625rem;
+  }
+}

@@ -1,0 +1,344 @@
+@charset "UTF-8";
+/* Browse/content styles extracted from the TYPO3 migration staging file. */
+.pagination {
+  margin-left: 0;
+  margin-bottom: 1rem;
+}
+
+.pagination:after,
+.pagination:before {
+  display: table;
+  content: " ";
+  flex-basis: 0;
+  order: 1;
+}
+
+.pagination:after {
+  clear: both;
+}
+
+.pagination li {
+  margin-right: 0.0625rem;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  display: none;
+}
+
+.pagination li:first-child,
+.pagination li:last-child {
+  display: inline-block;
+}
+
+@media print, screen and (min-width: 48em) {
+  .pagination li {
+    display: inline-block;
+  }
+}
+.pagination a,
+.pagination button {
+  display: block;
+  padding: 0.1875rem 0.625rem;
+  border-radius: 0.5rem;
+  color: #0a0a0a;
+}
+
+.pagination a:hover,
+.pagination button:hover {
+  background: #eff1f5;
+}
+
+.pagination .current {
+  padding: 0.1875rem 0.625rem;
+  background: #232e58;
+  color: #fff;
+  cursor: default;
+}
+
+.pagination .disabled {
+  padding: 0.1875rem 0.625rem;
+  color: #d1d7df;
+  cursor: not-allowed;
+}
+
+.pagination .disabled:hover {
+  background: transparent;
+}
+
+.pagination .ellipsis:after {
+  padding: 0.1875rem 0.625rem;
+  content: "...";
+  content: "…";
+  color: #0a0a0a;
+}
+
+.pagination-previous.disabled:before,
+.pagination-previous a:before {
+  display: inline-block;
+  margin-right: 0.5rem;
+  content: "«";
+}
+
+.pagination-next.disabled:after,
+.pagination-next a:after {
+  display: inline-block;
+  margin-left: 0.5rem;
+  content: "»";
+}
+
+ul.facet-option-list,
+ul.facets,
+ul.pagination {
+  list-style-type: none;
+}
+
+.uma-global-content table {
+  border-radius: 0;
+  border: none;
+  border-collapse: collapse;
+}
+
+.uma-global-content table:last-child {
+  margin-bottom: 0;
+}
+
+.uma-global-content table[class*=contenttable] {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+  width: auto;
+}
+
+.uma-global-content table tbody,
+.uma-global-content table tfoot,
+.uma-global-content table thead {
+  border: none;
+  background: transparent;
+}
+
+.uma-global-content table tr {
+  background: transparent;
+}
+
+.uma-global-content table tr th {
+  text-align: left;
+}
+
+.uma-global-content table tr td,
+.uma-global-content table tr th {
+  padding: 16px;
+  vertical-align: top;
+  font-size: 1rem;
+  line-height: 1.4rem;
+}
+
+.uma-global-content table tr td.align-left,
+.uma-global-content table tr th.align-left {
+  text-align: left;
+}
+
+.uma-global-content table tr td.align-right,
+.uma-global-content table tr th.align-right {
+  text-align: right;
+}
+
+.uma-global-content table tr td.align-center,
+.uma-global-content table tr th.align-center {
+  text-align: center;
+}
+
+.uma-global-content table tr td,
+.uma-global-content table tr th {
+  background: #fcfcfd;
+}
+
+.uma-global-content table thead tr th {
+  background: #e1e6ec;
+}
+
+.uma-global-content table tbody:first-child tr:first-child th:first-child,
+.uma-global-content table thead tr th:first-child {
+  border-top-left-radius: 12px;
+}
+
+.uma-global-content table tbody:first-child tr:first-child th:last-child,
+.uma-global-content table thead tr th:last-child {
+  border-top-right-radius: 12px;
+}
+
+.uma-global-content table tbody tr:last-child td:first-child,
+.uma-global-content table tbody tr:last-child th:first-child {
+  border-bottom-left-radius: 12px;
+}
+
+.uma-global-content table tbody tr:last-child td:last-child {
+  border-bottom-right-radius: 12px;
+}
+
+.uma-global-content table tr:nth-child(2n) td,
+.uma-global-content table tr:nth-child(2n) th {
+  background: #f2f4f7;
+}
+
+.uma-global-content table tr.odd td,
+.uma-global-content table tr.odd th {
+  background: #fcfcfd;
+}
+
+.uma-global-content table tr.even td,
+.uma-global-content table tr.even th {
+  background: #f2f4f7;
+}
+
+.uma-global-content table ol,
+.uma-global-content table ul {
+  font-size: 1rem;
+  line-height: 1.4rem;
+}
+
+.uma-global-content table ol:last-child,
+.uma-global-content table ol:last-child li:last-child,
+.uma-global-content table ul:last-child,
+.uma-global-content table ul:last-child li:last-child {
+  margin-bottom: 0;
+}
+
+.uma-global-content table html body input[type=submit],
+.uma-global-content table p,
+html body .uma-global-content table input[type=submit] {
+  font-size: 1rem;
+  line-height: 1.4rem;
+}
+
+.uma-global-content table html body input[type=submit]:last-child,
+.uma-global-content table p:last-child,
+html body .uma-global-content table input[type=submit]:last-child {
+  margin-bottom: 0;
+}
+
+.uma-global-content table[class*=full-width] {
+  display: table;
+  width: 100%;
+}
+
+@media print, screen and (max-width: 64.06125em) {
+  .uma-global-content table[class*=full-width] {
+    display: block;
+  }
+}
+.pagination li,
+.pagination li:first-child,
+pagination li:last-child {
+  display: block;
+  float: left;
+}
+
+.uma-global-content form {
+  margin-bottom: 24px;
+}
+
+.uma-global-content form input[type=file],
+.uma-global-content form input[type=input] {
+  height: auto;
+}
+
+@media print, screen and (max-width: 64.06125em) {
+  .uma-global-content form input,
+.uma-global-content form select,
+.uma-global-content form textarea {
+    border-width: 1px;
+  }
+}
+.uma-global-content form input[type=file],
+.uma-global-content form input[type=input],
+.uma-global-content input[type=text] {
+  padding: 6px 8px;
+}
+
+.uma-global-content input[type=checkbox] {
+  z-index: 2;
+}
+
+.uma-global-content input[type=checkbox] ~ span {
+  padding-left: 28px;
+}
+
+.uma-global-content input[type=checkbox]:disabled ~ span {
+  color: #abb8ca;
+}
+
+.uma-global-content input[type=radio] {
+  z-index: 2;
+}
+
+.uma-global-content input[type=radio] ~ span {
+  padding-left: 28px;
+}
+
+.uma-global-content input[type=radio]:disabled ~ span {
+  color: #abb8ca;
+}
+
+.uma-global-content input[type=file] {
+  line-height: 1;
+}
+
+.uma-global-content label {
+  color: #232e58;
+  font-style: italic;
+  line-height: 1.5rem;
+  margin-bottom: 0.3rem;
+}
+
+.uma-global-content label.form-check-label {
+  font-style: normal;
+  position: relative;
+}
+
+.uma-global-content .checkbox-group {
+  margin: 0 0 1rem;
+}
+
+.uma-global-content .checkbox-group-label {
+  margin: 0 0 0.5rem;
+}
+
+.uma-global-content .checkbox-wrapper {
+  position: relative;
+  float: left;
+  margin-right: 10px;
+  width: 18px;
+  height: 18px;
+}
+
+.uma-global-content .checkbox {
+  margin: 0 0 0.5rem;
+}
+
+.uma-global-content .optgroup {
+  margin-bottom: 1rem;
+}
+
+.uma-global-content .optgroup-label {
+  font-style: italic;
+  margin-bottom: 0.5rem;
+}
+
+.uma-global-content .radio {
+  margin: 0 0 0.5rem;
+}
+
+.uma-global-content .error {
+  color: #a94442;
+  margin-bottom: 1rem;
+  line-height: 32px;
+}
+
+.uma-global-content form input[type=file] + .error,
+.uma-global-content form input[type=input] + .error,
+.uma-global-content input[type=email] + .error,
+.uma-global-content input[type=password] + .error,
+.uma-global-content input[type=text] + .error,
+.uma-global-content select + .error,
+.uma-global-content textarea + .error {
+  margin-top: -1rem;
+}

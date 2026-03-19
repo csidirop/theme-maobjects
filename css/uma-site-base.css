@@ -1,0 +1,574 @@
+@charset "UTF-8";
+/* Universtiy of Mannheim Base styling */
+html {
+  box-sizing: border-box;
+  font-size: 100%;
+}
+
+*,
+:after,
+:before {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: #fff;
+  font-family: myriad-pro, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen-Sans, Ubuntu, Cantarell, Helvetica Neue, sans-serif;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #232e58;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img {
+  display: inline-block;
+  vertical-align: middle;
+  max-width: 100%;
+  height: auto;
+  -ms-interpolation-mode: bicubic;
+}
+
+textarea {
+  height: auto;
+  min-height: 50px;
+}
+
+select,
+textarea {
+  border-radius: 0.5rem;
+}
+
+select {
+  box-sizing: border-box;
+  width: 100%;
+}
+
+button {
+  padding: 0;
+  appearance: none;
+  border: 0;
+  border-radius: 0.5rem;
+  background: transparent;
+  line-height: 1;
+  cursor: auto;
+}
+
+pre {
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit;
+}
+
+.row {
+  max-width: 90.625rem;
+  margin-right: auto;
+  margin-left: auto;
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.row .row {
+  margin-right: -0.25rem;
+  margin-left: -0.25rem;
+}
+
+@media print, screen and (min-width: 48em) {
+  .row .row {
+    margin-right: -1rem;
+    margin-left: -1rem;
+  }
+}
+@media print, screen and (min-width: 64.0625em) {
+  .row .row {
+    margin-right: -1rem;
+    margin-left: -1rem;
+  }
+}
+@media screen and (min-width: 90.0625em) {
+  .row .row {
+    margin-right: -1rem;
+    margin-left: -1rem;
+  }
+}
+.row .row.collapse {
+  margin-right: 0;
+  margin-left: 0;
+}
+
+.row.expanded {
+  max-width: none;
+}
+
+.row.expanded .row {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.row:not(.expanded) .row {
+  max-width: none;
+}
+
+.row.collapse > .column,
+.row.collapse > .columns {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.row.collapse > .column > .row,
+.row.collapse > .columns > .row,
+.row.is-collapse-child {
+  margin-right: 0;
+  margin-left: 0;
+}
+
+.column,
+.columns {
+  flex: 1 1 0px;
+  padding-right: 0.25rem;
+  padding-left: 0.25rem;
+  min-width: 0;
+}
+
+@media print, screen and (min-width: 48em) {
+  .column,
+.columns {
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
+}
+.column.row.row,
+.row.row.columns {
+  float: none;
+  display: block;
+}
+
+.row .column.row.row,
+.row .row.row.columns {
+  margin-right: 0;
+  margin-left: 0;
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.h4,
+blockquote,
+dd,
+div,
+dl,
+dt,
+form,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+html body input[type=submit],
+li,
+ol,
+p,
+pre,
+td,
+th,
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+html body input[type=submit],
+p {
+  margin-bottom: 18px;
+  font-size: inherit;
+  line-height: 1.75;
+  text-rendering: optimizeLegibility;
+}
+
+em,
+i {
+  font-style: italic;
+}
+
+b,
+em,
+i,
+strong {
+  line-height: inherit;
+}
+
+b,
+strong {
+  font-weight: 700;
+}
+
+small {
+  font-size: 80%;
+  line-height: inherit;
+}
+
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+.has-subheadline + .subheadline,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: myriad-pro, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen-Sans, Ubuntu, Cantarell, Helvetica Neue, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  color: inherit;
+  text-rendering: optimizeLegibility;
+}
+
+.h1 small,
+.h2 small,
+.h3 small,
+.h4 small,
+.h5 small,
+.h6 small,
+h1 small,
+h2 small,
+h3 small,
+h4 small,
+h5 small,
+h6 small {
+  line-height: 0;
+  color: #d1d7df;
+}
+
+.h1,
+h1 {
+  font-size: 2rem;
+  line-height: 1.25;
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.h2,
+h2 {
+  font-size: 1.75rem;
+  line-height: 1.4285714286;
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.h3,
+h3 {
+  font-size: 1.5rem;
+  line-height: 1.1666666667;
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.h4,
+.h5,
+.h6,
+h4,
+h5,
+h6 {
+  font-size: 1.25rem;
+  line-height: 1.4;
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+@media print, screen and (min-width: 64.0625em) {
+  .h1,
+h1 {
+    font-size: 3rem;
+    line-height: 1;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+  }
+
+  .h2,
+h2 {
+    font-size: 2.5rem;
+    line-height: 1.2;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+  }
+
+  .h3,
+.has-subheadline + .subheadline,
+h3 {
+    font-size: 2rem;
+    line-height: 1.25;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+  }
+
+  .h4,
+.h5,
+.h6,
+h4,
+h5,
+h6 {
+    font-size: 1.625rem;
+    line-height: 1.2307692308;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+  }
+}
+a {
+  line-height: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+a:focus,
+a:hover {
+  color: #1e284c;
+}
+
+a img {
+  border: 0;
+}
+
+hr {
+  clear: both;
+  max-width: 90.625rem;
+  height: 0;
+  margin: 1.25rem auto;
+  border-top: 0;
+  border-right: 0;
+  border-bottom: 1px solid #d1d7df;
+  border-left: 0;
+}
+
+dl,
+ol,
+ul {
+  margin-bottom: 18px;
+  list-style-position: outside;
+  line-height: 1.75;
+}
+
+li {
+  font-size: inherit;
+}
+
+ul {
+  list-style-type: disc;
+}
+
+ol,
+ul {
+  margin-left: 1.25rem;
+}
+
+ol ol,
+ol ul,
+ul ol,
+ul ul {
+  margin-left: 1.25rem;
+  margin-bottom: 0;
+}
+
+dl {
+  margin-bottom: 1rem;
+}
+
+dl dt {
+  margin-bottom: 0.3rem;
+  font-weight: 700;
+}
+
+blockquote {
+  margin: 0 0 18px;
+  padding: 0.5625rem 1.25rem 0 1.1875rem;
+  border-left: 1px solid #d1d7df;
+}
+
+blockquote,
+blockquote html body input[type=submit],
+blockquote p,
+html body blockquote input[type=submit] {
+  line-height: 1.75;
+  color: gray;
+}
+
+.cite-block,
+cite {
+  display: block;
+  color: gray;
+  font-size: 0.8125rem;
+}
+
+.cite-block:before,
+cite:before {
+  content: "— ";
+}
+
+.code-inline,
+code {
+  display: inline;
+  max-width: 100%;
+  word-wrap: break-word;
+  padding: 0.125rem 0.3125rem 0.0625rem;
+}
+
+.code-block,
+.code-inline,
+code {
+  border: 1px solid #d1d7df;
+  background-color: #eff1f5;
+  font-family: Consolas, Liberation Mono, Courier, monospace;
+  font-weight: 400;
+  color: #0a0a0a;
+}
+
+.code-block {
+  display: block;
+  overflow: auto;
+  white-space: pre;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+@media print {
+  * {
+    background: transparent !important;
+    color: #000 !important;
+    -webkit-print-color-adjust: economy;
+            print-color-adjust: economy;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  a,
+a:visited {
+    text-decoration: underline;
+  }
+
+  a[href]:after {
+    content: " (" attr(href) ")";
+  }
+
+  a[href^="#"]:after,
+a[href^="javascript:"]:after {
+    content: "";
+  }
+
+  abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+
+  blockquote,
+pre {
+    border: 1px solid gray;
+    page-break-inside: avoid;
+  }
+
+  thead {
+    display: table-header-group;
+  }
+
+  img,
+tr {
+    page-break-inside: avoid;
+  }
+
+  img {
+    max-width: 100% !important;
+  }
+
+  @page {
+    margin: 0.5cm;
+  }
+  h2,
+h3,
+html body input[type=submit],
+p {
+    orphans: 3;
+    widows: 3;
+  }
+
+  h2,
+h3 {
+    page-break-after: avoid;
+  }
+}
+form input[type=file],
+form input[type=input],
+[type=color],
+[type=date],
+[type=datetime-local],
+[type=datetime],
+[type=email],
+[type=month],
+[type=number],
+[type=password],
+[type=search],
+[type=tel],
+[type=text],
+[type=time],
+[type=url],
+[type=week],
+textarea {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  height: 2.4375rem;
+  margin: 0 0 1rem;
+  padding: 0.5rem;
+  border: 0.1875rem solid #eff1f5;
+  border-radius: 0.625rem;
+  background-color: #eff1f5;
+  box-shadow: none;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #232e58;
+  transition: border-color 0.25s ease-in-out;
+  appearance: none;
+}
+
+form input[type=file]:focus,
+form input[type=input]:focus,
+[type=color]:focus,
+[type=date]:focus,
+[type=datetime-local]:focus,
+[type=datetime]:focus,
+[type=email]:focus,
+[type=month]:focus,
+[type=number]:focus,
+[type=password]:focus,
+[type=search]:focus,
+[type=tel]:focus,
+[type=text]:focus,
+[type=time]:focus,
+[type=url]:focus,
+[type=week]:focus,
+textarea:focus {
+  outline: none;
+  border: 0.1875rem solid #abb8ca;
+  background-color: #eff1f5;
+  box-shadow: none;
+  transition: border-color 0.25s ease-in-out;
+}
+
+.button:focus-visible,
+.button:hover,
+html body input[type=submit]:focus-visible,
+html body input[type=submit]:hover {
+  color: #232e58;
+  background: transparent;
+  border: 0.1875rem solid #abb8ca;
+}
