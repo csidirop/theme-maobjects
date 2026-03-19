@@ -1,4 +1,6 @@
-/* Universtiy of Mannheim Base styling */
+/* University of Mannheim base styling */
+
+/* Base reset and grid */
 
 html {
    box-sizing: border-box;
@@ -201,9 +203,38 @@ ul {
 html body input[type=submit],
 p {
    margin-bottom: 18px;
-   font-size: inherit;
+   font-size: 16px;
+   font-size: calc(.125vw + 15.6px);
    line-height: 1.75;
    text-rendering: optimizeLegibility
+}
+
+@media print,
+screen and (min-width:48em) {
+
+   html body input[type=submit],
+   p {
+      font-size: 18px;
+      line-height: 32px;
+      margin-bottom: 18px
+   }
+}
+
+@media print,
+screen and (max-width:47.99875em) {
+
+   html body input[type=submit],
+   p {
+      font-size: 16px
+   }
+}
+
+@media screen and (min-width:90.0625em) {
+
+   html body input[type=submit],
+   p {
+      font-size: 18px
+   }
 }
 
 em,
@@ -227,6 +258,8 @@ small {
    font-size: 80%;
    line-height: inherit
 }
+
+/* Base typography */
 
 .h1,
 .h2,
@@ -343,13 +376,16 @@ screen and (min-width:64.0625em) {
 
 a {
    line-height: inherit;
+   color: #232e58;
+   border-bottom: .1875rem solid #d1d7df;
    text-decoration: none;
    cursor: pointer
 }
 
 a:focus,
 a:hover {
-   color: #1e284c
+   color: #455d82;
+   border-color: #abb8ca
 }
 
 a img {
@@ -379,13 +415,23 @@ li {
    font-size: inherit
 }
 
-ul {
-   list-style-type: disc
-}
-
 ol,
 ul {
-   margin-left: 1.25rem
+   margin-left: 0;
+   font-size: 16px
+}
+
+@media print,
+screen and (min-width:48em) {
+
+   ol,
+   ul {
+      font-size: 18px
+   }
+}
+
+ul {
+   list-style-type: square
 }
 
 ol ol,
@@ -521,6 +567,8 @@ code {
    }
 }
 
+/* Forms and buttons */
+
 
 form input[type=file],
 form input[type=input],
@@ -593,6 +641,8 @@ html body input[type=submit]:hover {
    border: .1875rem solid #abb8ca
 }
 
+/* Layout helpers */
+
 .align-center {
    -ms-flex-pack: center;
    justify-content: center
@@ -612,6 +662,8 @@ html body input[type=submit]:hover {
    -ms-flex-align: center;
    align-items: center
 }
+
+/* Pagination */
 
 .pagination {
    margin-left: 0;
@@ -678,30 +730,14 @@ pagination li:last-child {
    float: left
 }
 
+/* Typography overrides */
+
 .hide {
    display: none !important
 }
 
 body {
    font-family: myriad-pro, sans-serif !important
-}
-
-html body input[type=submit],
-p {
-   font-size: 16px;
-   line-height: 28px;
-   font-size: calc(.125vw + 15.6px)
-}
-
-
-a {
-   color: #232e58;
-   border-bottom: .1875rem solid #d1d7df
-}
-
-a:hover {
-   color: #455d82;
-   border-color: #abb8ca
 }
 
 h1:focus-visible,
@@ -759,23 +795,6 @@ screen and (max-width:47.99875em) {
       font-size: 26px
    }
 }
-
-ol,
-ul {
-   margin-left: 0;
-   font-size: 16px
-}
-
-@media print,
-screen and (min-width:48em) {
-
-   ol,
-   ul {
-      font-size: 18px
-   }
-}
-
-
 
 @media print,
 screen and (max-width:47.99875em) {
@@ -846,23 +865,6 @@ screen and (max-width:47.99875em) {
    }
 }
 
-@media print,
-screen and (max-width:47.99875em) {
-
-   html body input[type=submit],
-   p {
-      font-size: 16px
-   }
-}
-
-@media screen and (min-width:90.0625em) {
-
-   html body input[type=submit],
-   p {
-      font-size: 18px
-   }
-}
-
 .h3,
 h3 {
    padding-top: 0;
@@ -899,17 +901,6 @@ screen and (max-width:47.99875em) {
 }
 
 
-@media print,
-screen and (min-width:48em) {
-
-   html body input[type=submit],
-   p {
-      font-size: 18px;
-      line-height: 32px;
-      margin-bottom: 18px
-   }
-}
-
 html body input[type=submit]+h1,
 html body input[type=submit]+h2,
 html body input[type=submit]+h3,
@@ -922,8 +913,11 @@ ul+h3 {
    margin-top: 32px
 }
 
+/* Shell components */
 
-/* Confirmed live styles extracted from the TYPO3 migration staging file. */
+
+
+/* Scroll-to-top button */
 
 #scroll-to-top {
    position: fixed;
@@ -970,6 +964,8 @@ screen and (max-width:64.06125em) {
    border-color: #fff transparent;
    margin: 18px auto 0
 }
+
+/* Footer shell and social icons */
 
 footer.uma-footer {
    background: #232e58;
@@ -1194,6 +1190,8 @@ screen and (max-width:47.99875em) {
    transform: translate(-50%, -50%)
 }
 
+/* Cookie notice */
+
 .cookie-notice {
    position: fixed;
    opacity: 0;
@@ -1238,6 +1236,8 @@ screen and (max-width:47.99875em) {
       margin-top: 1rem
    }
 }
+
+/* Primo bar */
 
 .uma-primo-bar {
    background: #232e58;
