@@ -572,3 +572,19 @@ html body input[type=submit]:hover {
   background: transparent;
   border: 0.1875rem solid #abb8ca;
 }
+
+.align-center {
+  justify-content: center;
+}
+
+.align-justify {
+  justify-content: space-between;
+}
+
+.align-bottom {
+  align-items: flex-end;
+}
+
+.align-middle {
+  align-items: center;
+}
