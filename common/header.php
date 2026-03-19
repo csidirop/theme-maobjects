@@ -29,7 +29,7 @@
     <?php
     queue_css_file(array('style', 'public', 'iconfonts'));
         queue_css_file('uma-site-base');
-        queue_css_file('uma-site-typography');
+        // queue_css_file('uma-site-typography');
         queue_css_file('uma-site');
         // queue_css_file('uma-site-layout');
         // queue_css_file('uma-site-content');
