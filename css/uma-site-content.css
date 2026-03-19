@@ -1,59 +1,5 @@
 @charset "UTF-8";
 /* Browse/content styles extracted from the TYPO3 migration staging file. */
-.pagination {
-  margin-left: 0;
-  margin-bottom: 1rem;
-}
-
-.pagination:after,
-.pagination:before {
-  display: table;
-  content: " ";
-  flex-basis: 0;
-  order: 1;
-}
-
-.pagination:after {
-  clear: both;
-}
-
-.pagination li {
-  margin-right: 0.0625rem;
-  border-radius: 0.5rem;
-  font-size: 0.875rem;
-  display: none;
-}
-
-.pagination li:first-child,
-.pagination li:last-child {
-  display: inline-block;
-}
-
-@media print, screen and (min-width: 48em) {
-  .pagination li {
-    display: inline-block;
-  }
-}
-.pagination a,
-.pagination button {
-  display: block;
-  padding: 0.1875rem 0.625rem;
-  border-radius: 0.5rem;
-  color: #0a0a0a;
-}
-
-.pagination a:hover,
-.pagination button:hover {
-  background: #eff1f5;
-}
-
-.pagination .current {
-  padding: 0.1875rem 0.625rem;
-  background: #232e58;
-  color: #fff;
-  cursor: default;
-}
-
 .pagination .disabled {
   padding: 0.1875rem 0.625rem;
   color: #d1d7df;
@@ -225,13 +171,6 @@ html body .uma-global-content table input[type=submit]:last-child {
     display: block;
   }
 }
-.pagination li,
-.pagination li:first-child,
-pagination li:last-child {
-  display: block;
-  float: left;
-}
-
 .uma-global-content form {
   margin-bottom: 24px;
 }
