@@ -1331,35 +1331,6 @@ a:hover {
   border-color: #abb8ca;
 }
 
-.uma-global-content ol {
-  list-style-type: none;
-  counter-reset: a;
-}
-
-.uma-global-content ol > li {
-  margin-left: 48px;
-  margin-bottom: 8px;
-  counter-increment: a;
-}
-
-.uma-global-content ol > li:before {
-  content: counter(a) ".";
-  position: absolute;
-  margin-left: -48px;
-  background: #eff1f5;
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  text-align: center;
-}
-
-.uma-global-content ol > li ol,
-.uma-global-content ol > li ul {
-  margin-top: 12px;
-  margin-bottom: 16px;
-}
-
-.has-subheadline + .subheadline:focus-visible,
 h1:focus-visible,
 h2:focus-visible,
 h3:focus-visible {
