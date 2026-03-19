@@ -1,8 +1,0 @@
-/* Extracted typography and content presentation layer from the TYPO3 staging stylesheet. */
-video::cue {
-  background-color: #232e58;
-}
-
-span[style*=font-size] {
-  font-size: inherit !important;
-}
