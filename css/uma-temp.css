@@ -71,14 +71,6 @@ textarea {
   font-family: inherit;
 }
 
-.is-visible {
-  display: block !important;
-}
-
-.is-hidden {
-  display: none !important;
-}
-
 .row {
   max-width: 90.625rem;
   margin-right: auto;
@@ -571,21 +563,6 @@ html body input[type=submit] {
   cursor: pointer;
 }
 
-.button.tiny,
-html body input.tiny[type=submit] {
-  font-size: 0.6rem;
-}
-
-.button.small,
-html body input.small[type=submit] {
-  font-size: 0.75rem;
-}
-
-.button.large,
-html body input.large[type=submit] {
-  font-size: 1.25rem;
-}
-
 .button.expanded,
 html body input.expanded[type=submit] {
   display: block;
@@ -612,228 +589,6 @@ html body input[type=submit]:focus,
 html body input[type=submit]:hover {
   background-color: #1e274b;
   color: #fff;
-}
-
-.button.primary,
-.button.primary.disabled,
-.button.primary.disabled:focus,
-.button.primary.disabled:hover,
-.button.primary[disabled],
-.button.primary[disabled]:focus,
-.button.primary[disabled]:hover,
-html body input.primary[type=submit] {
-  background-color: #232e58;
-  color: #fff;
-}
-
-.button.primary:focus,
-.button.primary:hover,
-html body input.primary[type=submit]:focus,
-html body input.primary[type=submit]:hover {
-  background-color: #1c2546;
-  color: #fff;
-}
-
-.button.secondary,
-.button.secondary.disabled,
-.button.secondary.disabled:focus,
-.button.secondary.disabled:hover,
-.button.secondary[disabled],
-.button.secondary[disabled]:focus,
-.button.secondary[disabled]:hover,
-html body input.secondary[type=submit] {
-  background-color: gray;
-  color: #0a0a0a;
-}
-
-.button.secondary:focus,
-.button.secondary:hover,
-html body input.secondary[type=submit]:focus,
-html body input.secondary[type=submit]:hover {
-  background-color: #666;
-  color: #0a0a0a;
-}
-
-.button.success,
-.button.success.disabled,
-.button.success.disabled:focus,
-.button.success.disabled:hover,
-.button.success[disabled],
-.button.success[disabled]:focus,
-.button.success[disabled]:hover,
-html body input.success[type=submit] {
-  background-color: #baf1b8;
-  color: #0a0a0a;
-}
-
-.button.success:focus,
-.button.success:hover,
-html body input.success[type=submit]:focus,
-html body input.success[type=submit]:hover {
-  background-color: #75e371;
-  color: #0a0a0a;
-}
-
-.button.warning,
-.button.warning.disabled,
-.button.warning.disabled:focus,
-.button.warning.disabled:hover,
-.button.warning[disabled],
-.button.warning[disabled]:focus,
-.button.warning[disabled]:hover,
-html body input.warning[type=submit] {
-  background-color: #f6a800;
-  color: #0a0a0a;
-}
-
-.button.warning:focus,
-.button.warning:hover,
-html body input.warning[type=submit]:focus,
-html body input.warning[type=submit]:hover {
-  background-color: #c58600;
-  color: #0a0a0a;
-}
-
-.button.alert,
-.button.alert.disabled,
-.button.alert.disabled:focus,
-.button.alert.disabled:hover,
-.button.alert[disabled],
-.button.alert[disabled]:focus,
-.button.alert[disabled]:hover,
-html body input.alert[type=submit] {
-  background-color: #da3943;
-  color: #fff;
-}
-
-.button.alert:focus,
-.button.alert:hover,
-html body input.alert[type=submit]:focus,
-html body input.alert[type=submit]:hover {
-  background-color: #b9232c;
-  color: #fff;
-}
-
-.button.clear,
-.button.clear.disabled,
-.button.clear.disabled:focus,
-.button.clear.disabled:hover,
-.button.clear:focus,
-.button.clear:hover,
-.button.clear[disabled],
-.button.clear[disabled]:focus,
-.button.clear[disabled]:hover,
-html body input.clear[type=submit] {
-  border-color: transparent;
-  background-color: transparent;
-}
-
-.button.clear,
-.button.clear.disabled,
-.button.clear.disabled:focus,
-.button.clear.disabled:hover,
-.button.clear[disabled],
-.button.clear[disabled]:focus,
-.button.clear[disabled]:hover,
-html body input.clear[type=submit] {
-  color: #232e58;
-}
-
-.button.clear:focus,
-.button.clear:hover,
-html body input.clear[type=submit]:focus,
-html body input.clear[type=submit]:hover {
-  color: #12172c;
-}
-
-.button.clear.primary,
-.button.clear.primary.disabled,
-.button.clear.primary.disabled:focus,
-.button.clear.primary.disabled:hover,
-.button.clear.primary[disabled],
-.button.clear.primary[disabled]:focus,
-.button.clear.primary[disabled]:hover,
-html body input.clear.primary[type=submit] {
-  color: #232e58;
-}
-
-.button.clear.primary:focus,
-.button.clear.primary:hover,
-html body input.clear.primary[type=submit]:focus,
-html body input.clear.primary[type=submit]:hover {
-  color: #12172c;
-}
-
-.button.clear.secondary,
-.button.clear.secondary.disabled,
-.button.clear.secondary.disabled:focus,
-.button.clear.secondary.disabled:hover,
-.button.clear.secondary[disabled],
-.button.clear.secondary[disabled]:focus,
-.button.clear.secondary[disabled]:hover,
-html body input.clear.secondary[type=submit] {
-  color: gray;
-}
-
-.button.clear.secondary:focus,
-.button.clear.secondary:hover,
-html body input.clear.secondary[type=submit]:focus,
-html body input.clear.secondary[type=submit]:hover {
-  color: #404040;
-}
-
-.button.clear.success,
-.button.clear.success.disabled,
-.button.clear.success.disabled:focus,
-.button.clear.success.disabled:hover,
-.button.clear.success[disabled],
-.button.clear.success[disabled]:focus,
-.button.clear.success[disabled]:hover,
-html body input.clear.success[type=submit] {
-  color: #baf1b8;
-}
-
-.button.clear.success:focus,
-.button.clear.success:hover,
-html body input.clear.success[type=submit]:focus,
-html body input.clear.success[type=submit]:hover {
-  color: #28b223;
-}
-
-.button.clear.warning,
-.button.clear.warning.disabled,
-.button.clear.warning.disabled:focus,
-.button.clear.warning.disabled:hover,
-.button.clear.warning[disabled],
-.button.clear.warning[disabled]:focus,
-.button.clear.warning[disabled]:hover,
-html body input.clear.warning[type=submit] {
-  color: #f6a800;
-}
-
-.button.clear.warning:focus,
-.button.clear.warning:hover,
-html body input.clear.warning[type=submit]:focus,
-html body input.clear.warning[type=submit]:hover {
-  color: #7b5400;
-}
-
-.button.clear.alert,
-.button.clear.alert.disabled,
-.button.clear.alert.disabled:focus,
-.button.clear.alert.disabled:hover,
-.button.clear.alert[disabled],
-.button.clear.alert[disabled]:focus,
-.button.clear.alert[disabled]:hover,
-html body input.clear.alert[type=submit] {
-  color: #da3943;
-}
-
-.button.clear.alert:focus,
-.button.clear.alert:hover,
-html body input.clear.alert[type=submit]:focus,
-html body input.clear.alert[type=submit]:hover {
-  color: #74161c;
 }
 
 .button.disabled,
@@ -977,12 +732,6 @@ label {
   color: #232e58;
 }
 
-label.middle {
-  margin: 0 0 1rem;
-  line-height: 1.5;
-  padding: 0.6875rem 0;
-}
-
 fieldset {
   margin: 0;
   padding: 0;
@@ -992,18 +741,6 @@ fieldset {
 legend {
   max-width: 100%;
   margin-bottom: 0.5rem;
-}
-
-.fieldset {
-  margin: 1.125rem 0;
-  padding: 1.25rem;
-  border: 1px solid #d1d7df;
-}
-
-.fieldset legend {
-  margin: 0;
-  margin-left: -0.1875rem;
-  padding: 0 0.1875rem;
 }
 
 select {
@@ -1147,29 +884,8 @@ output {
   cursor: default;
 }
 
-.label,
-.label.primary {
+.label {
   background: #232e58;
-  color: #fff;
-}
-
-.label.secondary {
-  background: gray;
-  color: #0a0a0a;
-}
-
-.label.success {
-  background: #baf1b8;
-  color: #0a0a0a;
-}
-
-.label.warning {
-  background: #f6a800;
-  color: #0a0a0a;
-}
-
-.label.alert {
-  background: #da3943;
   color: #fff;
 }
 
@@ -1227,47 +943,6 @@ tbody th {
 tbody tr:nth-child(2n) {
   border-bottom: 0;
   background-color: #f2f2f2;
-}
-
-table.unstriped tbody {
-  background-color: #fff;
-}
-
-table.unstriped tbody tr {
-  border-bottom: 0;
-  background-color: #fff;
-}
-
-@media print, screen and (max-width: 64.06125em) {
-  table.stack tfoot,
-table.stack thead {
-    display: none;
-  }
-
-  table.stack td,
-table.stack th,
-table.stack tr {
-    display: block;
-  }
-
-  table.stack td {
-    border-top: 0;
-  }
-}
-table.hover thead tr:hover {
-  background-color: #f4f4f4;
-}
-
-table.hover tfoot tr:hover {
-  background-color: #ededed;
-}
-
-table.hover tbody tr:hover {
-  background-color: #fafafa;
-}
-
-table.hover:not(.unstriped) tr:nth-of-type(2n):hover {
-  background-color: #ededed;
 }
 
 .hide {
@@ -1547,15 +1222,6 @@ html body input[type=submit] {
   border: 0.1875rem solid #232e58;
   box-sizing: border-box;
   transition: none;
-}
-
-.button.secondary,
-.button.secondary:focus-visible,
-.button.secondary:hover,
-html body input.secondary[type=submit] {
-  color: #232e58;
-  background: #eff1f5;
-  border-color: #eff1f5;
 }
 
 @media print, screen and (max-width: 64.06125em) {
