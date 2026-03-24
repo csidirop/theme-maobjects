@@ -357,66 +357,184 @@ header nav .navigation li {
 
 // Header search form:
 #search-container {
+    width: 25rem;
+    max-width: calc(100vw - 2rem);
+    min-height: 3.5rem;
     right: 15px;
 
     #search-form {
-        box-shadow: none;
+        position: absolute;
+        top: 0;
+        right: 0;
+        display: flex;
+        align-items: center;
+        gap: 0.65rem;
+        width: 100%;
+        min-height: 3.5rem;
+        padding: 0.4rem 3.4rem 0.4rem 0.75rem;
+        border: 0.0625rem solid $uni-blau;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.96);
+        box-shadow: 0 1rem 2.5rem $uni-blau-hell;
+        transition: width 0.32s cubic-bezier(0.22, 1, 0.36, 1), padding 0.32s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.24s ease, border-color 0.24s ease, transform 0.24s ease, background-color 0.24s ease;
 
-        &.open {
-            width: 400px;
-            padding: 0;
-            box-shadow: none;
-            border-bottom: none;
+        &:focus-within {
+            border-color: $uni-blau;
+            box-shadow: 0 1rem 2.5rem $uni-blau-hell;
+        }
 
-            input[type=text] {
-                border: 1px solid #ccc;
-                &::placeholder {
-                    color: #ccc;
-                }
-            }
-            & + button.search-toggle {
-                border: none;
+        input[type=text],
+        button#submit_search,
+        #advanced-form {
+            opacity: 1;
+            visibility: visible;
+            pointer-events: auto;
+            transform: translateX(0);
+            transition: opacity 0.22s ease, transform 0.28s ease, visibility 0.22s ease;
+        }
+
+        input[type=text] {
+            flex: 1 1 auto;
+            min-width: 0;
+            height: 2.5rem;
+            margin-bottom: 0;
+            padding: 0.55rem 1rem;
+            border: 0.0625rem solid $uni-blau;
+            border-radius: 999px;
+            background: #fff;
+            color: $uni-blau;
+
+            &::placeholder {
+                color: $uni-blau;
             }
         }
-        &.closed {
-            & + .search-toggle { 
-                //border: 0.1875rem solid $uni-blau;
-                //color: #fff;
-                //background: $uni-blau;
-                @include button_blau;
-                border-radius: 0.5rem;
 
-                &:hover {
-                    //color: $uni-blau;
-                    //background: #fff;
-                    //border: 0.1875rem solid $uni-blau-hell;
-                    @include button_blau_hover;
-                }
+        &.closed {
+            width: 0;
+            min-height: 0;
+            padding: 0;
+            border-color: transparent;
+            background: transparent;
+            box-shadow: none;
+            overflow: hidden;
+            transform: none;
+
+            input[type=text],
+            button#submit_search,
+            #advanced-form {
+                display: block;
+                opacity: 0;
+                visibility: hidden;
+                pointer-events: none;
+                transform: translateX(0.75rem);
+            }
+        }
+
+        &.open + button.search-toggle {
+            top: 50%;
+            right: 0.85rem;
+            width: 1.85rem;
+            height: 1.85rem;
+            border-color: transparent;
+            background: transparent;
+            box-shadow: none;
+            color: $uni-blau;
+            transform: translateY(-50%);
+
+            &:after {
+                font-size: 1.05rem;
+            }
+
+            &:hover,
+            &:focus {
+                border-color: transparent;
+                background: transparent;
+                box-shadow: none;
+                color: $uni-blau;
             }
         }
     }
+
+    #advanced-form {
+        display: block;
+        top: calc(100% + 0.55rem);
+        left: 0;
+        right: 0;
+        padding: 1rem;
+        border: 0.0625rem solid $uni-blau;
+        border-radius: 1rem;
+        background: #fff;
+        box-shadow: 0 1rem 2.5rem $uni-blau-hell;
+    }
+
     button {
+        &#submit_search,
+        &.search-toggle {
+            &:after {
+                position: absolute;
+                top: 0;
+                right: 0;
+                left: 0;
+                bottom: 0;
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                line-height: 1;
+            }
+        }
+
         &#submit_search {
-            //border: 0.1875rem solid $uni-blau;
-            //color: #fff;
-            //background: $uni-blau;
             @include button_blau;
+            width: 2.5rem;
+            height: 2.5rem;
+            min-height: 2.5rem;
+            flex: 0 0 2.5rem;
+            margin-bottom: 0;
+            border-radius: 999px;
 
             &:hover {
-                //color: $uni-blau;
-                //background: #fff;
-                //border: 0.1875rem solid $uni-blau-hell;
                 @include button_blau_hover;
             }
-
-            &:after {
-                top: 4px;
-                left: -3px;
-            }
-
         }
+
         &.search-toggle {
-            border: 0.1875rem solid $uni-blau;
+            @include button_blau;
+            position: absolute;
+            top: 0.425rem;
+            bottom: auto;
+            right: 0;
+            width: 2.65rem;
+            height: 2.65rem;
+            border-width: 0.125rem;
+            border-radius: 999px;
+            box-shadow: 0 0.5rem 1.5rem $uni-blau-hell;
+
+            &:hover,
+            &:focus {
+                @include button_blau_hover;
+                box-shadow: 0 0.75rem 1.5rem $uni-blau-hell;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 640px) {
+    #search-container {
+        right: 0;
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    #search-container {
+        #search-form,
+        #search-form input[type=text],
+        #search-form button#submit_search,
+        #search-form #advanced-form,
+        button.search-toggle {
+            transition: none;
         }
     }
 }

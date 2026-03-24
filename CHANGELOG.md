@@ -25,6 +25,8 @@ The largest internal change is the Uni Mannheim asset migration, which removes r
 
 - **Migrated external Uni Mannheim frontend dependencies into the theme bundle instead of loading remote assets ([a558280](https://github.com/UB-Mannheim/theme-maobjects/commit/a558280d3c53d40b19fbff0620700552bb8627b3), [b98ab1d](https://github.com/UB-Mannheim/theme-maobjects/commit/b98ab1d608522cead6dc7c8634657ee940f53823), [cae8d89](https://github.com/UB-Mannheim/theme-maobjects/commit/cae8d89da15542f456da06089f6c57fc4e3c705a)).**
 - Restored the internal naming from the temporary `Mashare` rename back to `Center Row`-based identifiers where the theme code had not actually changed ownership ([b1132f3](https://github.com/UB-Mannheim/theme-maobjects/commit/b1132f3189a691f4fef7fa0da005bfe40b67156e)).
+- Updated styling for:
+  - Search bar
 
 #### Fixed
 
