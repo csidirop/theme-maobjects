@@ -27,7 +27,7 @@
 
     <!-- Stylesheets -->
     <?php
-    queue_css_file(array('style', 'uma-basestyle', 'public', 'iconfonts'));
+    queue_css_file(array('style', 'maobjects', 'uma-basestyle', 'public', 'iconfonts'));
     echo head_css();
     echo $this->partial('common/theme_option_styles.php');
     ?>
