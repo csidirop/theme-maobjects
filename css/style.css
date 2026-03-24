@@ -1896,6 +1896,19 @@ li.pagination_next a,
   }
 }
 @media screen {
+  footer .svg-icon-social-facebook-dims {
+    width: 13px;
+    height: 24px;
+  }
+  footer .svg-icon-social-twitter-dims,
+footer .svg-icon-social-instagram-dims {
+    width: 24px;
+    height: 24px;
+  }
+  footer .svg-icon-social-youtube-dims {
+    width: 24px;
+    height: 17.7px;
+  }
   footer .logos {
     text-align: right;
     right: 0;
