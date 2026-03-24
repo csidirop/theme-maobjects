@@ -7,12 +7,20 @@ It is used by the [Mannheim University Library](https://www.bib.uni-mannheim.de)
 <!-- ![Theme Example (Kotzebue Exhibition)](theme.jpg) -->
 <a href="https://fdz.bib.uni-mannheim.de/kotzebue/"><img src="theme.jpg" alt="Theme Example (Kotzebue Exhibition)" style="max-width:70%; height:auto;" /></a>
 
-- **Very customizable:** Optional advanced site-wide search, ability to route or hide the quick search bar, and show/hide child pages in top navigation.
-- **Customizable homepage:** Featured item/collection/exhibit, intro text, optional slideshow with autoplay and speed, optional “floating” minimal homepage layout, and toggleable breadcrumbs.
-- **Item and media display controls:** Multiple user-selectable layout options. Optional Lightgallery support (including PDFs via PDF Embed), handling of non-image media, configurable media captions, options to hide headings/DC title, and show/hide citations.
-- **Collection views:** Configurable collection browse page style (e.g. grid/list) and options to hide headings/duplicate title entries on collection pages.
-- **Background image options:** Site-wide background image with control over position, repeat, size, and whether it appears beneath the main content area.
-- _much more...!_
+- **Built for research collections and digital exhibitions:**
+    - Designed for deployments that present digital objects, curated collections, and virtual exhibits in a polished University of Mannheim look (but not limited to!).
+- **Flexible branding and homepage setup:**
+    - Configure logo, logo text, header image, footer text, colors, breadcrumbs, background image, and a homepage with intro text plus featured item, collection, or exhibit blocks.
+- **Configurable navigation and search:**
+    - Show or hide child pages in the top navigation, switch the quick search behavior, or expose Omeka's advanced site-wide search for more targeted discovery.
+- **Stronger item and collection presentation:**
+    - Choose [grid or list browse views][items_browse_style], [switch item-page layouts][items_page_layout], control headings and duplicate title output, and decide how citations and secondary navigation are shown.
+- **Better media handling out of the box:**
+    - Support single- or multi-file items, choose media sizes and captions, surface non-image files more gracefully, and *optionally* use Lightgallery with PDF Embed integration for PDF viewing.
+- **Plugin-aware theme refinements:** 
+    - Includes dedicated support for [Exhibit Builder](https://omeka.org/classic/plugins/ExhibitBuilder/) content and additional theme styling for [maintenance pages](https://omeka.org/classic/plugins/AdminTools/) and other site states.
+
+Current Changelog and release notes can be found in the [CHANGELOG.md](CHANGELOG.md) file.
 
 ## Theme settings
 
@@ -139,7 +147,7 @@ These options apply to the exhibit pages. This includes the exhibit overview pag
 
 ## Installation
 
-1. Download the theme archive from the [Omeka themes collection](https://omeka.org/classic/themes/maobjects/) or clone this repository into your Omeka installation's `themes` directory.
+1. Download the theme archive from the [Omeka themes collection](https://omeka.org/classic/themes/maobjects/), the projects [release page](https://github.com/UB-Mannheim/theme-maobjects/releases) or clone this repository into your Omeka installation's `themes` directory.
 2. In the Omeka admin dashboard, navigate to "Appearance" and activate the "MAObjects" theme by clicking on the "Use this theme"-button.
 3. Customize the theme settings as needed.
 
@@ -164,5 +172,7 @@ All rights not expressly granted are reserved.
 [header_footer]: docs/options-header_footer.md
 [homepage]: docs/options-homepage.md
 [items_page]: docs/options-items_page.md
+[items_page_layout]: docs/options-items_page.md#option-layout
 [items_browse]: docs/options-items_browse.md
+[items_browse_style]: docs/options-items_browse.md#option-browse-item-page-style
 [collections]: docs/options-collections.md
