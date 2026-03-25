@@ -14,7 +14,7 @@ It is used by the [Mannheim University Library](https://www.bib.uni-mannheim.de)
 - **Configurable navigation and search:**
     - Show or hide child pages in the top navigation, switch the quick search behavior, or expose Omeka's advanced site-wide search for more targeted discovery.
 - **Stronger item and collection presentation:**
-    - Choose [grid or list browse views][items_browse_style], [switch item-page layouts][items_page_layout], control headings and duplicate title output, and decide how citations and secondary navigation are shown.
+    - Choose [grid or list browse views][items_browse_style], [switch item-page layouts][items_page_layout], control headings and duplicate title output, and decide how citations and secondary navigation are shown. Additionally, the item tags page includes a search bar to filter the tag cloud by search query.
 - **Better media handling out of the box:**
     - Support single- or multi-file items, choose media sizes and captions, surface non-image files more gracefully, and *optionally* use Lightgallery with PDF Embed integration for PDF viewing.
 - **Plugin-aware theme refinements:** 

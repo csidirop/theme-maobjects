@@ -265,6 +265,33 @@ ul {
 }
 
 /* Item Tag page */
+.tags-page-search {
+    padding: 1rem 2rem 1rem 2rem;
+    display: flex;
+    gap: 16rem;
+
+    .tags-page-search-form {
+        width: 60%;
+        flex: 1 1 24rem;
+        margin-bottom: 0;
+
+        input[type=search] {
+            width: 100%;
+            margin-bottom: 0;
+            padding: 0.75rem 1rem;
+            border: 0.0625rem solid rgba($uni-blau, 0.25);
+            border-radius: 999px;
+            background: white;
+            color: $uni-blau;
+            box-shadow: inset 0 0.125rem 0.5rem rgba($uni-blau, 0.06);
+
+            &::placeholder {
+                color: rgba($uni-blau, 0.7);
+            }
+        }
+    }
+}
+
 .tags .hTagcloud {
     li {
         list-style: none;
@@ -278,6 +305,11 @@ ul {
                 border-bottom: 0.1875rem solid $uni-blau-hell;
             }
         }
+    }
+
+    // Hide tags that don't match the filter query:
+    li[hidden] {
+        display: none;
     }
 }
 

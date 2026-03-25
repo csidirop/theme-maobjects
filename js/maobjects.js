@@ -38,5 +38,53 @@
                 }
             });
         }
+
+        // Tag filtering on items browse tags page:
+        var $tagFilterInput = $('#tags-page-search-query');
+        var $tagFilterStatus = $('#tags-page-search-status');
+        var $tagItems = $('.tags .hTagcloud li');
+
+        if ($tagFilterInput.length && $tagItems.length) {
+            var totalTagCount = $tagItems.length;
+
+            function normalizeText(value) {
+                return $.trim(String(value || '').toLowerCase());
+            }
+
+            function updateTagFilter() {
+                var query = normalizeText($tagFilterInput.val());
+                var visibleCount = 0;
+
+                $tagItems.each(function() {
+                    var $tagItem = $(this);
+                    var tagText = normalizeText($tagItem.text());
+                    var matches = query === '' || tagText.indexOf(query) !== -1;
+
+                    $tagItem.prop('hidden', !matches);
+
+                    if (matches) {
+                        visibleCount += 1;
+                    }
+                });
+
+                if (query === '') {
+                    $tagFilterStatus.text('Showing all ' + totalTagCount + ' tags.');
+                } else if (visibleCount === 0) {
+                    $tagFilterStatus.text('No tags match "' + query + '".');
+                } else {
+                    $tagFilterStatus.text('Showing ' + visibleCount + ' of ' + totalTagCount + ' tags for "' + query + '".');
+                }
+            }
+
+            $tagFilterInput.on('input', updateTagFilter);
+            $tagFilterInput.on('keydown', function(event) {
+                if (event.key === 'Escape') {
+                    $tagFilterInput.val('');
+                    updateTagFilter();
+                }
+            });
+
+            updateTagFilter();
+        }
     });
 })(jQuery);
