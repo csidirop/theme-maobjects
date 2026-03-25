@@ -31,7 +31,7 @@ $sortStyle = get_theme_option('browse_item_sort_style');
 
 <?php endif; ?>
 
-<?php fire_plugin_hook('public_facets', array('items'=>$items, 'view' => $this)); ?>
+<?php echo maobjects_public_facets_if_available(array('items'=>$items, 'view' => $this)); ?>
 
 <div class="records">
     <?php foreach (loop('items') as $item): ?>

@@ -20,7 +20,8 @@ The largest internal change is the Uni Mannheim asset migration, which removes r
   - selectable item image sizes ([f4a69a2](https://github.com/UB-Mannheim/theme-maobjects/commit/f4a69a2700fcbf6b9b43786dbb28ce52f8501a18), [ec8e696](https://github.com/UB-Mannheim/theme-maobjects/commit/ec8e696942d024d3c8157c214e94afca96d0d006))
   - option to hide the exhibit heading and exhibit navigation ([a9a3f20](https://github.com/UB-Mannheim/theme-maobjects/commit/a9a3f2097ab5b6df00b3d5ee760580f85af12731)).
 - Added dedicated lightGallery styling, initialization and configuration ([8db358f](https://github.com/UB-Mannheim/theme-maobjects/commit/8db358f61b268e38a77adc1bfe443baa05b9815a), [2f7510f](https://github.com/UB-Mannheim/theme-maobjects/commit/2f7510f054608ac6b5b08afe90a609ee1b87c1e7)).
-- Added a search bar to the item tags page to make the tag cloud filterable by search query
+- Added a search bar to the item tags page to make the tag cloud filterable by search query ([f76ec99](https://github.com/UB-Mannheim/theme-maobjects/commit/f76ec9951226a2e7886ca243fd044acdc8bc2177))
+- Only render the Facets plugin block when it contains facet fields
 
 #### Changed
 

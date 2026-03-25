@@ -299,4 +299,32 @@ function maobjects_browse_sort_select(array $sortLinks, $selectId = 'browse-sort
     return $html;
 }
 
+/**
+ * Render the Facets plugin block only when it contains actual facet fields.
+ *
+ * The Facets plugin can emit its outer container even when no configured facet
+ * has any values in the current browse context. Capture the plugin output first
+ * so the theme can suppress that empty shell.
+ *
+ * @param array $args Hook arguments passed to the Facets plugin.
+ * @return string
+ */
+function maobjects_public_facets_if_available(array $args = array()) {
+    if (!function_exists('get_specific_plugin_hook_output')) {
+        return '';
+    }
+
+    $html = get_specific_plugin_hook_output('Facets', 'public_facets', $args);
+
+    if (!is_string($html) || trim($html) === '') {
+        return '';
+    }
+
+    if (strpos($html, 'id="facets-field-') === false && strpos($html, "id='facets-field-") === false) {
+        return '';
+    }
+
+    return $html;
+}
+
 ?>

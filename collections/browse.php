@@ -20,7 +20,7 @@ $sortStyle = get_theme_option('browse_collection_sort_style');
     <?php endif; ?>
 </div>
 
-<?php fire_plugin_hook('public_facets', array('collections'=>$collections, 'view' => $this)); ?> <!-- TODO: wont load for some reason -->
+<?php echo maobjects_public_facets_if_available(array('collections' => $collections, 'view' => $this)); ?>
 
 <div class="records">
     <?php foreach (loop('collections') as $collection): ?>
