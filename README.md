@@ -89,6 +89,7 @@ These options apply to the items browse page (Browse All, Browse by Tag, Browse 
 |     Setting     |     Description     |
 |-----------------|---------------------|
 | Browse Item Page Style | Choose between **Grid** (thumbnail-focused) and **List** (metadata-focused) layout for item browse pages. |
+| Item Browse Sort Control | Choose between a **Dropdown** sort selector and the **Classic links** list on item browse pages. |
 | Hide Secondary Navigation | Hides the secondary navigation on browse pages (Browse All, Browse Collections, Browse by Tag, etc.). |
 | Show list of output formats | Shows links to available output formats on item browse and item show pages. |
 
@@ -117,6 +118,7 @@ These options apply to the collection browse pages (overview of all collections)
 |     Setting     |     Description     |
 |-----------------|---------------------|
 | Browse Collection Page Style | Choose between **Grid** and **List** layout for the collection browse page. |
+| Collection Browse Sort Control | Choose between a **Dropdown** sort selector and the **Classic links** list on collection browse pages. |
 
 ### [Collection: Page][collections]
 These options apply to the collection show pages (overview of one collections, showing some items). This is the collection detail view of one specific collection.

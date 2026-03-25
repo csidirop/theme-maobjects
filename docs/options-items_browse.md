@@ -9,6 +9,9 @@ Comparison example:
 
 ![Browse Item Page Style Example](assets/ex-items-browse_style.gif)
 
+### Option: Item Browse Sort Control
+Choose whether the sort controls on item browse pages are shown as a **Dropdown** or as **Classic links**.
+
 ### Option: Hide Secondary Navigation
 Hides the secondary navigation on browse pages (Browse All, Browse Collections, Browse by Tag, etc.).
 Example of secondary navigation:

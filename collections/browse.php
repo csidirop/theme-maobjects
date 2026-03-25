@@ -9,9 +9,15 @@ echo head(array('title'=>$pageTitle,'bodyclass' => 'collections browse'));
 <?php
 $sortLinks[__('Title')] = 'Dublin Core,Title';
 $sortLinks[__('Date Added')] = 'added';
+$sortStyle = get_theme_option('browse_collection_sort_style');
 ?>
+
 <div id="sort-links">
-    <span class="sort-label"><?php echo __('Sort by: '); ?></span><?php echo browse_sort_links($sortLinks); ?>
+    <?php if ($sortStyle === 'classic'): ?>
+        <span class="sort-label"><?php echo __('Sort by: '); ?></span><?php echo browse_sort_links($sortLinks); ?>
+    <?php else: ?>
+        <?php echo maobjects_browse_sort_select($sortLinks, 'collections-browse-sort-select', __('Sort collections')); ?>
+    <?php endif; ?>
 </div>
 
 <?php fire_plugin_hook('public_facets', array('collections'=>$collections, 'view' => $this)); ?> <!-- TODO: wont load for some reason -->

@@ -19,9 +19,14 @@ echo head(array('title'=>$pageTitle,'bodyclass' => 'items browse'));
 $sortLinks[__('Title')] = 'Dublin Core,Title';
 $sortLinks[__('Creator')] = 'Dublin Core,Creator';
 $sortLinks[__('Date Added')] = 'added';
+$sortStyle = get_theme_option('browse_item_sort_style');
 ?>
 <div id="sort-links">
-    <span class="sort-label"><?php echo __('Sort by: '); ?></span><?php echo browse_sort_links($sortLinks); ?>
+    <?php if ($sortStyle === 'classic'): ?>
+        <span class="sort-label"><?php echo __('Sort by: '); ?></span><?php echo browse_sort_links($sortLinks); ?>
+    <?php else: ?>
+        <?php echo maobjects_browse_sort_select($sortLinks, 'items-browse-sort-select', __('Sort items')); ?>
+    <?php endif; ?>
 </div>
 
 <?php endif; ?>

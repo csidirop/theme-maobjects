@@ -8,3 +8,6 @@ Choose between **Grid** and **List** layout for the collection browse page.
 Comparison example:
 
 ![Browse Collection Page Style Example](assets/ex-collections-browse_style.gif)
+
+### Option: Collection Browse Sort Control
+Choose whether the sort controls on collection browse pages are shown as a **Dropdown** or as **Classic links**.
