@@ -1,115 +1,39 @@
-@mixin button_blau {
+@mixin button_blau($radius: null, $padding: null) {
     border: 0.1875rem solid $uni-blau;
-    color: #fff;
+    color: white;
     background: $uni-blau;
+
+    @if $radius != null { border-radius: $radius; }
+    @if $padding != null { padding: $padding; }
 }
 
-@mixin button_blau_hover {
+@mixin button_blau_hover($radius: null, $padding: null) {
     border: 0.1875rem solid $uni-blau-hell;
     color: $uni-blau;
-    background: #fff;
+    background: white;
+
+    @if $radius != null { border-radius: $radius; }
+    @if $padding != null { padding: $padding; }
 }
+
+@mixin zebra_row_backgrounds {
+    &:nth-child(odd) {
+        background-color: whitesmoke;
+    }
+
+    &:nth-child(even) {
+        background-color: white;
+    }
+}
+
+
+/*** Global styles ***/
 
 a:focus {
     outline-width: 0;
     border-left: none;
     border-right: none;
     border-top: none;
-}
-
-// Item browse page:
-.browse {
-    .hentry {
-        h1, h2, h3, h4 {
-            color: $uni-blau;
-    
-            a {
-                color: $uni-blau;
-            }
-        }
-    }
-
-    // Grid view styling:
-    // Image container hides image overflow
-    .records {
-        .item-img {
-            overflow: hidden;
-            margin-bottom: 0.5rem;
-        }
-    }
-
-    // List view styling:
-    // Alternating row colors:
-    .records > div.list:nth-of-type(odd) {
-        background-color: #f6f6f6;
-    }
-  
-    .records > div.list:nth-of-type(even) {
-        background-color: white;
-    }
-  
-    // List specific styles:
-    .item-meta.hentry.list {
-        .item-meta-content {
-            display: flex;
-        }
-    
-        .item-img {
-            margin-right: 3%;
-            max-width: 120px;
-    
-            img {
-                max-width: 100%;
-            }
-        }
-    }
-}
-
-// Item show page:
-.show {
-    // Layout of the main content container (some properties set in theme_option_styles.php):
-    .content-container {
-        display: flex;
-        flex-direction: column;
-        
-        .primary-content {
-            flex-basis: 50%;
-            // For multi-media display:
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: row;
-            gap: 0.2rem;
-        }
-
-        .secondary-content {
-            flex-basis: auto;
-            display: flex;
-            flex-direction: column;
-        }
-    }
-}
-
-// Main article content area:
-#content {
-    // Headings in UniMa blue:
-    h1, h2, h3, h4 {
-        color: $uni-blau;
-
-        // No hover effect on headings:
-        img:hover {
-            transform: none;
-            transition: none;
-        }
-    }
-
-    // Image hover effect:
-    img{
-        &:hover {
-            transform: scale(1.05);
-        }
-        transition: all .4s;
-    }
 }
 
 .pagination-nav ul.pagination li.page-input {
@@ -141,13 +65,13 @@ a.cover,
     font-size:11px
 }
 
-/* Show lightgallery in flex container: */
+// Show lightgallery in flex container:
 .lightgallery {
     min-width: 100%;
     min-height: 75%;
 }
 
-/* Unterstreichungen bei a ausschalten */
+// Unterstreichungen bei a ausschalten:
 .collection .item-img,
 .item-meta .item-img,
 li.pagination_next,
@@ -158,10 +82,6 @@ li.pagination_next,
 }
 header nav .navigation {
     border: none;
-}
-
-header .uma-header-right nav .navigation li a {
-    border: 0.1875rem solid transparent;
 }
 
 .pagination {
@@ -181,12 +101,209 @@ header .uma-header-right nav .navigation li a {
     }
 }
 
-
 a:hover {
     text-decoration: none;
 }
 
-// Navigation styling
+// jcarousel left / right buttons:
+.jcarousel-wrapper {
+    a {
+        &.jcarousel-control-prev,
+        &.jcarousel-control-next {
+            @include button_blau;
+            font: 24px / 22px Arial, sans-serif;
+
+            &:focus,
+            &:hover {
+                @include button_blau_hover;
+            }
+        }
+    }
+    .jcarousel-pagination {
+        a {
+            &.active {
+                background: $uni-blau;
+            }
+        }
+    }
+}
+
+#scroll-to-top {
+    &:hover {
+        background: $uni-blau-hell;
+    }
+}
+
+.uma-header-right {
+    position:relative;
+    text-align:right;
+    margin-right:0;
+    margin-left:auto
+}
+
+.element h3 {
+    font-size:16px;
+    font-weight:700
+}
+
+.welcome {
+    text-align: center;
+    margin: 100px 0;
+}
+
+.secondary-nav ul {
+    margin-bottom: 15px;
+}
+
+.element-set .element h3{
+    overflow-wrap: break-word;
+    word-break: break-word;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+@media screen and (min-width: 90.0625em) {
+    #site-title.uma-header-left {
+        padding-bottom: 44px;
+    }
+}
+
+// Indent lists:
+#content ul, #content ol {
+    margin-left: 2.5rem;
+}
+
+ul {
+    li {
+        list-style-type: disc;
+    }
+}
+
+
+/*** Page specific styles ***/
+
+/* Item browse page */
+.browse {
+    .hentry {
+        h1, h2, h3, h4 {
+            color: $uni-blau;
+    
+            a {
+                color: $uni-blau;
+            }
+        }
+    }
+
+    // Grid view styling:
+    // Image container hides image overflow
+    .records {
+        .item-img {
+            overflow: hidden;
+            margin-bottom: 0.5rem;
+        }
+    }
+
+    // List view styling:
+    // Alternating row colors:
+    .records > div.list {
+        @include zebra_row_backgrounds;
+    }
+  
+    // List specific styles:
+    .item-meta.hentry.list {
+        .item-meta-content {
+            display: flex;
+        }
+    
+        .item-img {
+            margin-right: 3%;
+            max-width: 120px;
+    
+            img {
+                max-width: 100%;
+            }
+        }
+    }
+}
+
+.browse .hentry,
+#collection-items .hentry {
+    h2 {
+        a {
+            font-weight: bold;
+        }
+    }
+}
+
+/* Item show page */
+.show {
+    // Layout of the main content container (some properties set in theme_option_styles.php):
+    .content-container {
+        display: flex;
+        flex-direction: column;
+        
+        .primary-content {
+            flex-basis: 50%;
+            // For multi-media display:
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row;
+            gap: 0.2rem;
+        }
+
+        .secondary-content {
+            flex-basis: auto;
+            display: flex;
+            flex-direction: column;
+        }
+    }
+}
+
+/* Item Tag page */
+.tags .hTagcloud {
+    li {
+        list-style: none;
+        list-style-type: none;
+
+        // Remove underline from tag links:
+        a {
+            border-bottom: none;
+
+            &:hover {
+                border-bottom: 0.1875rem solid $uni-blau-hell;
+            }
+        }
+    }
+}
+
+/* Main article content area */
+#content {
+    // Headings in UniMa blue:
+    h1, h2, h3, h4 {
+        color: $uni-blau;
+
+        // No hover effect on headings:
+        img:hover {
+            transform: none;
+            transition: none;
+        }
+    }
+
+    // Image hover effect:
+    img{
+        &:hover {
+            transform: scale(1.05);
+        }
+        transition: all .4s;
+    }
+}
+
+/* Navigation styling */
 header nav .navigation li {
     // Highlight active navigation in Uni style:
     &.active a {
@@ -194,7 +311,7 @@ header nav .navigation li {
     }
 
     a {
-        border: 1px solid transparent;
+        border: 0.1875rem solid transparent;
     
         &:hover {
             text-decoration: none;
@@ -209,15 +326,15 @@ header nav .navigation li {
         }
 
         & > div {
-            background-color: #232e58;
-            color: #fff;
+            background-color: $uni-blau;
+            color: white;
 
             .parent {
                 display: none;
             }
 
             a {
-                color: #fff;
+                color: white;
                 border-bottom: none;
 
                 &:not(.parent)::before {
@@ -238,78 +355,7 @@ header nav .navigation li {
     }
 }
 
-/* jcarousel left / right */
-.jcarousel-wrapper {
-    a {
-        &.jcarousel-control-prev,
-        &.jcarousel-control-next {
-            //border: 0.1875rem solid $uni-blau;
-            //color: #fff;
-            //background: $uni-blau;
-            @include button_blau;
-            font: 24px / 22px Arial, sans-serif;
-
-            &:focus,
-            &:hover {
-                //color: $uni-blau;
-                //background: #fff;
-                //border: 0.1875rem solid $uni-blau-hell;
-                @include button_blau_hover;
-            }
-        }
-    }
-    .jcarousel-pagination {
-        a {
-            &.active {
-                background: $uni-blau;
-            }
-        }
-    }
-}
-
-#scroll-to-top {
-    &:hover {
-        background: $uni-blau-hell;
-    }
-}
-
-
-.uma-header-right {
-    position:relative;
-    text-align:right;
-    margin-right:0;
-    margin-left:auto
-}
-
-.element h3 {
-    font-size:16px;
-    font-weight:700
-}
-
-.welcome {
-    text-align:center;
-    margin-top:100px;
-    margin-bottom:100px
-}
-
-.pagination li, .pagination li:first-child, .pagination li {
-    float:none;
-    display:inline-block
-}
-
-.secondary-nav ul {
-    margin-bottom: 15px;
-}
-
-.browse .hentry,
-#collection-items .hentry {
-    h2 {
-        a {
-            font-weight: bold;
-        }
-    }
-}
-
+/* Home page */
 #content h2.AusstellungsThema.uma-primo-bar {
     position: relative;
     top: -40px;
@@ -319,21 +365,21 @@ header nav .navigation li {
     margin-right: auto;
     padding-top: 10px;
     padding-bottom: 4px;
-    color: #fff;
+    color: white;
 }
 
 #home {
     #search-form {
         background-color: $uni-blau;
         border-radius: 15px;
-        padding: 8px 8px 8px 8px;
+        padding: 8px;
     
-        input, button {
-            margin-bottom: 0rem;
+        input,
+        button {
+            margin-bottom: 0;
+
             &:hover {
-                // color: $uni-blau;
-                background: #fff;
-                // border: 0.1875rem solid $uni-blau-hell;
+                background: white;
             }
         }
     }
@@ -350,12 +396,12 @@ header nav .navigation li {
     }
 
     // Hide line on top of h1 on home page:
-    #home #wrap #content h1:before {
+    #wrap #content h1::before {
         display: none;
     }
 }
 
-// Header search form:
+/* Header search form */
 #search-container {
     width: 25rem;
     max-width: calc(100vw - 2rem);
@@ -374,7 +420,7 @@ header nav .navigation li {
         padding: 0.4rem 3.4rem 0.4rem 0.75rem;
         border: 0.0625rem solid $uni-blau;
         border-radius: 999px;
-        background: rgba(255, 255, 255, 0.96);
+        background: rgba(white, 0.96);
         box-shadow: 0 1rem 2.5rem $uni-blau-hell;
         transition: width 0.32s cubic-bezier(0.22, 1, 0.36, 1), padding 0.32s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.24s ease, border-color 0.24s ease, transform 0.24s ease, background-color 0.24s ease;
 
@@ -401,7 +447,7 @@ header nav .navigation li {
             padding: 0.55rem 1rem;
             border: 0.0625rem solid $uni-blau;
             border-radius: 999px;
-            background: #fff;
+            background: white;
             color: $uni-blau;
 
             &::placeholder {
@@ -463,7 +509,7 @@ header nav .navigation li {
         padding: 1rem;
         border: 0.0625rem solid $uni-blau;
         border-radius: 1rem;
-        background: #fff;
+        background: white;
         box-shadow: 0 1rem 2.5rem $uni-blau-hell;
     }
 
@@ -539,22 +585,20 @@ header nav .navigation li {
     }
 }
 
-// Advanced search:
+/* Advanced search */
 .advanced-search #advanced-search-form {
-    button {
-        @include button_blau;
-        border-radius: 4px; //TODO: why is this needed?
-        padding: 4px;
+    button,
+    input#submit_search_advanced[type=submit] {
+        @include button_blau(4px, 4px);
 
         &:hover {
-            @include button_blau_hover;
-            border-radius: 4px;
-            padding: 4px;
+            @include button_blau_hover(4px, 4px);
         }
     }
 
     input#submit_search_advanced[type=submit] {
         font-weight: normal;
+        font-size: inherit;
     }
     
     // Erweiterte Suche Überschrift "Feld löschen" ausblenden // TODO: sollte konfigurierbar sein
@@ -562,30 +606,16 @@ header nav .navigation li {
         display: none;
     }
     #search-narrow-by-fields-label.label {
-        color: #232e58;
+        color: $uni-blau;
         background: transparent;
-    }
-    #submit_search_advanced {
-        font-size: inherit;
     }
 }
 
 #no-results {
-    margin-top: 80px;
-    margin-bottom: 80px;
+    margin: 80px 0;
 }
 
-.collection.hentry,
-.item-meta {
-    text-align: center;
-}
-.facet-checkbox {
-    input[type=checkbox] {
-        vertical-align: inherit;
-    }
-}
-
-//Footer:
+/* Footer */
 footer {
     // Local replacement for the few sprite.css icon size helpers used in the footer.
     .svg-icon-social-facebook-dims {
@@ -629,6 +659,17 @@ footer {
     }
 }
 
+/* Collections */
+.collection.hentry,
+.item-meta {
+    text-align: center;
+}
+.facet-checkbox {
+    input[type=checkbox] {
+        vertical-align: inherit;
+    }
+}
+
 #collection.element,
 .element {
     h3 {
@@ -636,22 +677,6 @@ footer {
     }
 }
 
-.element-set .element h3{
-    overflow-wrap: break-word;
-    word-break: break-word;
-}
-
-.center {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-}
-@media screen and (min-width: 90.0625em) {
-    #site-title.uma-header-left {
-        padding-bottom: 44px;
-    }
-}
 
 // Style Collection title in item overview:
 #item-filters ul {
@@ -665,17 +690,6 @@ footer {
         margin-left: 0px;
         margin-bottom: 15px;
         padding-left: 0px;
-    }
-}
-
-/* indent lists */
-#content ul, #content ol {
-    margin-left: 2.5rem;
-}
-
-ul {
-    li {
-        list-style-type: disc;
     }
 }
 
@@ -695,7 +709,7 @@ ul {
     }
 }
 
-// Search results page:
+/* Search results page */
 .search {
     #search-filters {
     display: none;
@@ -727,14 +741,12 @@ ul {
     }
 }
 
-// Plugin Facets: horizontal styling: (item browse and collection views)
+/* Plugin Facets: horizontal styling: (item browse and collection views) */
 .facets-layout-horizontal {
     margin-top: unset;
 
     #facets-body {
-        border-color: $uni-blau;
-        border-width: 2px 2px 2px 2px;
-        border-style: solid;
+        border: 2px solid $uni-blau;
         border-radius: .5rem;
     }
 
@@ -744,19 +756,12 @@ ul {
     }
 }
 
-/*** Collection Show page: Listview if set ***/
+/* Collection Show page: Listview if set */
 .collections #collection-items.browse.list {
     .item {
         padding: 10px;
         width: 100%;
-
-        &:nth-child(odd) {
-            background-color: #f6f6f6;
-        }
-
-        &:nth-child(even) {
-            background-color: #ffffff;
-        }
+        @include zebra_row_backgrounds;
     }
 
     .item-meta {
@@ -770,12 +775,12 @@ ul {
         }
 
         a:hover {
-            border-bottom: 0.1875rem solid #abb8ca;
+            border-bottom: 0.1875rem solid $uni-blau-hell;
         }
     }
 }
 
-/** Files show page styling **/
+/* Files show page styling */
 .files.show {
     #content {
         display: flex;
@@ -794,7 +799,7 @@ ul {
     }
 }
 
-// Buttons for item navigation (previous/next) on item show page:
+/*  Buttons for item navigation (previous/next) on item show page */
 .item-nav-buttons {
     margin: 2rem 0;
 
@@ -832,7 +837,7 @@ ul {
     }
 }
 
-// Maintenance page styling:
+/* Maintenance page styling */
 .maintenance-mode {
     // Hide menu items in header:
     .uma-header-right {
@@ -848,7 +853,7 @@ ul {
         padding: 25px;
         border: 2px solid $uni-blau;
         border-radius: 10px;
-        background-color: #e6f2ff;
+        background-color: aliceblue;
 
         .centered {
             text-align: center;
@@ -873,7 +878,7 @@ ul {
     }
 }
 
-// Lightgallery styling:
+/* Lightgallery styling */
 .lightgallery .lg-container{
     // Make backdrop transparent:
     &.lg-inline .lg-backdrop {
