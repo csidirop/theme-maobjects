@@ -648,45 +648,213 @@ header nav .navigation li {
 }
 
 /* Footer */
-footer {
-    // Local replacement for the few sprite.css icon size helpers used in the footer.
-    .svg-icon-social-facebook-dims {
-        width: 13px;
-        height: 24px;
+body footer.uma-footer {
+    background: $uni-blau;
+    color: $lighter-gray;
+    padding: 0;
+
+    .footer-inner {
+        padding: 3rem 0 2rem;
     }
 
-    .svg-icon-social-twitter-dims,
-    .svg-icon-social-instagram-dims {
-        width: 24px;
-        height: 24px;
+    .main-footer-navigation {
+        row-gap: 1.5rem;
+        margin-bottom: 2.75rem;
+    }
+
+    .main-footer-text {
+        margin-bottom: 2rem;
+        color: rgba(255, 255, 255, .88);
+        font-size: .9375rem;
+        line-height: 1.5;
+
+        p:last-child {
+            margin-bottom: 0;
+        }
+
+        a,
+        a:link,
+        a:visited {
+            color: white;
+        }
+    }
+
+    .main-footer-legal-info {
+        row-gap: 1.5rem;
+        padding-top: 1.75rem;
+        border-top: .0625rem solid rgba(255, 255, 255, .18);
+    }
+
+    .footer-branding {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.5rem;
+    }
+
+    .footer-branding-item {
+        max-width: 100%;
+    }
+
+    .footer-branding-label {
+        display: block;
+        margin-bottom: .5rem;
+        color: white;
+        font-size: 1rem;
+        line-height: 1.35;
+    }
+
+    .footer-branding-image {
+        display: block;
+        max-width: 100%;
+        height: auto;
+    }
+
+    .footer-branding-primary .footer-branding-image,
+    .footer-branding-secondary .footer-branding-image {
+        width: 10rem;
+    }
+
+    h4 {
+        margin-bottom: 1rem;
+        color: white;
+        font-size: 1.125rem;
+        line-height: 1.2;
+    }
+
+    .footer-nav ul {
+        display: block;
+
+        li {
+            &:last-child {
+                margin-bottom: 0;
+            }
+
+            > a,
+            > a:link,
+            > a:visited {
+                display: inline-block;
+                color: rgba(255, 255, 255, .88);
+                border-bottom: .125rem solid transparent;
+                font-size: .9375rem;
+                line-height: 1.2;
+            }
+        }
+    }
+
+    .footer-nav-flat {
+        li {
+            float: none;
+            margin-right: 0;
+            margin-bottom: 0;
+        }
+
+        ul {
+            display: flex;
+            flex-wrap: wrap;
+            gap: .625rem 1rem;
+        }
+    }
+
+    .social-icons {
+        align-items: center;
+        justify-content: flex-end;
+        gap: .875rem;
+
+        a {
+            margin-left: 0;
+        }
+
+        a > [class^=icon-] {
+            width: 1.5rem;
+            height: 1.5rem;
+            background: transparent !important;
+            border-radius: 0;
+            color: white;
+
+            &.active,
+            &:active,
+            &:focus-visible,
+            &:hover {
+                background: transparent !important;
+                color: #d8e3ef;
+                transform: translateY(-.0625rem);
+            }
+        }
+    }
+
+    .svg-icon-social-facebook-dims {
+        width: .75rem;
+        height: 1.25rem;
+    }
+
+    .svg-icon-social-instagram-dims,
+    .svg-icon-social-linkedin-dims,
+    .svg-icon-social-tiktok-dims,
+    .svg-icon-social-mastodon-dims {
+        width: 1.25rem;
+        height: 1.25rem;
     }
 
     .svg-icon-social-youtube-dims {
-        width: 24px;
-        height: 17.7px;
+        width: 1.5rem;
+        height: 1.125rem;
     }
+}
 
-    .logos {
-        text-align: right;
-        right: 0;
-        position: absolute;
-    
-        .logo1, .logo2 {
-            display: inline-block;
+@media print, screen and (max-width:64.06125em) {
+    body footer.uma-footer {
+        .footer-inner {
+            padding: 2.5rem 0 2rem;
         }
-       .logo2 {
-           .hosted {
-               display: block;
-               text-align: left;
-           }
-       }
-    
-        .ub-logo {
-            height: 50px;
+
+        .main-footer-navigation {
+            margin-bottom: 2.25rem;
         }
-        .uni-logo {
-            height: 50px;
-            margin-right: 20px;
+
+        .main-footer-text {
+            margin-bottom: 1.75rem;
+            text-align: center;
+        }
+
+        .footer-branding {
+            align-items: center;
+            text-align: center;
+        }
+
+        .main-footer-navigation .footer-nav {
+            padding-top: 1rem;
+            border-top: .0625rem solid rgba(255, 255, 255, .14);
+        }
+
+        .footer-nav-flat ul,
+        .social-icons {
+            justify-content: center;
+        }
+    }
+}
+
+@media print, screen and (max-width:47.99875em) {
+    body footer.uma-footer {
+        .footer-inner {
+            padding: 2rem 0 1.75rem;
+        }
+
+        .main-footer-navigation {
+            margin-bottom: 2rem;
+        }
+
+        .main-footer-text {
+            margin-bottom: 1.5rem;
+        }
+
+        h4 {
+            margin-bottom: .25rem;
+            font-size: 1.0625rem;
+        }
+
+        .footer-nav ul li {
+            margin-bottom: .5rem;
         }
     }
 }

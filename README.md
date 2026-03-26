@@ -10,7 +10,7 @@ It is used by the [Mannheim University Library](https://www.bib.uni-mannheim.de)
 - **Built for research collections and digital exhibitions:**
     - Designed for deployments that present digital objects, curated collections, and virtual exhibits in a polished University of Mannheim look (but not limited to!).
 - **Flexible branding and homepage setup:**
-    - Configure logo, logo text, header image, footer text, colors, breadcrumbs, background image, and a homepage with intro text plus featured item, collection, or exhibit blocks.
+    - Configure logo, logo text, header image, a configurable CI-style footer with uploaded logos and editable link blocks, colors, breadcrumbs, background image, and a homepage with intro text plus featured item, collection, or exhibit blocks.
 - **Configurable navigation and search:**
     - Show or hide child pages in the top navigation, switch the quick search behavior, or expose Omeka's advanced site-wide search for more targeted discovery.
 - **Stronger item and collection presentation:**
@@ -34,7 +34,7 @@ These options apply to various general aspects of the theme.
 | Hide 'breadcrumbs' | Hides the breadcrumb trail (the path to the current page) from the top of content pages. |
 | Disable Image Hover Effect | Disables the zoom-on-hover effect for images throughout the theme. |
 
-### Colors
+### Color
 Provide a hex code to set the color of different elements of the theme. (Read more about html color codes here. Omeka only uses hex codes, formatted `#XXXXXX`.)
 
 |     Setting     |     Description     |
@@ -46,8 +46,8 @@ Provide a hex code to set the color of different elements of the theme. (Read mo
 > [!NOTE]
 > In the current state of the theme, some colors are not fully applied throughout all elements of the theme. Further improvements are planned for future versions.
 
-### [Header and Footer][header_footer]
-These options apply to the header and footer of the theme, including the quick search bar button in the header.
+### [Header][header]
+"These options apply to the header of the theme, including the quick search bar in the header.
 
 |     Setting     |     Description     |
 |-----------------|---------------------|
@@ -60,15 +60,27 @@ These options apply to the header and footer of the theme, including the quick s
 | Header Image Position | Vertical alignment of the header image within its container (top, center or bottom). |
 | Alt Text for Header Image | Alternative text for the header image to improve accessibility and screen-reader support. |
 | Show Header Image On Homepage | Shows the header image on the homepage as well as on other pages. |
-| Footer Text | Custom text/HTML shown in the footer of every page. |
-| Display Copyright in Footer | Appends the site’s copyright information to the footer. |
 | Use Advanced Site-wide Search | Enables Omeka’s advanced search form so users can search across record types and choose boolean operators. |
 | Replace quick search bar with link to items/search | Routes queries from the quick search bar to the `/items/search` page instead of using the basic search. |
 | Do not provide quick search bar | Completely hides the quick search bar from the header. |
 | Show Top Navigation Child Pages | Shows child pages as dropdowns under the top navigation items; when unchecked, only top-level pages are shown. |
 
 > [!NOTE]
-> In the current state of the theme, some header and footer options have no effect anymore. Further improvements are planned for future versions.
+> In the current state of the theme, some header options have no effect anymore and will be reviewed in future updates.
+
+### [Footer][footer]
+These options apply to the footer of the theme.
+
+|     Setting     |     Description     |
+|-----------------|---------------------|
+| Footer Logo 1 / Footer Logo 2 | Optional uploaded logos shown in the left footer branding column. |
+| Footer Logo 1 Label / Footer Logo 2 Label | Optional text shown above the corresponding footer logo (for example “Hosted by”). |
+| Footer Block 1-3 Title | Title shown above each of the three main footer link columns. |
+| Footer Block 1-3 Links | `html-input` textareas for footer column links in the format `"url":"title"`, one entry per line. `<br>`-based line breaks from the editor are supported. |
+| Footer Legal Links | `html-input` textarea for the lower legal link row, using the same `"url":"title"` format. Internal paths like `"/imprint"` are resolved through Omeka, so they work in subdirectory installs as well. |
+| Footer Text | Optional additional text/HTML shown beneath the main footer columns; hidden entirely when empty. |
+| Footer Instagram URL / Footer Facebook URL / Footer LinkedIn URL / Footer TikTok URL / Footer YouTube URL / Footer Mastodon URL | Individual social-media URL fields for the footer icons. Leave a field empty to hide that icon. |
+
 
 ### [Homepage][homepage]
 These options apply to the homepage. Most of these options apply only if no other homepage is set in the Omeka settings ( Select a Homepage).
@@ -171,7 +183,8 @@ Third-party copyright in this distribution is noted where applicable.
 All rights not expressly granted are reserved.
 
 [general]: docs/options-general.md
-[header_footer]: docs/options-header_footer.md
+[header]: docs/options-header.md
+[footer]: docs/options-footer.md
 [homepage]: docs/options-homepage.md
 [items_page]: docs/options-items_page.md
 [items_page_layout]: docs/options-items_page.md#option-layout

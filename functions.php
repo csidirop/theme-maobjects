@@ -51,6 +51,29 @@ function maobjects_queue_lightgallery_assets() {
 }
 
 /**
+ * Return the public URL for a theme-uploaded file option.
+ *
+ * @param string $optionName
+ * @return string
+ */
+function maobjects_theme_upload_url($optionName) {
+    $filename = trim((string) get_theme_option($optionName));
+
+    if ($filename === '') {
+        return '';
+    }
+
+    try {
+        $storage = Zend_Registry::get('storage');
+        $path = $storage->getPathByType($filename, 'theme_uploads');
+
+        return (string) $storage->getUri($path);
+    } catch (Exception $e) {
+        return '';
+    }
+}
+
+/**
  * Render Omeka browse sort links as select dropdowns.
  *
  * The helper reuses browse_sort_links() as its source for sort fields, then
@@ -325,6 +348,251 @@ function maobjects_public_facets_if_available(array $args = array()) {
     }
 
     return $html;
+}
+/**
+ * Return configured footer branding logos.
+ *
+ * @return array
+ */
+function maobjects_footer_branding_logos() {
+    $logoSlots = array(
+        'primary' => array(
+            'file_option' => 'footer_logo_primary',
+            'label_option' => 'footer_logo_primary_label',
+        ),
+        'secondary' => array(
+            'file_option' => 'footer_logo_secondary',
+            'label_option' => 'footer_logo_secondary_label',
+        ),
+    );
+
+    $logos = array();
+
+    foreach ($logoSlots as $slot => $settings) {
+        $src = maobjects_theme_upload_url($settings['file_option']);
+
+        if ($src === '') {
+            continue;
+        }
+
+        $logos[] = array(
+            'slot' => $slot,
+            'src' => $src,
+            'label' => trim((string) get_theme_option($settings['label_option'])),
+        );
+    }
+
+    return $logos;
+}
+
+/**
+ * Normalize html-input textarea content into plain text lines.
+ *
+ * @param string $value
+ * @return string
+ */
+function maobjects_footer_textarea_lines($value) {
+    if (!is_string($value) || trim($value) === '') {
+        return '';
+    }
+
+    $normalizedValue = preg_replace('/&nbsp;?/i', ' ', $value); // Replace literal nbsp entities before decoding
+    $normalizedValue = html_entity_decode($normalizedValue, ENT_QUOTES, 'UTF-8'); // Decode HTML entities
+    $normalizedValue = preg_replace('/[\x{00A0}\x{2007}\x{202F}]/u', ' ', $normalizedValue); // Normalize non-breaking spaces to regular spaces
+    $normalizedValue = preg_replace('/<br\s*\/?>/i', "\n", $normalizedValue); // Replace <br> tags with newlines
+    $normalizedValue = preg_replace('/<\/p>|<\/div>|<\/li>/i', "\n", $normalizedValue); // Replace paragraph and list tags with newlines
+    $normalizedValue = strip_tags($normalizedValue); // Remove any remaining HTML tags
+    $normalizedValue = preg_replace("/\r\n?/", "\n", $normalizedValue); // Normalize line endings
+    $normalizedValue = preg_replace("/[ \t]+\n/", "\n", $normalizedValue); // Drop trailing spaces before line breaks
+
+    return trim($normalizedValue);
+}
+
+/**
+ * Determine whether a footer link href is allowed.
+ *
+ * @param string $href
+ * @return bool
+ */
+function maobjects_footer_link_is_allowed($href) {
+    if ($href === '') {
+        return false;
+    }
+
+    if (filter_var($href, FILTER_VALIDATE_URL)) {
+        return true;
+    }
+
+    return (bool) preg_match('/^(\/|#|\?|mailto:|tel:)/i', $href);
+}
+
+/**
+ * Parse footer links from a textarea using the format "url":"title".
+ *
+ * @param string $value
+ * @return array
+ */
+function maobjects_footer_links_from_textarea($value) {
+    $normalizedValue = maobjects_footer_textarea_lines($value);
+
+    if ($normalizedValue === '') {
+        return array();
+    }
+
+    $links = array();
+    $lines = preg_split('/\n+/', $normalizedValue); // Split the normalized value into lines
+
+    // Process each line:
+    foreach ($lines as $line) {
+        $line = trim($line);
+
+        if ($line === '') {
+            continue;
+        }
+
+        if (!preg_match('/^\s*"([^"]+)"\s*:\s*"([^"]+)"\s*$/', $line, $matches)) {
+            continue;
+        }
+
+        $href = trim($matches[1]);
+        $label = trim($matches[2]);
+
+        if ($href === '' || $label === '' || !maobjects_footer_link_is_allowed($href)) {
+            continue;
+        }
+
+        $links[] = array(
+            'href' => (strpos($href, '/') === 0) ? url(ltrim($href, '/')) : $href,
+            'label' => $label,
+        );
+    }
+
+    return $links;
+}
+
+/**
+ * Return configured footer info blocks.
+ *
+ * @return array
+ */
+function maobjects_footer_sections() {
+    $sections = array();
+
+    // Iterate through the footer sections:
+    for ($index = 1; $index <= 3; $index++) {
+        $title = trim((string) get_theme_option('footer_section_' . $index . '_title'));
+        $links = maobjects_footer_links_from_textarea((string) get_theme_option('footer_section_' . $index . '_links'));
+
+        if ($title === '' && !$links) {
+            continue;
+        }
+
+        $sections[] = array(
+            'id' => 'info-block-' . $index,
+            'title' => $title,
+            'links' => $links,
+        );
+    }
+
+    return $sections;
+}
+
+/**
+ * Return configured footer legal links.
+ *
+ * @return array
+ */
+function maobjects_footer_legal_links() {
+    return maobjects_footer_links_from_textarea((string) get_theme_option('footer_legal_links'));
+}
+
+/**
+ * Return footer social links from individual theme settings.
+ *
+ * @return array
+ */
+function maobjects_footer_social_links() {
+    $supportedPlatforms = maobjects_footer_social_icon_map();
+
+    $socialLinks = array();
+
+    // Retrieve social links from theme options:
+    foreach ($supportedPlatforms as $platform => $label) {
+        $href = trim((string) get_theme_option('footer_social_' .$platform));
+
+        // Check if the URL is valid:
+        if ($href === '' || !filter_var($href, FILTER_VALIDATE_URL)) {
+            continue;
+        }
+
+        $socialLinks[] = array(
+            'platform' => $platform,
+            'href' => $href,
+            'label' => $label,
+            'rel' => 'noreferrer me nofollow noopener',
+        );
+    }
+
+    return $socialLinks;
+}
+
+/**
+ * Render one supported footer social icon.
+ *
+ * @param string $platform
+ * @return string
+ */
+function maobjects_footer_social_icon($platform) {
+    $supportedPlatforms = maobjects_footer_social_icon_map();
+    static $svgCache = array();
+
+    if (!isset($supportedPlatforms[$platform])) {
+        return ''; // return empty string if platform is not supported
+    }
+
+    $svgPath = dirname(__FILE__) . '/img/footer/social/' . $platform . '.svg';
+
+    // Check if the SVG file exists and is readable. If so, cache its markup.
+    if (!isset($svgCache[$platform])) {
+        if (!is_readable($svgPath)) {
+            $svgCache[$platform] = ''; 
+        } else {
+            $svgMarkup = trim((string) file_get_contents($svgPath));
+            $svgMarkup = preg_replace(
+                '/<svg\b/i',
+                '<svg class="svg-icon-social-' . html_escape($platform) . '-dims" aria-hidden="true" focusable="false"',
+                $svgMarkup,
+                1
+            );
+            $svgCache[$platform] = $svgMarkup;
+        }
+    }
+
+    if ($svgCache[$platform] === '') {
+        return '';
+    }
+
+    return '<div class="icon-' . html_escape($platform) . '">'
+        . '<span class="svg-icon">'
+        . $svgCache[$platform]
+        . '</span>'
+        . '</div>';
+}
+
+/**
+ * Return the supported footer social media platforms and their labels.
+ *
+ * @return array
+ */
+function maobjects_footer_social_icon_map() {
+    return array(
+        'instagram' => 'Instagram',
+        'facebook' => 'Facebook',
+        'linkedin' => 'LinkedIn',
+        'tiktok' => 'TikTok',
+        'youtube' => 'YouTube',
+        'mastodon' => 'Mastodon',
+    );
 }
 
 ?>

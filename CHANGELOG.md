@@ -22,14 +22,17 @@ The largest internal change is the Uni Mannheim asset migration, which removes r
 - Added dedicated lightGallery styling, initialization and configuration ([8db358f](https://github.com/UB-Mannheim/theme-maobjects/commit/8db358f61b268e38a77adc1bfe443baa05b9815a), [2f7510f](https://github.com/UB-Mannheim/theme-maobjects/commit/2f7510f054608ac6b5b08afe90a609ee1b87c1e7)).
 - Added a search bar to the item tags page to make the tag cloud filterable by search query ([f76ec99](https://github.com/UB-Mannheim/theme-maobjects/commit/f76ec9951226a2e7886ca243fd044acdc8bc2177))
 - Only render the Facets plugin block when it contains facet fields
+- Added a configurable CI-style footer with theme settings for uploaded branding logos, footer column titles, footer link textareas, legal links, footer text, and per-platform social URLs.
 
 #### Changed
 
 - **Migrated external Uni Mannheim frontend dependencies into the theme bundle instead of loading remote assets ([a558280](https://github.com/UB-Mannheim/theme-maobjects/commit/a558280d3c53d40b19fbff0620700552bb8627b3), [b98ab1d](https://github.com/UB-Mannheim/theme-maobjects/commit/b98ab1d608522cead6dc7c8634657ee940f53823), [cae8d89](https://github.com/UB-Mannheim/theme-maobjects/commit/cae8d89da15542f456da06089f6c57fc4e3c705a)).**
 - Restored the internal naming from the temporary `Mashare` rename back to `Center Row`-based identifiers where the theme code had not actually changed ownership ([b1132f3](https://github.com/UB-Mannheim/theme-maobjects/commit/b1132f3189a691f4fef7fa0da005bfe40b67156e)).
+- Reworked footer link parsing so `html-input` textareas can be used for configurable footer blocks and legal links, including Omeka-aware resolution of internal paths like `"/imprint"` in subdirectory installs.
 - Updated styling for:
   - Search Bar ([b04e311](https://github.com/UB-Mannheim/theme-maobjects/commit/fb04e311b8a429752eb946bfeca8a8905878bf6f))
   - Sort Links (in both items and collections browse pages) ([6148534](https://github.com/UB-Mannheim/theme-maobjects/commit/6148534112e72eb8a77e602e858763080edc4eb4)).
+- Updated README and footer documentation to document the new configurable footer settings and textarea link format.
 
 #### Fixed
 

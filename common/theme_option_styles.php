@@ -121,8 +121,7 @@
 
     /*** Userdefined Backgroundimage ***/
     <?php
-        $storage = Zend_Registry::get('storage');
-        $uri = $storage->getUri($storage->getPathByType(get_theme_option('background_image'), 'theme_uploads'));
+        $uri = maobjects_theme_upload_url('background_image');
         if ($backgroundImageUrl) :
     ?>
     body {
