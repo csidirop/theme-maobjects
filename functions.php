@@ -51,6 +51,137 @@ function maobjects_queue_lightgallery_assets() {
 }
 
 /**
+ * Parse the browse item metadata theme option into renderable field specs.
+ *
+ * Supported line formats:
+ * - Dublin Core:Creator
+ * - 'Dublin Core':'Creator'
+ * - Dublin Core:Description|view=list|snippet=350
+ *
+ * Empty lines and comment lines starting with "#" are ignored.
+ *
+ * @param string|null $config Raw config string. When null, reads the theme option.
+ * @return array
+ */
+function maobjects_parse_browse_item_metadata_config($config = null) {
+    if ($config === null) {
+        $config = get_theme_option('browse_item_metadata');
+    }
+
+    $config = trim((string) $config);
+    if ($config === '') {
+        $config = "Dublin Core:Creator\nDublin Core:Date\nDublin Core:Description|view=list|snippet=350";
+    }
+
+    $config = str_replace(array('\r\n', '\n', '\r'), "\n", $config);
+    $lines = preg_split("/\r\n|\n|\r/", $config);
+    $specs = array();
+
+    foreach ($lines as $line) {
+        $line = trim($line);
+
+        if ($line === '' || strpos($line, '#') === 0 || strpos($line, ';') === 0) {
+            continue;
+        }
+
+        $segments = preg_split('/\s*\|\s*/', $line);
+        $fieldSegment = array_shift($segments);
+
+        if (!$fieldSegment) {
+            continue;
+        }
+
+        $fieldParts = preg_split('/\s*[:,]\s*/', $fieldSegment, 2);
+        if (count($fieldParts) !== 2) {
+            continue;
+        }
+
+        $elementSet = trim($fieldParts[0], " \t\n\r\0\x0B'\"");
+        $elementName = trim($fieldParts[1], " \t\n\r\0\x0B'\"");
+
+        if ($elementSet === '' || $elementName === '') {
+            continue;
+        }
+
+        $fieldClass = 'item-' . trim(strtolower(preg_replace('/[^a-z0-9]+/i', '-', $elementName)), '-');
+        $spec = array(
+            'element_set' => $elementSet,
+            'element_name' => $elementName,
+            'class' => $fieldClass !== 'item-' ? $fieldClass : 'item-meta-field',
+            'snippet' => null,
+            'view' => 'both',
+        );
+
+        foreach ($segments as $segment) {
+            $segment = trim($segment);
+            if ($segment === '') {
+                continue;
+            }
+
+            if (strpos($segment, '=') === false) {
+                $flag = strtolower(trim($segment, "'\""));
+                if (in_array($flag, array('list', 'grid', 'both'), true)) {
+                    $spec['view'] = $flag;
+                }
+                continue;
+            }
+
+            list($key, $value) = array_map('trim', explode('=', $segment, 2));
+            $key = strtolower($key);
+            $value = trim($value, "'\"");
+
+            if ($key === 'view' && in_array($value, array('list', 'grid', 'both'), true)) {
+                $spec['view'] = $value;
+            } elseif ($key === 'snippet' && ctype_digit($value) && (int) $value > 0) {
+                $spec['snippet'] = (int) $value;
+            }
+        }
+
+        $specs[] = $spec;
+    }
+
+    return $specs;
+}
+
+/**
+ * Render configured browse item metadata fields for list or grid browse cards.
+ *
+ * @param Item $item
+ * @param string $viewMode Either "list" or "grid".
+ * @return string
+ */
+function maobjects_render_browse_item_metadata($item, $viewMode = 'grid') {
+    $html = '';
+    $viewMode = $viewMode === 'list' ? 'list' : 'grid';
+
+    foreach (maobjects_parse_browse_item_metadata_config() as $field) {
+        if ($field['view'] !== 'both' && $field['view'] !== $viewMode) {
+            continue;
+        }
+
+        $options = array();
+        if (!empty($field['snippet'])) {
+            $options['snippet'] = $field['snippet'];
+        }
+
+        $value = metadata($item, array($field['element_set'], $field['element_name']), $options);
+        if (!$value) {
+            continue;
+        }
+
+        $tag = !empty($field['snippet']) ? 'div' : 'span';
+        $html .= sprintf(
+            '<%1$s class="item-meta-field %2$s">%3$s</%1$s>',
+            $tag,
+            html_escape($field['class']),
+            $value
+        );
+    }
+
+    return $html;
+}
+
+/**
  * Render Omeka browse sort links as select dropdowns.
  *
  * The helper reuses browse_sort_links() as its source for sort fields, then
