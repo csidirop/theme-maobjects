@@ -6,11 +6,21 @@ $footerBrandingLogos = maobjects_footer_branding_logos();
 $legalLinks = maobjects_footer_legal_links();
 $footerText = (string) get_theme_option('footer_text');
 $socialLinks = maobjects_footer_social_links();
+$isHomePage = maobjects_is_home_page(!empty($is_home_page)); // $is_home_page is set by the Simple Pages plugin when the page is set as the homepage in the navigation.
+
+$isFloatingHomepage = get_theme_option('floating_homepage') === '1' && $isHomePage;
+$footerClasses = 'uma-footer';
+
+if ($isFloatingHomepage) {
+    $footerClasses .= ' uma-footer-compact-home';
+}
 ?>
 
-<footer role="contentinfo" class="uma-footer">
+<footer role="contentinfo" class="<?php echo html_escape($footerClasses); ?>">
   <div class="row expanded align-center">
     <div class="column large-16 xlarge-12 footer-inner">
+      <!-- Regular Footer -->
+      <?php if (!$isFloatingHomepage): ?>
       <div class="main-footer-navigation row">
         <!-- Footer Logos: -->
         <?php if ($footerBrandingLogos): ?>
@@ -37,8 +47,7 @@ $socialLinks = maobjects_footer_social_links();
           <ul id="<?php echo html_escape($section['id']); ?>">
             <?php foreach ($section['links'] as $link): ?>
             <li>
-              <a
-                href="<?php echo html_escape($link['href']); ?>"
+              <a href="<?php echo html_escape($link['href']); ?>"
                 <?php if (!empty($link['target'])): ?>target="<?php echo html_escape($link['target']); ?>" rel="<?php echo html_escape($link['rel']); ?>"<?php endif; ?>>
                 <?php echo html_escape($link['label']); ?>
               </a>
@@ -58,17 +67,17 @@ $socialLinks = maobjects_footer_social_links();
         </div>
       </div>
       <?php endif; ?>
+      <?php endif; ?>
 
       <!-- Legal Information: -->
-      <?php if ($legalLinks || $socialLinks): ?>
+      <?php if ($legalLinks || $socialLinks || ($isFloatingHomepage && $footerBrandingLogos)): ?>
       <div class="main-footer-legal-info row align-middle align-justify medium-text-center">
         <?php if ($legalLinks): ?>
-        <div class="column small-16 large-12 footer-nav footer-nav-flat">
+        <div class="column small-16 <?php echo $isFloatingHomepage ? 'large-8' : 'large-12'; ?> footer-nav footer-nav-flat">
           <ul>
             <?php foreach ($legalLinks as $link): ?>
             <li>
-              <a
-                href="<?php echo html_escape($link['href']); ?>"
+              <a href="<?php echo html_escape($link['href']); ?>"
                 <?php if (!empty($link['target'])): ?>target="<?php echo html_escape($link['target']); ?>" rel="<?php echo html_escape($link['rel']); ?>"<?php endif; ?>>
                 <?php echo html_escape($link['label']); ?>
               </a>
@@ -78,13 +87,26 @@ $socialLinks = maobjects_footer_social_links();
         </div>
         <?php endif; ?>
 
+        <!-- Floating Footer branding -->
+        <?php if ($isFloatingHomepage && $footerBrandingLogos): ?>
+        <div class="column small-16 <?php echo $legalLinks ? 'large-8' : 'large-16'; ?> footer-branding footer-branding-compact">
+          <?php foreach ($footerBrandingLogos as $logo): ?>
+          <div class="footer-branding-item footer-branding-<?php echo html_escape($logo['slot']); ?>">
+            <?php if ($logo['label'] !== ''): ?>
+            <span class="footer-branding-label"><?php echo html_escape($logo['label']); ?></span>
+            <?php endif; ?>
+            <img class="footer-branding-image" src="<?php echo html_escape($logo['src']); ?>" alt="" />
+          </div>
+          <?php endforeach; ?>
+        </div>
+        <?php endif; ?>
+
         <!-- Social Media Links: -->
-        <?php if ($socialLinks): ?>
+        <?php if (!$isFloatingHomepage && $socialLinks): ?>
         <div class="column small-16 large-4">
           <div class="social-icons">
             <?php foreach ($socialLinks as $socialLink): ?>
-            <a
-              href="<?php echo html_escape($socialLink['href']); ?>"
+            <a href="<?php echo html_escape($socialLink['href']); ?>"
               target="_blank"
               rel="<?php echo html_escape($socialLink['rel']); ?>"
               aria-label="<?php echo html_escape($socialLink['label']); ?>">

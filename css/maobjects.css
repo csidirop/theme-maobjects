@@ -1007,6 +1007,12 @@ body footer.uma-footer .main-footer-text a:visited {
     align-items: flex-start;
     gap: 1.5rem;
   }
+  body footer.uma-footer .footer-branding-compact {
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 1.5rem 2rem;
+  }
   body footer.uma-footer .footer-branding-item {
     max-width: 100%;
   }
@@ -1025,6 +1031,36 @@ body footer.uma-footer .main-footer-text a:visited {
   body footer.uma-footer .footer-branding-primary .footer-branding-image,
 body footer.uma-footer .footer-branding-secondary .footer-branding-image {
     width: 10rem;
+  }
+  body footer.uma-footer.uma-footer-compact-home .footer-inner {
+    padding: 1.25rem 0;
+  }
+  body footer.uma-footer.uma-footer-compact-home .main-footer-legal-info {
+    padding-top: 0;
+    border-top: 0;
+  }
+  body footer.uma-footer.uma-footer-compact-home .footer-nav-flat {
+    display: flex;
+    align-items: center;
+  }
+  body footer.uma-footer.uma-footer-compact-home .footer-branding-compact .footer-branding-item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+  body footer.uma-footer.uma-footer-compact-home .footer-branding-compact .footer-branding-image {
+    width: auto;
+    max-width: 10rem;
+    max-height: 2.5rem;
+    object-fit: contain;
+  }
+  body footer.uma-footer.uma-footer-compact-home .footer-branding-compact .footer-branding-label {
+    margin-bottom: 0.375rem;
+    font-size: 0.9375rem;
+  }
+  body footer.uma-footer.uma-footer-compact-home .footer-nav-flat ul {
+    margin: 0;
+    gap: 0.625rem 1.25rem;
   }
   body footer.uma-footer h4 {
     margin-bottom: 1rem;
@@ -1108,6 +1144,12 @@ body footer.uma-footer .svg-icon-social-mastodon-dims {
     align-items: center;
     text-align: center;
   }
+  body footer.uma-footer .footer-branding-compact {
+    justify-content: center;
+  }
+  body footer.uma-footer.uma-footer-compact-home .footer-branding-compact .footer-branding-item {
+    align-items: center;
+  }
   body footer.uma-footer .main-footer-navigation .footer-nav {
     padding-top: 1rem;
     border-top: 0.0625rem solid rgba(255, 255, 255, 0.14);
@@ -1126,6 +1168,10 @@ body footer.uma-footer .social-icons {
   }
   body footer.uma-footer .main-footer-text {
     margin-bottom: 1.5rem;
+  }
+  body footer.uma-footer .footer-branding-compact {
+    flex-direction: column;
+    gap: 1rem;
   }
   body footer.uma-footer h4 {
     margin-bottom: 0.25rem;

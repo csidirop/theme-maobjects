@@ -349,6 +349,35 @@ function maobjects_public_facets_if_available(array $args = array()) {
 
     return $html;
 }
+
+/**
+ * Determine whether the current public request resolves to the homepage.
+ *
+ * @param bool $isSimplePagesHome Whether Simple Pages marked the current page as home. $is_home_page is set by the Simple Pages plugin when the page is set as the homepage in the navigation.
+ * @return bool
+ */
+function maobjects_is_home_page($isSimplePagesHome = false) {
+    if ($isSimplePagesHome) {
+        return true;
+    }
+
+    // Check the current route name for a direct match with the homepage route:
+    $front = Zend_Controller_Front::getInstance();
+    $request = $front->getRequest();
+    $router = $front->getRouter();
+    $currentRouteName = $router ? $router->getCurrentRouteName() : null;
+
+    // The homepage route is typically named 'home' in Omeka, but this can be customized:
+    if ($currentRouteName === Omeka_Application_Resource_Router::HOMEPAGE_ROUTE_NAME) {
+        return true;
+    }
+
+    return $request
+        && in_array((string) $request->getModuleName(), array('', 'default'), true)
+        && $request->getControllerName() === 'index'
+        && $request->getActionName() === 'index';
+}
+
 /**
  * Return configured footer branding logos.
  *
