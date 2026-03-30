@@ -14,6 +14,7 @@
     $backgroundImageOpacity = get_theme_option('background_image_opacity');
     $backgroundImageDonotshowundercontent = get_theme_option('background_image_donotshowundercontent');
     $floatingHome = get_theme_option('floating_homepage');
+    $isHomePage = maobjects_is_home_page(!empty($is_home_page));
     is_numeric($backgroundImageOpacity) ? $backgroundImageOpacity / 100 : 100;
     $show_element_set_headings = get_option('show_element_set_headings');
     $media_lightgallery_pdf_embed_hide_toolbar = get_theme_option( 'media_lightgallery_pdf_embed_hide_toolbar');
@@ -160,45 +161,45 @@
     <?php endif; ?>
 
     /*** Floating home ***/
-    <?php if ($floatingHome == '1') : ?>
-    #home #wrap {
+    <?php if ($floatingHome == '1' && $isHomePage) : ?>
+    #wrap {
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
     }
     @media only screen and (min-width: 900px) {
-        #home #wrap {
+        #wrap {
             min-width: 1000px;
         }
     } 
     @media only screen and (max-width: 900px) {
-        #home #wrap {
+        #wrap {
             min-width: 100%;
         }
     }
 
-    #home #search-container {
+    #search-container {
         display: none;
     }
 
-    #home #site-title {
+    #site-title {
         margin-top: auto;
     }
 
-    #home .uma-footer {
+    .uma-footer {
         padding: 0rem;
     }
 
-    #home .logos .hosted {
+    .logos .hosted {
         display: none;
     }
 
-    #home footer .legal {
+    footer .legal {
         margin: 1.075rem 0;
     }
 
-    #home footer .logos {
+    footer .logos {
         margin-right: 20px;
     }
     <?php endif; ?>
