@@ -75,6 +75,7 @@ These options apply to the footer of the theme.
 |-----------------|---------------------|
 | Footer Logo 1 / Footer Logo 2 | Optional uploaded logos shown in the left footer branding column. |
 | Footer Logo 1 Label / Footer Logo 2 Label | Optional text shown above the corresponding footer logo (for example “Hosted by”). |
+| Use footer gradient background | Enables a linear gradient for the footer shell; when disabled, the default is a solid Uni Mannheim blue background. |
 | Footer Block 1-3 Title | Title shown above each of the three main footer link columns. |
 | Footer Block 1-3 Links | `html-input` textareas for footer column links in the format `"url":"title"`, one entry per line. `<br>`-based line breaks from the editor are supported. |
 | Footer Legal Links | `html-input` textarea for the lower legal link row, using the same `"url":"title"` format. Internal paths like `"/imprint"` are resolved through Omeka, so they work in subdirectory installs as well. |

@@ -18,6 +18,7 @@ The footer is now configurable from the theme settings and follows the current M
 #### Footer logo options
 - `Footer Logo 1` and `Footer Logo 2` upload images for the branding column.
 - `Footer Logo 1 Label` and `Footer Logo 2 Label` add optional text above the corresponding logo, for example `Hosted by`.
+- `Use footer gradient background` enables a linear gradient for the footer shell. By default, the footer uses a solid Uni Mannheim blue background.
 
 #### Footer link format
 The footer block link fields and the legal-links field use the same input format:

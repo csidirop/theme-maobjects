@@ -1511,8 +1511,7 @@ nav ul {
   }
 
   /* @group ----- Containers ----- */
-  #wrap,
-footer {
+  #wrap {
     padding: 0 24px;
   }
 

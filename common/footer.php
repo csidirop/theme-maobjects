@@ -1,4 +1,5 @@
 </article><!-- end content -->
+</div><!-- end wrap -->
 
 <?php
 $footerSections = maobjects_footer_sections();
@@ -7,18 +8,18 @@ $legalLinks = maobjects_footer_legal_links();
 $footerText = (string) get_theme_option('footer_text');
 $socialLinks = maobjects_footer_social_links();
 $isHomePage = maobjects_is_home_page(!empty($is_home_page)); // $is_home_page is set by the Simple Pages plugin when the page is set as the homepage in the navigation.
+$footerUsesGradient = get_theme_option('footer_use_gradient') === '1';
 
 $isFloatingHomepage = get_theme_option('floating_homepage') === '1' && $isHomePage;
 $footerClasses = 'uma-footer';
-
-if ($isFloatingHomepage) {
-    $footerClasses .= ' uma-footer-compact-home';
-}
+if ($isFloatingHomepage) { $footerClasses .= ' uma-footer-compact-home'; }
+if ($footerUsesGradient) { $footerClasses .= ' uma-footer-gradient'; }
 ?>
 
 <footer role="contentinfo" class="<?php echo html_escape($footerClasses); ?>">
-  <div class="row expanded align-center">
-    <div class="column large-16 xlarge-12 footer-inner">
+  <div class="uma-footer-shell">
+    <div class="row expanded align-center">
+      <div class="column small-16 footer-inner">
       <!-- Regular Footer -->
       <?php if (!$isFloatingHomepage): ?>
       <div class="main-footer-navigation row">
@@ -118,6 +119,7 @@ if ($isFloatingHomepage) {
         <?php endif; ?>
       </div>
       <?php endif; ?>
+      </div>
     </div>
   </div>
   <?php fire_plugin_hook('public_footer', array('view' => $this)); ?>

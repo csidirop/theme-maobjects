@@ -172,6 +172,25 @@ a:hover {
     }
 }
 
+html,
+body {
+    min-height: 100%;
+}
+
+body {
+    min-height: 100vh; // Fallback for browsers that don't support dynamic viewport units
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+}
+
+#wrap {
+    width: 100%;
+    flex: 1 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
 // Indent lists:
 #content ul, #content ol {
     margin-left: 2.5rem;
@@ -182,7 +201,6 @@ ul {
         list-style-type: disc;
     }
 }
-
 
 /*** Page specific styles ***/
 
@@ -649,12 +667,21 @@ header nav .navigation li {
 
 /* Footer */
 body footer.uma-footer {
-    background: $uni-blau;
-    color: $lighter-gray;
-    padding: 0;
+    --footer-shell-padding: clamp(1.25rem, 2vw, 2rem);
+
+    background: transparent;
+    padding: clamp(2.5rem, 5vw, 4.5rem) 0 0;
+
+    .uma-footer-shell {
+        background: $uni-blau;
+    }
+
+    &.uma-footer-gradient .uma-footer-shell {
+        background: linear-gradient(180deg, #0a4479 0%, $uni-blau 100%);
+    }
 
     .footer-inner {
-        padding: 3rem 0 2rem;
+        padding: 3rem var(--footer-shell-padding) 2rem;
     }
 
     .main-footer-navigation {
@@ -664,7 +691,7 @@ body footer.uma-footer {
 
     .main-footer-text {
         margin-bottom: 2rem;
-        color: rgba(255, 255, 255, .88);
+        color: rgba(white, .88);
         font-size: .9375rem;
         line-height: 1.5;
 
@@ -682,7 +709,7 @@ body footer.uma-footer {
     .main-footer-legal-info {
         row-gap: 1.5rem;
         padding-top: 1.75rem;
-        border-top: .0625rem solid rgba(255, 255, 255, .18);
+        border-top: .0625rem solid rgba(white, .18);
     }
 
     .footer-branding {
@@ -723,8 +750,11 @@ body footer.uma-footer {
     }
 
     &.uma-footer-compact-home {
+        margin-top: 0;
+        padding-top: 1.5rem;
+
         .footer-inner {
-            padding: 1.25rem 0;
+            padding: 1.25rem var(--footer-shell-padding);
         }
 
         .main-footer-legal-info {
@@ -780,7 +810,7 @@ body footer.uma-footer {
             > a:link,
             > a:visited {
                 display: inline-block;
-                color: rgba(255, 255, 255, .88);
+                color: rgba(white, .88);
                 border-bottom: .125rem solid transparent;
                 font-size: .9375rem;
                 line-height: 1.2;
@@ -823,7 +853,7 @@ body footer.uma-footer {
             &:focus-visible,
             &:hover {
                 background: transparent !important;
-                color: #d8e3ef;
+                color: $light-gray;
                 transform: translateY(-.0625rem);
             }
         }
@@ -851,7 +881,7 @@ body footer.uma-footer {
 @media print, screen and (max-width:64.06125em) {
     body footer.uma-footer {
         .footer-inner {
-            padding: 2.5rem 0 2rem;
+            padding: 2.5rem var(--footer-shell-padding) 2rem;
         }
 
         .main-footer-navigation {
@@ -878,7 +908,7 @@ body footer.uma-footer {
 
         .main-footer-navigation .footer-nav {
             padding-top: 1rem;
-            border-top: .0625rem solid rgba(255, 255, 255, .14);
+            border-top: .0625rem solid rgba(white, .14);
         }
 
         .footer-nav-flat ul,
@@ -891,7 +921,7 @@ body footer.uma-footer {
 @media print, screen and (max-width:47.99875em) {
     body footer.uma-footer {
         .footer-inner {
-            padding: 2rem 0 1.75rem;
+            padding: 2rem var(--footer-shell-padding) 1.75rem;
         }
 
         .main-footer-navigation {

@@ -162,20 +162,29 @@
 
     /*** Floating home ***/
     <?php if ($floatingHome == '1' && $isHomePage) : ?>
-    #wrap {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+    body {
+        justify-content: center;
     }
-    @media only screen and (min-width: 900px) {
-        #wrap {
-            min-width: 1000px;
-        }
-    } 
+
+    #wrap {
+        flex: 0 0 auto;
+        width: min(100%, 1000px);
+        max-width: 1000px;
+        min-width: 0;
+        margin: 0 auto;
+    }
+
+    footer.uma-footer.uma-footer-compact-home {
+        width: min(100%, 1000px);
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+
     @media only screen and (max-width: 900px) {
-        #wrap {
-            min-width: 100%;
+        #wrap,
+        footer.uma-footer.uma-footer-compact-home {
+            width: 100%;
+            max-width: none;
         }
     }
 
@@ -183,24 +192,8 @@
         display: none;
     }
 
-    #site-title {
-        margin-top: auto;
-    }
-
-    .uma-footer {
-        padding: 0rem;
-    }
-
-    .logos .hosted {
-        display: none;
-    }
-
-    footer .legal {
-        margin: 1.075rem 0;
-    }
-
-    footer .logos {
-        margin-right: 20px;
+    footer.uma-footer.uma-footer-compact-home .uma-footer-shell {
+        box-shadow: none;
     }
     <?php endif; ?>
 
