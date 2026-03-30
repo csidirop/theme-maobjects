@@ -88,9 +88,11 @@ $sortStyle = get_theme_option('browse_item_sort_style');
 <?php if (get_theme_option('show_outputformats') == 1): ?>
 <details class="outputs">
     <summary class="outputs-label">
-        <?php echo __('Output Formats'); ?>
+        <span class="outputs-icon" aria-hidden="true"></span>
+        <span class="outputs-text"><?php echo __('Output Formats'); ?></span>
+        <span class="outputs-caret" aria-hidden="true"></span>
     </summary>
-    <div id="output-format-list">
+    <div id="output-format-list" class="output-format-panel">
         <?php echo output_format_list(false); ?>
     </div>
 </details>

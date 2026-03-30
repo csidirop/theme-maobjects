@@ -1170,6 +1170,116 @@ body footer.uma-footer {
     }
 }
 
+/* Output format toggle on item browse/show pages */
+.outputs {
+    $outputs-icon-size: 0.9rem;
+    $outputs-transition: .2s ease-out;
+
+    summary {
+        list-style: none;
+
+        &::marker {
+            display: none;
+        }
+
+        &::-webkit-details-marker {
+            display: none;
+        }
+    }
+
+    .outputs-label {
+        @include button_blau(8px, 0.45rem 0.85rem);
+
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        cursor: pointer;
+        font-size: 0.9rem;
+        font-weight: 600;
+        line-height: 1.2;
+        transition: all $outputs-transition;
+
+        &:hover,
+        &:focus,
+        &:focus-visible {
+            @include button_blau_hover;
+            outline: none;
+        }
+    }
+
+    .outputs-icon {
+        position: relative;
+        width: $outputs-icon-size;
+        height: $outputs-icon-size;
+        flex: 0 0 $outputs-icon-size;
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0.05rem;
+            left: 50%;
+            width: 0.4rem;
+            height: 0.5rem;
+            border-right: 0.14rem solid currentColor;
+            border-bottom: 0.14rem solid currentColor;
+            transform: translateX(-50%) rotate(45deg);
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            bottom: 0.05rem;
+            left: 0.1rem;
+            width: 0.8rem;
+            height: 0.28rem;
+            border: 0.14rem solid currentColor;
+            border-top: 0;
+            border-radius: 0 0 0.15rem 0.15rem;
+        }
+    }
+
+    .outputs-caret {
+        display: inline-flex;
+        justify-content: center;
+        width: 0.6rem;
+        line-height: 1;
+        transition: transform $outputs-transition;
+
+        &::before {
+            content: "›";
+        }
+    }
+
+    &[open] {
+        .outputs-caret {
+            transform: rotate(90deg);
+        }
+    }
+
+    > .output-format-panel,
+    > .output-formats {
+        margin-top: 0.9rem;
+    }
+
+    a {
+        padding: 0.45rem 0.85rem;
+        border: 1px solid $uni-blau-hell;
+        background: white;
+        color: $uni-blau;
+        font-size: 0.7rem;
+        font-weight: 600;
+        text-decoration: none;
+
+        &:hover,
+        &:focus,
+        &:focus-visible {
+            border-color: $uni-blau;
+            background: $uni-blau;
+            color: white;
+        }
+    }
+}
+
 /* Maintenance page styling */
 .maintenance-mode {
     // Hide menu items in header:

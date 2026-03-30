@@ -6,6 +6,8 @@ All notable changes to this project will be documented in this file.
 Version Strings to change before release:
  - /theme.ini
  - /package.json
+
+Placeholder for commit: [xxxxxxx](https://github.com/UB-Mannheim/theme-maobjects/commit/xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx))
  -->
 
 ## Current State
@@ -13,16 +15,15 @@ Version Strings to change before release:
 The largest internal change is the Uni Mannheim asset migration, which removes reliance on externally hosted corporate-design resources and makes the theme more self-contained ([a558280](https://github.com/UB-Mannheim/theme-maobjects/commit/a558280d3c53d40b19fbff0620700552bb8627b3), [b98ab1d](https://github.com/UB-Mannheim/theme-maobjects/commit/b98ab1d608522cead6dc7c8634657ee940f53823), [cae8d89](https://github.com/UB-Mannheim/theme-maobjects/commit/cae8d89da15542f456da06089f6c57fc4e3c705a)).
 
 
-#### Added
+#### New
 
 - Added theme-specific styling for the Admin Tools maintenance mode page so maintenance screens inherit the MAObjects look and footer/header framing ([ab3469d](https://github.com/UB-Mannheim/theme-maobjects/commit/ab3469d2215e99b92ae581afa0041d3aa21c63bc), [30c4824](https://github.com/UB-Mannheim/theme-maobjects/commit/30c48249121fa1be67328e7f71e133e1bb2f62ef)).
 - Added new theme options:
   - selectable item image sizes ([f4a69a2](https://github.com/UB-Mannheim/theme-maobjects/commit/f4a69a2700fcbf6b9b43786dbb28ce52f8501a18), [ec8e696](https://github.com/UB-Mannheim/theme-maobjects/commit/ec8e696942d024d3c8157c214e94afca96d0d006))
   - option to hide the exhibit heading and exhibit navigation ([a9a3f20](https://github.com/UB-Mannheim/theme-maobjects/commit/a9a3f2097ab5b6df00b3d5ee760580f85af12731)).
 - Added dedicated lightGallery styling, initialization and configuration ([8db358f](https://github.com/UB-Mannheim/theme-maobjects/commit/8db358f61b268e38a77adc1bfe443baa05b9815a), [2f7510f](https://github.com/UB-Mannheim/theme-maobjects/commit/2f7510f054608ac6b5b08afe90a609ee1b87c1e7)).
-- Added a search bar to the item tags page to make the tag cloud filterable by search query ([f76ec99](https://github.com/UB-Mannheim/theme-maobjects/commit/f76ec9951226a2e7886ca243fd044acdc8bc2177))
-- Only render the Facets plugin block when it contains facet fields
-- Added a configurable CI-style footer with theme settings for uploaded branding logos, footer column titles, footer link textareas, legal links, footer text, and per-platform social URLs.
+- Added a search bar to the item tags page to make the tag cloud filterable by search query ([f76ec99](https://github.com/UB-Mannheim/theme-maobjects/commit/f76ec9951226a2e7886ca243fd044acdc8bc2177)).
+- Added a configurable CI-style footer with theme settings for uploaded branding logos, footer column titles, footer link textareas, legal links, footer text, and per-platform social URLs. ([35e25be](https://github.com/UB-Mannheim/theme-maobjects/commit/35e25be0c9611d99e25d3e61c78ce694eec7db23))
 
 #### Changed
 
@@ -32,11 +33,13 @@ The largest internal change is the Uni Mannheim asset migration, which removes r
 - Updated styling for:
   - Search Bar ([b04e311](https://github.com/UB-Mannheim/theme-maobjects/commit/fb04e311b8a429752eb946bfeca8a8905878bf6f))
   - Sort Links (in both items and collections browse pages) ([6148534](https://github.com/UB-Mannheim/theme-maobjects/commit/6148534112e72eb8a77e602e858763080edc4eb4)).
+  - Output formats on item browse and show pages.
 - Updated README and footer documentation to document the new configurable footer settings and textarea link format.
 
 #### Fixed
 
 - Fixed smaller item-page media issues, including display handling around file rendering and theme options for item media output ([ec8e696](https://github.com/UB-Mannheim/theme-maobjects/commit/ec8e696942d024d3c8157c214e94afca96d0d006)).
+- Only render the Facets plugin block when it contains facet fields ([7a9e3d2](https://github.com/UB-Mannheim/theme-maobjects/commit/7a9e3d265ee60443a6ca5b02f7f3b194df5cd302)).
 
 
 ## [v2.1](https://github.com/UB-Mannheim/theme-maobjects/releases/tag/maobjects-v2.1)

@@ -78,7 +78,9 @@ echo head(array('title' => metadata('item', array('Dublin Core', 'Title')), 'bod
             <h3><?php echo __('Output Formats'); ?></h3>
             <details class="element-text outputs">
                 <summary class="outputs-label">
-                    <?php echo __('Show'); ?>
+                    <span class="outputs-icon" aria-hidden="true"></span>
+                    <span class="outputs-text"><?php echo __('Output Formats'); ?></span>
+                    <span class="outputs-caret" aria-hidden="true"></span>
                 </summary>
                 <?php echo output_format_list(); ?>
             </details>
