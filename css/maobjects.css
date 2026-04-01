@@ -719,40 +719,54 @@ body {
   }
 }
 @media screen {
-  header nav .navigation li.active a {
+  header nav .navigation > li.active > a {
     border-bottom: 0.1875rem solid #abb8ca;
   }
-  header nav .navigation li a {
-    border: 0.1875rem solid transparent;
-  }
-  header nav .navigation li a:hover {
+  header nav .navigation > li:hover > a, header nav .navigation > li:focus-within > a, header nav .navigation > li.nav-item.open > a {
     text-decoration: none;
     border-bottom: 0.1875rem solid #00325d;
   }
-  header nav .navigation li.nav-item a {
+  header nav .navigation > li > a {
+    border: 0.1875rem solid transparent;
+  }
+  header nav .navigation > li.nav-item > a {
     margin-bottom: 0;
   }
-  header nav .navigation li.nav-item > div {
+  header nav .navigation > li.nav-item > div {
     background-color: #00325d;
     color: white;
+    width: max-content;
+    left: auto;
+    right: 0;
   }
-  header nav .navigation li.nav-item > div .parent {
+  header nav .navigation > li.nav-item > div .parent {
     display: none;
   }
-  header nav .navigation li.nav-item > div a {
+  header nav .navigation > li.nav-item > div a {
     color: white;
-    border-bottom: none;
+    border-bottom: 0.1875rem solid transparent;
   }
-  header nav .navigation li.nav-item > div a:not(.parent)::before {
+  header nav .navigation > li.nav-item > div a:not(.parent)::before {
     display: none;
     margin-right: 15px;
   }
-  header nav .navigation li.nav-item > div a:hover {
+  header nav .navigation > li.nav-item > div a:hover {
     border-bottom: 0.1875rem solid #abb8ca;
   }
-  header nav .navigation li.nav-item .sub-nav ul li {
-    padding: 10px;
-    margin-right: 5px;
+  header nav .navigation > li.nav-item .sub-nav ul li.sub-nav-group {
+    margin: 10px;
+  }
+  header nav .navigation > li.nav-item .sub-nav ul li.sub-nav-group ul {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: stretch;
+    row-gap: 10px;
+    column-gap: 20px;
+  }
+  header nav .navigation > li.nav-item .sub-nav ul li.sub-nav-group ul li {
+    padding: 0px;
+    width: unset;
   }
 }
 @media screen {

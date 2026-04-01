@@ -138,7 +138,7 @@ a:hover {
     position:relative;
     text-align:right;
     margin-right:0;
-    margin-left:auto
+    margin-left:auto;
 }
 
 .element h3 {
@@ -354,53 +354,77 @@ ul {
 }
 
 /* Navigation styling */
-header nav .navigation li {
-    // Highlight active navigation in Uni style:
-    &.active a {
-        border-bottom: 0.1875rem solid $uni-blau-hell;
-    }
+header nav .navigation {
+    > li {
+        // Highlight active navigation in Uni style:
+        &.active > a {
+            border-bottom: 0.1875rem solid $uni-blau-hell;
+        }
 
-    a {
-        border: 0.1875rem solid transparent;
-    
-        &:hover {
+        &:hover > a,
+        &:focus-within > a,
+        &.nav-item.open > a {
             text-decoration: none;
             border-bottom: 0.1875rem solid $uni-blau;
         }
-    }
 
-    // Submenu styling:
-    &.nav-item {
-        a {
-            margin-bottom: 0;
+        > a {
+            border: 0.1875rem solid transparent;
         }
 
-        & > div {
-            background-color: $uni-blau;
-            color: white;
-
-            .parent {
-                display: none;
+        // Menu items:
+        &.nav-item {
+            > a {
+                margin-bottom: 0;
             }
 
-            a {
+            // Submenu styling:
+            > div {
+                background-color: $uni-blau;
                 color: white;
-                border-bottom: none;
+                width: max-content;
+                left: auto;
+                right: 0;
 
-                &:not(.parent)::before {
+                .parent {
                     display: none;
-                    margin-right: 15px;
                 }
 
-                &:hover {
-                    border-bottom: 0.1875rem solid $uni-blau-hell;
+                a {
+                    color: white;
+                    border-bottom: 0.1875rem solid transparent;
+
+                    &:not(.parent)::before {
+                        display: none;
+                        margin-right: 15px;
+                    }
+
+                    &:hover {
+                        border-bottom: 0.1875rem solid $uni-blau-hell;
+                    }
                 }
             }
-        }
 
-        .sub-nav ul li {
-            padding: 10px;
-            margin-right: 5px;
+            .sub-nav ul li {
+                &.sub-nav-group {
+                    margin: 10px;
+
+                    ul {
+                        display: flex;
+                        flex-flow: row wrap;
+                        justify-content: space-between;
+                        align-items: stretch;
+                        row-gap: 10px;
+                        column-gap: 20px;
+
+                        li {
+                            padding: 0px;
+                            width: unset;
+                        }
+                    }
+
+                }
+            }
         }
     }
 }

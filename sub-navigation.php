@@ -11,7 +11,7 @@
             ?>
 
             <?php if (!$hasChildren): ?>
-                <li class="<?php if ($child->isActive()) echo ' active' ?>">
+                <li class="<?php if ($child->isActive(true)) echo ' active' ?>">
                     <a
 
                         href="<?php echo $child->getHref() ?>"
@@ -38,7 +38,7 @@
                     if ($access) :
                         ?>
 
-                    <li<?php if ($child->isActive()) echo ' class="active"' ?>>
+                    <li<?php if ($child->isActive(true)) echo ' class="active"' ?>>
                         <a
                             href="<?php echo $child->getHref() ?>"
                             <?php if ($child->getTarget() != ""): ?>

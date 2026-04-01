@@ -9,7 +9,7 @@ $layout = $this->navigation()->menu()->getUlClass();
         <?php /* @var $page Zend\Navigation\Page\Mvc */ ?>
         <?php $hasChildren = $page->hasPages() ?>
         <?php $showChildren = get_theme_option('nav_show_levels'); ?>
-        <li class="<?php if ($page->isActive()) echo 'active' ?>">
+        <li class="<?php if ($page->isActive(true)) echo 'active' ?>">
             <a href="<?php echo ($hasChildren) ? '#' : $page->getHref(); ?>">
                 <?php echo html_escape($this->translate($page->getLabel())); ?>
             </a>
