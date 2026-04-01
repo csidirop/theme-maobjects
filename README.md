@@ -2,6 +2,8 @@
 
 This theme is based on the [Center Row](https://github.com/omeka/theme-centerrow) theme.
 
+_This is a heavy customizable Omeka Classic theme for MAObjects, built to present digital collections, objects, and virtual exhibitions in the University of Mannheim’s visual design._
+
 It is used by the [Mannheim University Library](https://www.bib.uni-mannheim.de) in the context of [MAObjects](https://www.bib.uni-mannheim.de/en/teaching-and-research/research-data-center-fdz/services-of-the-fdz/maobjects/) Omeka deployments to provide a theme in the corporate design of the [University of Mannheim](https://www.uni-mannheim.de/). MAObjects is a service of the Mannheim University Library that provides researchers with an Omeka-based platform to create and present digital object collections and virtual exhibitions by uploading digital objects, describing them with standardised metadata, and making the data available via an API.
 
 <!-- ![Theme Example (Kotzebue Exhibition)](theme.jpg) -->
@@ -47,7 +49,7 @@ Provide a hex code to set the color of different elements of the theme. (Read mo
 > In the current state of the theme, some colors are not fully applied throughout all elements of the theme. Further improvements are planned for future versions.
 
 ### [Header][header]
-"These options apply to the header of the theme, including the quick search bar in the header.
+These options apply to the header of the theme, including the quick search bar in the header.
 
 |     Setting     |     Description     |
 |-----------------|---------------------|

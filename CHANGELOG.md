@@ -6,6 +6,7 @@ All notable changes to this project will be documented in this file.
 Version Strings to change before release:
  - /theme.ini
  - /package.json
+ - /CHANGELOG.md
 
 Placeholder for commit: [xxxxxxx](https://github.com/UB-Mannheim/theme-maobjects/commit/xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx))
  -->
@@ -16,6 +17,8 @@ The largest internal change is the Uni Mannheim asset migration, which removes r
 
 
 #### New
+
+#### v3.0
 
 - Added theme-specific styling for the Admin Tools maintenance mode page so maintenance screens inherit the MAObjects look and footer/header framing ([ab3469d](https://github.com/UB-Mannheim/theme-maobjects/commit/ab3469d2215e99b92ae581afa0041d3aa21c63bc), [30c4824](https://github.com/UB-Mannheim/theme-maobjects/commit/30c48249121fa1be67328e7f71e133e1bb2f62ef)).
 - Added new theme options:
