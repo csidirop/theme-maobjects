@@ -1,3 +1,5 @@
+/*** Custom styling for the MAObjects theme ***/
+
 @mixin button_blau($radius: null, $padding: null) {
     border: 0.1875rem solid $uni-blau;
     color: white;
@@ -14,6 +16,24 @@
 
     @if $radius != null { border-radius: $radius; }
     @if $padding != null { padding: $padding; }
+}
+
+// Buttons in UniMa style
+// with optional parameters for border-radius and padding, plus optional plain focus styling:
+@mixin maobjects_button($radius: null, $padding: null, $include-focus: false) {
+    @include button_blau($radius, $padding);
+
+    // Hover and focus styles:
+    &:hover,
+    &:focus-visible {
+        @include button_blau_hover($radius, $padding);
+    }
+
+    @if $include-focus {
+        &:focus {
+            @include button_blau_hover($radius, $padding);
+        }
+    }
 }
 
 @mixin zebra_row_backgrounds {
@@ -92,11 +112,7 @@ header nav .navigation {
         top: -3px;
 
         a {
-            @include button_blau;
-
-            &:hover {
-                @include button_blau_hover;
-            }
+            @include maobjects_button;
         }
     }
 }
@@ -105,18 +121,21 @@ a:hover {
     text-decoration: none;
 }
 
+button,
+.button,
+input[type=button],
+input[type=submit],
+input[type=reset] {
+    @include maobjects_button(4px, 4px);
+}
+
 // jcarousel left / right buttons:
 .jcarousel-wrapper {
     a {
         &.jcarousel-control-prev,
         &.jcarousel-control-next {
-            @include button_blau;
+            @include maobjects_button;
             font: 24px / 22px Arial, sans-serif;
-
-            &:focus,
-            &:hover {
-                @include button_blau_hover;
-            }
         }
     }
     .jcarousel-pagination {
@@ -605,21 +624,17 @@ header nav .navigation {
         }
 
         &#submit_search {
-            @include button_blau;
+            @include maobjects_button;
             width: 2.5rem;
             height: 2.5rem;
             min-height: 2.5rem;
             flex: 0 0 2.5rem;
             margin-bottom: 0;
             border-radius: 999px;
-
-            &:hover {
-                @include button_blau_hover;
-            }
         }
 
         &.search-toggle {
-            @include button_blau;
+            @include maobjects_button;
             position: absolute;
             top: 0.425rem;
             bottom: auto;
@@ -661,13 +676,8 @@ header nav .navigation {
 
 /* Advanced search */
 .advanced-search #advanced-search-form {
-    button,
-    input#submit_search_advanced[type=submit] {
-        @include button_blau(4px, 4px);
-
-        &:hover {
-            @include button_blau_hover(4px, 4px);
-        }
+    button {
+        @include maobjects_button(4px, 4px);
     }
 
     input#submit_search_advanced[type=submit] {
@@ -1212,7 +1222,7 @@ body footer.uma-footer {
     }
 
     .outputs-label {
-        @include button_blau(8px, 0.45rem 0.85rem);
+        @include maobjects_button(8px, 0.45rem 0.85rem, true);
 
         display: inline-flex;
         align-items: center;
@@ -1226,7 +1236,6 @@ body footer.uma-footer {
         &:hover,
         &:focus,
         &:focus-visible {
-            @include button_blau_hover;
             outline: none;
         }
     }
@@ -1371,12 +1380,8 @@ body footer.uma-footer {
     }
 
     button.lg-next, button.lg-prev {
-        @include button_blau;
+        @include maobjects_button;
         border-radius: .3125rem;
-
-        &:hover {
-            @include button_blau_hover;
-        }
     }
 
     .lg-toolbar .lg-icon:hover {

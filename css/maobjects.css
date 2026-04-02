@@ -407,6 +407,7 @@ textarea {
 }
 
 @media screen {
+  /*** Custom styling for the MAObjects theme ***/
   /*** Global styles ***/
   a:focus {
     outline-width: 0;
@@ -470,8 +471,9 @@ li.pagination_next a,
     color: white;
     background: #00325d;
   }
-  .pagination li.pagination_previous a:hover,
-.pagination li.pagination_next a:hover {
+  .pagination li.pagination_previous a:hover, .pagination li.pagination_previous a:focus-visible,
+.pagination li.pagination_next a:hover,
+.pagination li.pagination_next a:focus-visible {
     border: 0.1875rem solid #abb8ca;
     color: #00325d;
     background: white;
@@ -481,13 +483,40 @@ li.pagination_next a,
     text-decoration: none;
   }
 
+  button,
+.button,
+input[type=button],
+input[type=submit],
+input[type=reset] {
+    border: 0.1875rem solid #00325d;
+    color: white;
+    background: #00325d;
+    border-radius: 4px;
+    padding: 4px;
+  }
+  button:hover, button:focus-visible,
+.button:hover,
+.button:focus-visible,
+input[type=button]:hover,
+input[type=button]:focus-visible,
+input[type=submit]:hover,
+input[type=submit]:focus-visible,
+input[type=reset]:hover,
+input[type=reset]:focus-visible {
+    border: 0.1875rem solid #abb8ca;
+    color: #00325d;
+    background: white;
+    border-radius: 4px;
+    padding: 4px;
+  }
+
   .jcarousel-wrapper a.jcarousel-control-prev, .jcarousel-wrapper a.jcarousel-control-next {
     border: 0.1875rem solid #00325d;
     color: white;
     background: #00325d;
     font: 24px/22px Arial, sans-serif;
   }
-  .jcarousel-wrapper a.jcarousel-control-prev:focus, .jcarousel-wrapper a.jcarousel-control-prev:hover, .jcarousel-wrapper a.jcarousel-control-next:focus, .jcarousel-wrapper a.jcarousel-control-next:hover {
+  .jcarousel-wrapper a.jcarousel-control-prev:hover, .jcarousel-wrapper a.jcarousel-control-prev:focus-visible, .jcarousel-wrapper a.jcarousel-control-next:hover, .jcarousel-wrapper a.jcarousel-control-next:focus-visible {
     border: 0.1875rem solid #abb8ca;
     color: #00325d;
     background: white;
@@ -932,7 +961,7 @@ body {
     margin-bottom: 0;
     border-radius: 999px;
   }
-  #search-container button#submit_search:hover {
+  #search-container button#submit_search:hover, #search-container button#submit_search:focus-visible {
     border: 0.1875rem solid #abb8ca;
     color: #00325d;
     background: white;
@@ -950,6 +979,11 @@ body {
     border-width: 0.125rem;
     border-radius: 999px;
     box-shadow: 0 0.5rem 1.5rem #abb8ca;
+  }
+  #search-container button.search-toggle:hover, #search-container button.search-toggle:focus-visible {
+    border: 0.1875rem solid #abb8ca;
+    color: #00325d;
+    background: white;
   }
   #search-container button.search-toggle:hover, #search-container button.search-toggle:focus {
     border: 0.1875rem solid #abb8ca;
@@ -975,16 +1009,14 @@ body {
   }
 }
 @media screen {
-  .advanced-search #advanced-search-form button,
-.advanced-search #advanced-search-form input#submit_search_advanced[type=submit] {
+  .advanced-search #advanced-search-form button {
     border: 0.1875rem solid #00325d;
     color: white;
     background: #00325d;
     border-radius: 4px;
     padding: 4px;
   }
-  .advanced-search #advanced-search-form button:hover,
-.advanced-search #advanced-search-form input#submit_search_advanced[type=submit]:hover {
+  .advanced-search #advanced-search-form button:hover, .advanced-search #advanced-search-form button:focus-visible {
     border: 0.1875rem solid #abb8ca;
     color: #00325d;
     background: white;
@@ -1439,10 +1471,21 @@ body footer.uma-footer .social-icons {
     line-height: 1.2;
     transition: all 0.2s ease-out;
   }
-  .outputs .outputs-label:hover, .outputs .outputs-label:focus, .outputs .outputs-label:focus-visible {
+  .outputs .outputs-label:hover, .outputs .outputs-label:focus-visible {
     border: 0.1875rem solid #abb8ca;
     color: #00325d;
     background: white;
+    border-radius: 8px;
+    padding: 0.45rem 0.85rem;
+  }
+  .outputs .outputs-label:focus {
+    border: 0.1875rem solid #abb8ca;
+    color: #00325d;
+    background: white;
+    border-radius: 8px;
+    padding: 0.45rem 0.85rem;
+  }
+  .outputs .outputs-label:hover, .outputs .outputs-label:focus, .outputs .outputs-label:focus-visible {
     outline: none;
   }
   .outputs .outputs-icon {
@@ -1559,7 +1602,7 @@ body footer.uma-footer .social-icons {
     background: #00325d;
     border-radius: 0.3125rem;
   }
-  .lightgallery .lg-container button.lg-next:hover, .lightgallery .lg-container button.lg-prev:hover {
+  .lightgallery .lg-container button.lg-next:hover, .lightgallery .lg-container button.lg-next:focus-visible, .lightgallery .lg-container button.lg-prev:hover, .lightgallery .lg-container button.lg-prev:focus-visible {
     border: 0.1875rem solid #abb8ca;
     color: #00325d;
     background: white;
