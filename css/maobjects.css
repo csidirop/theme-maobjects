@@ -567,6 +567,8 @@ input[type=reset]:focus-visible {
 
   /* Item show page */
 
+  /* Item show page: Tags */
+
   /* Item Tag page */
 
   /* Main article content area */
@@ -601,6 +603,8 @@ input[type=reset]:focus-visible {
   /* Maintenance page styling */
 
   /* Lightgallery styling */
+
+  /* Keep Omeka's public admin bar pinned to the viewport top. */
 }
 @media screen and (min-width: 90.0625em) {
   #site-title.uma-header-left {
@@ -627,6 +631,13 @@ body {
     flex: 1 0 auto;
     display: flex;
     flex-direction: column;
+    padding-bottom: clamp(2.5rem, 5vw, 4.5rem);
+  }
+}
+@media screen {
+  #site-title.uma-header-left {
+    padding-top: 12px;
+    padding-bottom: 12px;
   }
 }
 @media screen {
@@ -690,6 +701,16 @@ body {
     flex-basis: auto;
     display: flex;
     flex-direction: column;
+  }
+}
+@media screen {
+  .items.show #item-tags .element-text a {
+    background: white;
+    border: 0.0875rem solid #abb8ca;
+    padding: 0.3125rem;
+  }
+  .items.show #item-tags .element-text a:hover {
+    background: #eff1f5;
   }
 }
 @media screen {
@@ -1044,7 +1065,8 @@ body {
   body footer.uma-footer {
     --footer-shell-padding: clamp(1.25rem, 2vw, 2rem);
     background: transparent;
-    padding: clamp(2.5rem, 5vw, 4.5rem) 0 0;
+    margin-top: 0;
+    padding: 0;
   }
   body footer.uma-footer .uma-footer-shell {
     background: #00325d;
@@ -1609,5 +1631,15 @@ body footer.uma-footer .social-icons {
   }
   .lightgallery .lg-container .lg-toolbar .lg-icon:hover {
     color: #00325d;
+  }
+}
+@media screen {
+  #admin-bar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10000;
   }
 }

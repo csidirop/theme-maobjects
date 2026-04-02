@@ -152,7 +152,6 @@
     <?php if ($backgroundImageUrl && ($backgroundImageDonotshowundercontent == '1')) : ?>
     #wrap {
         background-color: #FFFFFF;
-        padding: 0px
     }
     #wrap header, #wrap article {
         margin-left: 1.8rem;
@@ -172,6 +171,7 @@
         max-width: 1000px;
         min-width: 0;
         margin: 0 auto;
+        padding-bottom: 50px;
     }
 
     footer.uma-footer.uma-footer-compact-home {

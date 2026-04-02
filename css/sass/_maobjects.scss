@@ -208,6 +208,12 @@ body {
     flex: 1 0 auto;
     display: flex;
     flex-direction: column;
+    padding-bottom: clamp(2.5rem, 5vw, 4.5rem);
+}
+// Align site title vertically in header:
+#site-title.uma-header-left {
+    padding-top: 12px;
+    padding-bottom: 12px;
 }
 
 // Indent lists:
@@ -301,6 +307,17 @@ ul {
     }
 }
 
+/* Item show page: Tags */
+.items.show #item-tags .element-text a {
+    background: white;
+    border: .0875rem solid $uni-blau-hell;
+    padding: .3125rem;
+
+    &:hover {
+        background: $lighter-gray;
+    }
+}
+
 /* Item Tag page */
 .tags-page-search {
     padding: 1rem 2rem 1rem 2rem;
@@ -349,6 +366,8 @@ ul {
         display: none;
     }
 }
+
+
 
 /* Main article content area */
 #content {
@@ -704,7 +723,8 @@ body footer.uma-footer {
     --footer-shell-padding: clamp(1.25rem, 2vw, 2rem);
 
     background: transparent;
-    padding: clamp(2.5rem, 5vw, 4.5rem) 0 0;
+    margin-top: 0;
+    padding: 0;
 
     .uma-footer-shell {
         background: $uni-blau;
@@ -1387,4 +1407,14 @@ body footer.uma-footer {
     .lg-toolbar .lg-icon:hover {
         color: $uni-blau;
     }
+}
+
+/* Keep Omeka's public admin bar pinned to the viewport top. */
+#admin-bar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10000;
 }
