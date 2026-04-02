@@ -46,6 +46,19 @@ textarea {
 select {
   box-sizing: border-box;
   width: 100%;
+  width: 100%;
+  appearance: none;
+  border: 0.1875rem solid #eff1f5;
+  border-radius: 0.625rem;
+  background-color: #eff1f5;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #00325d;
+}
+select option {
+  background-color: #eff1f5;
 }
 
 button {

@@ -152,7 +152,6 @@
     <?php if ($backgroundImageUrl && ($backgroundImageDonotshowundercontent == '1')) : ?>
     #wrap {
         background-color: #FFFFFF;
-        padding: 0px
     }
     #wrap header, #wrap article {
         margin-left: 1.8rem;
@@ -168,32 +167,17 @@
 
     #wrap {
         flex: 0 0 auto;
-        width: min(100%, 1000px);
-        max-width: 1000px;
-        min-width: 0;
+        width: min(100%, 1100px);
         margin: 0 auto;
     }
 
     footer.uma-footer.uma-footer-compact-home {
-        width: min(100%, 1000px);
-        max-width: 1000px;
+        width: min(100%, 1100px);
         margin: 0 auto;
-    }
-
-    @media only screen and (max-width: 900px) {
-        #wrap,
-        footer.uma-footer.uma-footer-compact-home {
-            width: 100%;
-            max-width: none;
-        }
     }
 
     #search-container {
         display: none;
-    }
-
-    footer.uma-footer.uma-footer-compact-home .uma-footer-shell {
-        box-shadow: none;
     }
     <?php endif; ?>
 
