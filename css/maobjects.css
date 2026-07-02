@@ -605,6 +605,8 @@ input[type=reset]:focus-visible {
   /* Lightgallery styling */
 
   /* Keep Omeka's public admin bar pinned to the viewport top. */
+
+  /* Exhibits */
 }
 @media screen and (min-width: 90.0625em) {
   #site-title.uma-header-left {
@@ -1640,5 +1642,13 @@ body footer.uma-footer .social-icons {
     left: 0;
     width: 100%;
     z-index: 10000;
+  }
+}
+@media screen {
+  #exhibit-blocks div.exhibit-block.layout-file-text:nth-child(odd) {
+    background-color: whitesmoke;
+  }
+  #exhibit-blocks div.exhibit-block.layout-file-text:nth-child(even) {
+    background-color: white;
   }
 }

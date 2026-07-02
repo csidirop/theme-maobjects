@@ -1417,3 +1417,9 @@ body footer.uma-footer {
     width: 100%;
     z-index: 10000;
 }
+
+/* Exhibits */
+// Alternate row colors in exhibit blocks:
+#exhibit-blocks div.exhibit-block.layout-file-text {
+    @include zebra_row_backgrounds;
+}
