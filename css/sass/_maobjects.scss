@@ -38,7 +38,7 @@
 
 @mixin zebra_row_backgrounds {
     &:nth-child(odd) {
-        background-color: whitesmoke;
+        background-color: lighten($uni-blau, 79%);
     }
 
     &:nth-child(even) {

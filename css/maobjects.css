@@ -664,7 +664,7 @@ body {
     margin-bottom: 0.5rem;
   }
   .browse .records > div.list:nth-child(odd) {
-    background-color: whitesmoke;
+    background-color: #f1f8ff;
   }
   .browse .records > div.list:nth-child(even) {
     background-color: white;
@@ -1411,7 +1411,7 @@ body footer.uma-footer .social-icons {
     width: 100%;
   }
   .collections #collection-items.browse.list .item:nth-child(odd) {
-    background-color: whitesmoke;
+    background-color: #f1f8ff;
   }
   .collections #collection-items.browse.list .item:nth-child(even) {
     background-color: white;
@@ -1646,7 +1646,7 @@ body footer.uma-footer .social-icons {
 }
 @media screen {
   #exhibit-blocks div.exhibit-block.layout-file-text:nth-child(odd) {
-    background-color: whitesmoke;
+    background-color: #f1f8ff;
   }
   #exhibit-blocks div.exhibit-block.layout-file-text:nth-child(even) {
     background-color: white;
