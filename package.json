@@ -1,6 +1,6 @@
 {
   "name": "maobjects",
-  "version": "3.0",
+  "version": "3.1",
   "description": "\"Heavy customizable Omeka Classic theme for MAObjects, built to present digital collections, objects, and virtual exhibitions in the University of Mannheim’s visual design.\"",
   "main": "gulpfile.js",
   "devDependencies": {

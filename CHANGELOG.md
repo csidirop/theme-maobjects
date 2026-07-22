@@ -10,15 +10,14 @@ Version Strings to change before release:
 
 Placeholder for commit: [xxxxxxx](https://github.com/UB-Mannheim/theme-maobjects/commit/xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx))
  -->
+## New
+-
 
-## Current State
+## v3.1
+- Mainly styling updates ([a22c281](https://github.com/UB-Mannheim/theme-maobjects/commit/a22c281dac3d5351596b17e1612d0fd383213087), [fdc1cf0](https://github.com/UB-Mannheim/theme-maobjects/commit/fdc1cf012d1f14f815c00f0a099352a3342f9306), [775adae](https://github.com/UB-Mannheim/theme-maobjects/commit/775adae9c0773507a56240cf9e1ea8723a152201)).
 
+## v3.0
 The largest internal change is the Uni Mannheim asset migration, which removes reliance on externally hosted corporate-design resources and makes the theme more self-contained ([a558280](https://github.com/UB-Mannheim/theme-maobjects/commit/a558280d3c53d40b19fbff0620700552bb8627b3), [b98ab1d](https://github.com/UB-Mannheim/theme-maobjects/commit/b98ab1d608522cead6dc7c8634657ee940f53823), [cae8d89](https://github.com/UB-Mannheim/theme-maobjects/commit/cae8d89da15542f456da06089f6c57fc4e3c705a)).
-
-
-#### New
-
-#### v3.0
 
 - Added theme-specific styling for the Admin Tools maintenance mode page so maintenance screens inherit the MAObjects look and footer/header framing ([ab3469d](https://github.com/UB-Mannheim/theme-maobjects/commit/ab3469d2215e99b92ae581afa0041d3aa21c63bc), [30c4824](https://github.com/UB-Mannheim/theme-maobjects/commit/30c48249121fa1be67328e7f71e133e1bb2f62ef)).
 - Added new theme options:
