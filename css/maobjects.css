@@ -748,8 +748,8 @@ body {
   .tags .hTagcloud li a {
     border-bottom: none;
   }
-  .tags .hTagcloud li a:hover {
-    border-bottom: 0.1875rem solid #abb8ca;
+  .tags .hTagcloud li:hover {
+    background: #eff1f5;
   }
   .tags .hTagcloud li[hidden] {
     display: none;
